@@ -1,0 +1,31 @@
+.page {
+  position: relative;
+  min-width: 320px;
+  max-width: $narrow-width;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: $font;
+  font-size: 2rem;
+  color: $dark-shades;
+  background-color: $light-shades;
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: screen;
+
+  &-noscroll {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: $middle-width) {
+  .page {
+    max-width: $middle-width;
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: $extra-wide-width) {
+  .page {
+    max-width: $extra-wide-width;
+    font-size: 2.4rem;
+  }
+}

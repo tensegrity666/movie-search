@@ -1,0 +1,19 @@
+@charset 'utf-8';
+//commons
+@import "source/scss/commons/variables.scss";
+@import "source/scss/commons/animations.scss";
+@import "source/scss/commons/mixins.scss";
+@import "source/scss/commons/normalize.scss";
+@import "source/scss/commons/visually-hidden.scss";
+@import "source/scss/root/root.scss";
+//main page
+@import "source/scss/page/page.scss";
+@import "source/scss/header/header.scss";
+@import "source/scss/menu/menu.scss";
+@import "source/scss/burger/burger.scss";
+@import "source/scss/toggler/toggler.scss";
+@import "source/scss/navigation/navigation.scss";
+@import "source/scss/categories/categories.scss";
+@import "source/scss/item/item.scss";
+@import "source/scss/start/start.scss";
+@import "source/scss/wrapper/wrapper.scss";

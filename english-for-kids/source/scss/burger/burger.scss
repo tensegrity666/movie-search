@@ -1,0 +1,57 @@
+.burger {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: transform 0.15s linear;
+
+  &__inner {
+    @include burger-inner;
+
+    top: 45%;
+    left: 5px;
+
+    &::before {
+      @include burger-inner;
+
+      top: -14px;
+      content: "";
+    }
+
+    &::after {
+      @include burger-inner;
+
+      top: 14px;
+      content: "";
+    }
+  }
+
+  &-action {
+    transform: rotate(135deg);
+
+    &::before {
+      @include burger-inner;
+
+      top: 0;
+      left: 0;
+      content: "";
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      @include burger-inner;
+
+      top: 0;
+      left: 0;
+      content: "";
+      transform: rotate(90deg);
+    }
+  }
+}

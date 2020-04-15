@@ -1,0 +1,34 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: -200%;
+  z-index: $z-index-middle;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(3px) grayscale(70%);
+  transition: left 0.3s linear;
+
+  &_show {
+    left: 0;
+    display: block;
+    transition: left 0.3s linear;
+  }
+
+  &__burger {
+    z-index: $z-index-top;
+  }
+}
+
+@media (min-width: $middle-width) {
+  .menu {
+    width: 50%;
+  }
+}
+
+@media (min-width: $extra-wide-width) {
+  .menu {
+    width: 28vw;
+  }
+}

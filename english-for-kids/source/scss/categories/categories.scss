@@ -1,0 +1,92 @@
+.categories {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: 100%;
+  justify-items: center;
+  row-gap: 15rem;
+  width: $narrow-width;
+  padding: 0;
+  margin-top: 20rem;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    scroll-snap-align: center;
+    border-radius: 0.8rem;
+    transition: all 0.25s linear;
+    perspective: 600px;
+
+    &_front {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      transition: all 0.35s linear;
+      transform: rotateX(0) rotateY(0);
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+
+      &-active {
+        transition: transform 0.35s linear;
+        transform: rotateY(180deg);
+      }
+    }
+
+    &_reverse {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      transition: all 0.35s linear;
+      transform: rotateY(-180deg);
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+
+      &-active {
+        transition: all 0.35s linear;
+        transform: rotateX(0) rotateY(0);
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 7px 8px 1px rgba(65, 65, 65, 0.2);
+      transition: all 0.15s linear;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (min-width: $middle-width) {
+  .categories {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    width: 700px;
+    row-gap: 10rem;
+    margin-top: 18rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: $wide-width) and (max-width: 1279px) {
+  .categories {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    width: 100vw;
+    margin-top: 18rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: $extra-wide-width) {
+  .categories {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    width: 100vw;
+    margin-top: 18rem;
+    margin-bottom: 4rem;
+  }
+}
