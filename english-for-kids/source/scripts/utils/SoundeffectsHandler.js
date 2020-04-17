@@ -1,10 +1,11 @@
-export const SOUNDEFFECTS = {
+export const SOUND_EFFECTS = {
+  isSundPlay: false,
+  delayForMenu: 20,
   menuButton: new Audio('../assets/sounds/hover.mp3'),
 };
-const AUDIO_DELAY = 20;
 
-export function delayForSouneffect(soundFile) {
+export function delayForSouneffect(soundFile, delay) {
   setTimeout(() => {
     soundFile.play();
-  }, AUDIO_DELAY);
+  }, delay);
 }

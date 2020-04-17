@@ -4,8 +4,9 @@ import { dataToProcess, CURRENT_STATE } from './Categories';
 import sideMenuToggle from './SideMenuShow';
 import togglePageType from './TogglerHandler';
 
-dataToProcess(CURRENT_STATE.currentCategory);
-cardsToRender(CURRENT_STATE.currentCategory);
-sideMenuToggle();
-togglePageType();
-
+window.onload = () => {
+  dataToProcess(CURRENT_STATE.currentCategory);
+  cardsToRender(CURRENT_STATE.currentCategory);
+  sideMenuToggle();
+  togglePageType();
+};

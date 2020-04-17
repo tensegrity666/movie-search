@@ -9,12 +9,17 @@
   margin: 0;
   cursor: pointer;
   background-color: $primary-color;
+  background-image: $card-background-train;
   border-radius: 0.5rem;
   box-shadow:
     0 10px 20px -12px rgba(0, 0, 0, 0.42),
     0 3px 20px 0 rgba(0, 0, 0, 0.12),
     0 8px 10px -5px rgba(0, 0, 0, 0.2),
     inset 10px 10px 61px -22px rgba(0, 0, 0, 0.58);
+
+  &_play {
+    background-image: $card-background-play;
+  }
 
   &__image {
     position: absolute;
@@ -49,17 +54,3 @@
     }
   }
 }
-
-// @media (min-width: $narrow-width) {
-//   .item {
-//     width: 300px;
-
-//     &__image {
-//       top: -60px;
-
-//       &-inner {
-//         width: 260px;
-//       }
-//     }
-//   }
-// }

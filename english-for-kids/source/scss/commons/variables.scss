@@ -1,10 +1,13 @@
 $font: "Comfortaa", cursive;
 $default-color: #54565c27;
-$accent-color: #aa4a23;
 $light-accent-color: #d9c0a9;
+$accent-color: #F76B1C;
 $primary-color: #e6b424;
 $dark-shades: #3a32ca;
 $light-shades: #ffffff;
+
+$card-background-train: linear-gradient(30deg, $primary-color 50%, $accent-color 100%);
+$card-background-play: linear-gradient(50deg, $dark-shades 40%, $primary-color 100%);
 
 $succes-color: #7ab143;
 $warning-color: #f8a00b;
