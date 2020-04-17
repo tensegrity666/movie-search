@@ -13,14 +13,15 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './build',
+    open: false,
+    contentBase: path.join(__dirname, 'build')
   },
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin([
       {
-        from: 'source/assets/images/',
-        to: 'assets/images/'
+        from: 'source/assets/',
+        to: 'assets/'
       },
     ]),
     new HtmlWebpackPlugin({

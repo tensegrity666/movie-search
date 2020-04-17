@@ -7,6 +7,7 @@
   width: $narrow-width;
   padding: 0;
   margin-top: 20rem;
+  margin-bottom: 6rem;
   list-style: none;
 
   &__item {
@@ -16,14 +17,13 @@
     scroll-snap-align: center;
     border-radius: 0.8rem;
     transition: all 0.25s linear;
-    perspective: 600px;
 
     &_front {
       position: absolute;
       top: 0;
       bottom: 0;
       transition: all 0.35s linear;
-      transform: rotateX(0) rotateY(0);
+      transform: perspective(600px) rotateY(0);
       backface-visibility: hidden;
       transform-style: preserve-3d;
 
@@ -44,7 +44,7 @@
 
       &-active {
         transition: all 0.35s linear;
-        transform: rotateX(0) rotateY(0);
+        transform: perspective(600px) rotateY(0);
         backface-visibility: hidden;
         transform-style: preserve-3d;
       }
@@ -66,7 +66,6 @@
     width: 700px;
     row-gap: 10rem;
     margin-top: 18rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -76,8 +75,6 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     width: 100vw;
-    margin-top: 18rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -86,7 +83,5 @@
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
     width: 100vw;
-    margin-top: 18rem;
-    margin-bottom: 4rem;
   }
 }

@@ -1,13 +1,24 @@
 .start {
+  position: absolute;
+  bottom: -50px;
   width: 240px;
   height: 60px;
   padding: 5px 10px;
   font-weight: 900;
   color: $primary-color;
+  text-transform: capitalize;
   cursor: pointer;
   background-color: $dark-shades;
+  // filter: blur(10px) grayscale(70%) opacity(0);
   border: 2px solid $primary-color;
   border-radius: 60px;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+
+  &_show {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+  }
 }
 
 @media (min-width: $middle-width) {

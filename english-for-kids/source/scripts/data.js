@@ -1,305 +1,469 @@
 const data = [
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+  ['Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
   [
     {
+      id: '1',
       word: 'cry',
       translation: 'плакать',
-      image: '/assets/images/cry.jpg',
-      audioSrc: 'audio/cry.mp3'
+      image: 'assets/images/cry.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/cry.mp3',
     },
     {
+      id: '2',
       word: 'dance',
       translation: 'танцевать',
-      image: '/assets/images/dance.jpg',
-      audioSrc: 'audio/dance.mp3'
+      image: 'assets/images/dance.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dance.mp3',
     },
     {
+      id: '3',
       word: 'dive',
       translation: 'нырять',
-      image: '/assets/images/dive.jpg',
-      audioSrc: 'audio/dive.mp3'
+      image: 'assets/images/dive.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dive.mp3',
     },
     {
+      id: '4',
       word: 'draw',
       translation: 'рисовать',
-      image: '/assets/images/draw.jpg',
-      audioSrc: 'audio/draw.mp3'
+      image: 'assets/images/draw.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/draw.mp3',
     },
     {
+      id: '5',
       word: 'fish',
       translation: 'ловить рыбу',
-      image: '/assets/images/fish.jpg',
-      audioSrc: 'audio/fish.mp3'
+      image: 'assets/images/fish.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/fish.mp3',
     },
     {
+      id: '6',
       word: 'fly',
       translation: 'летать',
-      image: '/assets/images/fly.jpg',
-      audioSrc: 'audio/fly.mp3'
+      image: 'assets/images/fly.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/fly.mp3',
     },
     {
+      id: '7',
       word: 'hug',
       translation: 'обнимать',
-      image: '/assets/images/hug.jpg',
-      audioSrc: 'audio/hug.mp3'
+      image: 'assets/images/hug.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/hug.mp3',
     },
     {
+      id: '8',
       word: 'jump',
       translation: 'прыгать',
-      image: '/assets/images/jump.jpg',
-      audioSrc: 'audio/jump.mp3'
-    }
+      image: 'assets/images/jump.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/jump.mp3',
+    },
   ],
   [
     {
+      id: '1',
       word: 'open',
       translation: 'открывать',
-      image: '/assets/images/open.jpg',
-      audioSrc: 'audio/open.mp3'
+      image: 'assets/images/open.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/open.mp3',
     },
     {
+      id: '2',
       word: 'play',
       translation: 'играть',
-      image: '/assets/images/play.jpg',
-      audioSrc: 'audio/play.mp3'
+      image: 'assets/images/play.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/play.mp3',
     },
     {
+      id: '3',
       word: 'point',
       translation: 'указывать',
-      image: '/assets/images/point.jpg',
-      audioSrc: 'audio/point.mp3'
+      image: 'assets/images/point.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/point.mp3',
     },
     {
+      id: '4',
       word: 'ride',
       translation: 'ездить',
-      image: '/assets/images/ride.jpg',
-      audioSrc: 'audio/ride.mp3'
+      image: 'assets/images/ride.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/ride.mp3',
     },
     {
+      id: '5',
       word: 'run',
       translation: 'бегать',
-      image: '/assets/images/run.jpg',
-      audioSrc: 'audio/run.mp3'
+      image: 'assets/images/run.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/run.mp3',
     },
     {
+      id: '6',
       word: 'sing',
       translation: 'петь',
-      image: '/assets/images/sing.jpg',
-      audioSrc: 'audio/sing.mp3'
+      image: 'assets/images/sing.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/sing.mp3',
     },
     {
+      id: '7',
       word: 'skip',
       translation: 'пропускать, прыгать',
-      image: '/assets/images/skip.jpg',
-      audioSrc: 'audio/skip.mp3'
+      image: 'assets/images/skip.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/skip.mp3',
     },
     {
+      id: '8',
       word: 'swim',
       translation: 'плавать',
-      image: '/assets/images/swim.jpg',
-      audioSrc: 'audio/swim.mp3'
-    }
+      image: 'assets/images/swim.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/swim.mp3',
+    },
   ],
   [
     {
+      id: '1',
+      word: 'argue',
+      translation: 'спорить',
+      image: 'assets/images/argue.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/argue.mp3',
+    },
+    {
+      id: '2',
+      word: 'build',
+      translation: 'строить',
+      image: 'assets/images/build.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/build.mp3',
+    },
+    {
+      id: '3',
+      word: 'carry',
+      translation: 'нести',
+      image: 'assets/images/carry.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/carry.mp3',
+    },
+    {
+      id: '4',
+      word: 'catch',
+      translation: 'ловить',
+      image: 'assets/images/catch.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/catch.mp3',
+    },
+    {
+      id: '5',
+      word: 'drive',
+      translation: 'водить машину',
+      image: 'assets/images/drive.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/drive.mp3',
+    },
+    {
+      id: '6',
+      word: 'drop',
+      translation: 'падать',
+      image: 'assets/images/drop.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/drop.mp3',
+    },
+    {
+      id: '7',
+      word: 'pull',
+      translation: 'тянуть',
+      image: 'assets/images/pull.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/pull.mp3',
+    },
+    {
+      id: '8',
+      word: 'push',
+      translation: 'толкать',
+      image: 'assets/images/push.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/push.mp3',
+    },
+  ],
+  [
+    {
+      id: '1',
+      word: 'big',
+      translation: 'большой',
+      image: 'assets/images/big.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/big.mp3',
+    },
+    {
+      id: '2',
+      word: 'small',
+      translation: 'маленький',
+      image: 'assets/images/small.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/small.mp3',
+    },
+    {
+      id: '3',
+      word: 'fast',
+      translation: 'быстрый',
+      image: 'assets/images/fast.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/fast.mp3',
+    },
+    {
+      id: '4',
+      word: 'slow',
+      translation: 'медленный',
+      image: 'assets/images/slow.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/slow.mp3',
+    },
+    {
+      id: '5',
+      word: 'friendly',
+      translation: 'дружелюбный',
+      image: 'assets/images/friendly.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/friendly.mp3',
+    },
+    {
+      id: '6',
+      word: 'unfriendly',
+      translation: 'недружелюбный',
+      image: 'assets/images/unfriendly.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/unfriendly.mp3',
+    },
+    {
+      id: '7',
+      word: 'young',
+      translation: 'молодой',
+      image: 'assets/images/young.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/young.mp3',
+    },
+    {
+      id: '8',
+      word: 'old',
+      translation: 'старый',
+      image: 'assets/images/old.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/old.mp3',
+    },
+  ],
+  [
+    {
+      id: '1',
       word: 'cat',
       translation: 'кот',
-      image: '/assets/images/cat.jpg',
-      audioSrc: 'audio/cat.mp3'
+      image: 'assets/images/cat.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/cat.mp3',
     },
     {
+      id: '2',
       word: 'chick',
       translation: 'цыплёнок',
-      image: '/assets/images/chick.jpg',
-      audioSrc: 'audio/chick.mp3'
+      image: 'assets/images/chick.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/chick.mp3',
     },
     {
+      id: '3',
       word: 'chicken',
       translation: 'курица',
-      image: '/assets/images/chicken.jpg',
-      audioSrc: 'audio/chicken.mp3'
+      image: 'assets/images/chicken.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/chicken.mp3',
     },
     {
+      id: '4',
       word: 'dog',
       translation: 'собака',
-      image: '/assets/images/dog.jpg',
-      audioSrc: 'audio/dog.mp3'
+      image: 'assets/images/dog.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dog.mp3',
     },
     {
+      id: '5',
       word: 'horse',
       translation: 'лошадь',
-      image: '/assets/images/horse.jpg',
-      audioSrc: 'audio/horse.mp3'
+      image: 'assets/images/horse.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/horse.mp3',
     },
     {
+      id: '6',
       word: 'pig',
       translation: 'свинья',
-      image: '/assets/images/pig.jpg',
-      audioSrc: 'audio/pig.mp3'
+      image: 'assets/images/pig.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/pig.mp3',
     },
     {
+      id: '7',
       word: 'rabbit',
       translation: 'кролик',
-      image: '/assets/images/rabbit.jpg',
-      audioSrc: 'audio/rabbit.mp3'
+      image: 'assets/images/rabbit.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/rabbit.mp3',
     },
     {
+      id: '8',
       word: 'sheep',
       translation: 'овца',
-      image: '/assets/images/sheep.jpg',
-      audioSrc: 'audio/sheep.mp3'
-    }
+      image: 'assets/images/sheep.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/sheep.mp3',
+    },
   ],
   [
     {
+      id: '1',
       word: 'bird',
       translation: 'птица',
-      image: '/assets/images/bird.jpg',
-      audioSrc: 'audio/bird.mp3'
+      image: 'assets/images/bird.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/bird.mp3',
     },
     {
+      id: '2',
       word: 'fish',
       translation: 'рыба',
-      image: '/assets/images/fish1.jpg',
-      audioSrc: 'audio/fish.mp3'
+      image: 'assets/images/fish1.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/fish.mp3',
     },
     {
+      id: '3',
       word: 'frog',
       translation: 'жаба',
-      image: '/assets/images/frog.jpg',
-      audioSrc: 'audio/frog.mp3'
+      image: 'assets/images/frog.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/frog.mp3',
     },
     {
+      id: '4',
       word: 'giraffe',
       translation: 'жирафа',
-      image: '/assets/images/giraffe.jpg',
-      audioSrc: 'audio/giraffe.mp3'
+      image: 'assets/images/giraffe.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/giraffe.mp3',
     },
     {
+      id: '5',
       word: 'lion',
       translation: 'лев',
-      image: '/assets/images/lion.jpg',
-      audioSrc: 'audio/lion.mp3'
+      image: 'assets/images/lion.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/lion.mp3',
     },
     {
+      id: '6',
       word: 'mouse',
       translation: 'мышь',
-      image: '/assets/images/mouse.jpg',
-      audioSrc: 'audio/mouse.mp3'
+      image: 'assets/images/mouse.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/mouse.mp3',
     },
     {
+      id: '7',
       word: 'turtle',
       translation: 'черепаха',
-      image: '/assets/images/turtle.jpg',
-      audioSrc: 'audio/turtle.mp3'
+      image: 'assets/images/turtle.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/turtle.mp3',
     },
     {
+      id: '8',
       word: 'dolphin',
       translation: 'дельфин',
-      image: '/assets/images/dolphin.jpg',
-      audioSrc: 'audio/dolphin.mp3'
-    }
+      image: 'assets/images/dolphin.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dolphin.mp3',
+    },
   ],
   [
     {
+      id: '1',
       word: 'skirt',
       translation: 'юбка',
-      image: '/assets/images/skirt.jpg',
-      audioSrc: 'audio/skirt.mp3'
+      image: 'assets/images/skirt.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/skirt.mp3',
     },
     {
+      id: '2',
       word: 'pants',
       translation: 'брюки',
-      image: '/assets/images/pants.jpg',
-      audioSrc: 'audio/pants.mp3'
+      image: 'assets/images/pants.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/pants.mp3',
     },
     {
+      id: '3',
       word: 'blouse',
       translation: 'блузка',
-      image: '/assets/images/blouse.jpg',
-      audioSrc: 'audio/blouse.mp3'
+      image: 'assets/images/blouse.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/blouse.mp3',
     },
     {
+      id: '4',
       word: 'dress',
       translation: 'платье',
-      image: '/assets/images/dress.jpg',
-      audioSrc: 'audio/dress.mp3'
+      image: 'assets/images/dress.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dress.mp3',
     },
     {
+      id: '5',
       word: 'boot',
       translation: 'ботинок',
-      image: '/assets/images/boot.jpg',
-      audioSrc: 'audio/boot.mp3'
+      image: 'assets/images/boot.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/boot.mp3',
     },
     {
+      id: '6',
       word: 'shirt',
       translation: 'рубашка',
-      image: '/assets/images/shirt.jpg',
-      audioSrc: 'audio/shirt.mp3'
+      image: 'assets/images/shirt.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/shirt.mp3',
     },
     {
+      id: '7',
       word: 'coat',
       translation: 'пальто',
-      image: '/assets/images/coat.jpg',
-      audioSrc: 'audio/coat.mp3'
+      image: 'assets/images/coat.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/coat.mp3',
     },
     {
+      id: '8',
       word: 'shoe',
       translation: 'туфли',
-      image: '/assets/images/shoe.jpg',
-      audioSrc: 'audio/shoe.mp3'
-    }
+      image: 'assets/images/shoe.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/shoe.mp3',
+    },
   ],
   [
     {
+      id: '1',
       word: 'sad',
       translation: 'грустный',
-      image: '/assets/images/sad.jpg',
-      audioSrc: 'audio/sad.mp3'
+      image: 'assets/images/sad.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/sad.mp3',
     },
     {
+      id: '2',
       word: 'angry',
       translation: 'сердитый',
-      image: '/assets/images/angry.jpg',
-      audioSrc: 'audio/angry.mp3'
+      image: 'assets/images/angry.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/angry.mp3',
     },
     {
+      id: '3',
       word: 'happy',
       translation: 'счастливый',
-      image: '/assets/images/happy.jpg',
-      audioSrc: 'audio/happy.mp3'
+      image: 'assets/images/happy.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/happy.mp3',
     },
     {
+      id: '4',
       word: 'tired',
       translation: 'уставший',
-      image: '/assets/images/tired.jpg',
-      audioSrc: 'audio/tired.mp3'
+      image: 'assets/images/tired.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/tired.mp3',
     },
     {
+      id: '5',
       word: 'surprised',
       translation: 'удивлённый',
-      image: '/assets/images/surprised.jpg',
-      audioSrc: 'audio/surprised.mp3'
+      image: 'assets/images/surprised.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/surprised.mp3',
     },
     {
+      id: '6',
       word: 'scared',
       translation: 'испуганный',
-      image: '/assets/images/scared.jpg',
-      audioSrc: 'audio/scared.mp3'
+      image: 'assets/images/scared.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/scared.mp3',
     },
     {
+      id: '7',
       word: 'smile',
       translation: 'улыбка',
-      image: '/assets/images/smile.jpg',
-      audioSrc: 'audio/smile.mp3'
+      image: 'assets/images/smile.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/smile.mp3',
     },
     {
+      id: '8',
       word: 'laugh',
       translation: 'смех',
-      image: '/assets/images/laugh.jpg',
-      audioSrc: 'audio/laugh.mp3'
-    }
-  ]
-]
+      image: 'assets/images/laugh.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/laugh.mp3',
+    },
+  ],
+];
 
 export default data;
