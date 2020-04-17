@@ -59,62 +59,62 @@ const data = [
     },
   ],
   [
-  {
-    id: '1',
-    word: 'open',
-    translation: 'открывать',
-    image: 'assets/images/open.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/open.mp3',
-  },
-  {
-    id: '2',
-    word: 'play',
-    translation: 'играть',
-    image: 'assets/images/play.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/play.mp3',
-  },
-  {
-    id: '3',
-    word: 'point',
-    translation: 'указывать',
-    image: 'assets/images/point.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/point.mp3',
-  },
-  {
-    id: '4',
-    word: 'ride',
-    translation: 'ездить',
-    image: 'assets/images/ride.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/ride.mp3',
-  },
-  {
-    id: '5',
-    word: 'run',
-    translation: 'бегать',
-    image: 'assets/images/run.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/run.mp3',
-  },
-  {
-    id: '6',
-    word: 'sing',
-    translation: 'петь',
-    image: 'assets/images/sing.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/sing.mp3',
-  },
-  {
-    id: '7',
-    word: 'skip',
-    translation: 'пропускать, прыгать',
-    image: 'assets/images/skip.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/skip.mp3',
-  },
-  {
-    id: '8',
-    word: 'swim',
-    translation: 'плавать',
-    image: 'assets/images/swim.jpg',
-    audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/swim.mp3',
-  }
+    {
+      id: '1',
+      word: 'open',
+      translation: 'открывать',
+      image: 'assets/images/open.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/open.mp3',
+    },
+    {
+      id: '2',
+      word: 'play',
+      translation: 'играть',
+      image: 'assets/images/play.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/play.mp3',
+    },
+    {
+      id: '3',
+      word: 'point',
+      translation: 'указывать',
+      image: 'assets/images/point.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/point.mp3',
+    },
+    {
+      id: '4',
+      word: 'ride',
+      translation: 'ездить',
+      image: 'assets/images/ride.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/ride.mp3',
+    },
+    {
+      id: '5',
+      word: 'run',
+      translation: 'бегать',
+      image: 'assets/images/run.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/run.mp3',
+    },
+    {
+      id: '6',
+      word: 'sing',
+      translation: 'петь',
+      image: 'assets/images/sing.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/sing.mp3',
+    },
+    {
+      id: '7',
+      word: 'skip',
+      translation: 'пропускать, прыгать',
+      image: 'assets/images/skip.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/skip.mp3',
+    },
+    {
+      id: '8',
+      word: 'swim',
+      translation: 'плавать',
+      image: 'assets/images/swim.jpg',
+      audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/swim.mp3',
+    },
   ],
   [
     {
@@ -172,7 +172,7 @@ const data = [
       translation: 'толкать',
       image: 'assets/images/push.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/push.mp3',
-    }
+    },
   ],
   [
     {
@@ -230,7 +230,7 @@ const data = [
       translation: 'старый',
       image: 'assets/images/old.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/old.mp3',
-    }
+    },
   ],
   [
     {
@@ -260,7 +260,6 @@ const data = [
       translation: 'собака',
       image: 'assets/images/dog.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dog.mp3',
-      parentId: '5'
     },
     {
       id: '5',
@@ -289,7 +288,7 @@ const data = [
       translation: 'овца',
       image: 'assets/images/sheep.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/sheep.mp3',
-    }
+    },
   ],
   [
     {
@@ -347,7 +346,7 @@ const data = [
       translation: 'дельфин',
       image: 'assets/images/dolphin.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/dolphin.mp3',
-    }
+    },
   ],
   [
     {
@@ -405,7 +404,7 @@ const data = [
       translation: 'туфли',
       image: 'assets/images/shoe.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/shoe.mp3',
-    }
+    },
   ],
   [
     {
@@ -463,8 +462,8 @@ const data = [
       translation: 'смех',
       image: 'assets/images/laugh.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/laugh.mp3',
-    }
-  ]
-]
+    },
+  ],
+];
 
 export default data;

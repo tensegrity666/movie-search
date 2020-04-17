@@ -1,3 +1,5 @@
+$transition-burger: all 0.15s linear 0.4s;
+
 .burger {
   position: relative;
   box-sizing: border-box;
@@ -10,19 +12,22 @@
   background-color: transparent;
   border: none;
   outline: none;
-  transition: transform 0.15s linear;
 
   &__inner {
     @include burger-inner;
 
     top: 45%;
     left: 5px;
+    background-color: $dark-shades;
+    transition: $transition-burger;
 
     &::before {
       @include burger-inner;
 
       top: -14px;
       content: "";
+      background-color: $dark-shades;
+      transition: $transition-burger;
     }
 
     &::after {
@@ -30,10 +35,14 @@
 
       top: 14px;
       content: "";
+      background-color: $dark-shades;
+      transition: $transition-burger;
     }
   }
 
   &-action {
+    background-color: $light-shades;
+    transition: $transition-burger;
     transform: rotate(135deg);
 
     &::before {
@@ -42,6 +51,8 @@
       top: 0;
       left: 0;
       content: "";
+      background-color: $light-shades;
+      transition: $transition-burger;
       transform: rotate(90deg);
     }
 
@@ -51,6 +62,8 @@
       top: 0;
       left: 0;
       content: "";
+      background-color: $light-shades;
+      transition: $transition-burger;
       transform: rotate(90deg);
     }
   }

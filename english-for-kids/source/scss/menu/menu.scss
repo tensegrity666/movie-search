@@ -3,17 +3,15 @@
   top: 0;
   left: -200%;
   z-index: $z-index-middle;
-  display: none;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: $dark-shades;
   backdrop-filter: blur(3px) grayscale(70%);
-  transition: left 0.3s linear;
+  transition: left 1s ease-in;
 
   &_show {
     left: 0;
-    display: block;
-    transition: left 0.3s linear;
+    transition: left 1s ease-out;
   }
 
   &__burger {
@@ -29,6 +27,6 @@
 
 @media (min-width: $extra-wide-width) {
   .menu {
-    width: 28vw;
+    width: 27vw;
   }
 }
