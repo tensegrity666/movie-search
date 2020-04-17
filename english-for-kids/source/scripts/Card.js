@@ -1,44 +1,40 @@
-const cards = [{
-  word: 'cry',
-  translation: 'плакать',
-  image: 'img/cry.jpg',
-  audioSrc: 'audio/cry.mp3'
-},
-{
-  word: 'dance',
-  translation: 'танцевать',
-  image: 'img/dance.jpg',
-  audioSrc: 'audio/dance.mp3'
-  },
-{
-  word: 'dive',
-  translation: 'нырять',
-  image: 'img/dive.jpg',
-  audioSrc: 'audio/dive.mp3'
-  },
-{
-  word: 'draw',
-  translation: 'рисовать',
-  image: 'img/draw.jpg',
-  audioSrc: 'audio/draw.mp3'
-  }];
+import data from './data';
 
 const wrapper = document.body.querySelector('.wrapper');
 const cardList = document.createElement('ul');
 
 cardList.classList.add('categories');
-wrapper.append(cardList);
+wrapper.prepend(cardList);
 
-cardList.insertAdjacentHTML('afterbegin', `<li class="categories__item">
-      <a class="item-front" href="">
+export default function categoryOfCardsToRender(index) {
+  if (index) {
+    data[index].forEach((card) => {
+      const listItem = document.createElement('li');
+      listItem.classList.add('categories__item');
+
+      listItem.innerHTML = `<div class="categories__item_front">
+      <figure class="item">
+        <picture class="item__image">
+            <img class="item__image-inner" src=${card.image} >
+          </picture>
+            <figcaption class="item__description">
+              ${card.word}
+            </figcaption>
+        </figure>
+      </div>
+      <div class="categories__item_reverse">
         <figure class="item">
           <picture class="item__image">
-            <source class="item__image-inner" srcset="" type="image/webp">
-            <img class="item__image-inner" width="320">
+            <img class="item__image-inner" src=${card.image} >
           </picture>
-          <figcaption class="item__description">
-          </figcaption>
+            <figcaption class="item__description">
+              ${card.translation}
+            </figcaption>
         </figure>
-      </a>
-    </li>`);
+      </div>
+      <button class="categories__item-button">Q</button>`;
 
+      cardList.append(listItem);
+    });
+  }
+}

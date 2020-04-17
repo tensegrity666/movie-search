@@ -16,14 +16,13 @@
     scroll-snap-align: center;
     border-radius: 0.8rem;
     transition: all 0.25s linear;
-    perspective: 600px;
 
     &_front {
       position: absolute;
       top: 0;
       bottom: 0;
       transition: all 0.35s linear;
-      transform: rotateX(0) rotateY(0);
+      transform: perspective(600px) rotateY(0);
       backface-visibility: hidden;
       transform-style: preserve-3d;
 
@@ -44,7 +43,7 @@
 
       &-active {
         transition: all 0.35s linear;
-        transform: rotateX(0) rotateY(0);
+        transform: perspective(600px) rotateY(0);
         backface-visibility: hidden;
         transform-style: preserve-3d;
       }
