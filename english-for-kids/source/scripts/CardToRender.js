@@ -1,14 +1,15 @@
 import data from './data';
+import categoriesToRender from './CategoriesToRender';
 
-const wrapper = document.body.querySelector('.wrapper');
-const cardList = document.createElement('ul');
+export const wrapper = document.body.querySelector('.wrapper');
+export const cardList = document.createElement('ul');
 
 cardList.classList.add('categories');
 wrapper.prepend(cardList);
 
-export default function categoryOfCardsToRender(index) {
-  if (index) {
-    data[index].forEach((card) => {
+export function cardsToRender(cardIndex) {
+  if (cardIndex !== 0 && !isNaN(cardIndex) && cardIndex !== undefined) {
+    data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
       listItem.classList.add('categories__item');
 
@@ -36,5 +37,7 @@ export default function categoryOfCardsToRender(index) {
 
       cardList.append(listItem);
     });
+  } else if (cardIndex === 0) {
+    categoriesToRender();
   }
 }

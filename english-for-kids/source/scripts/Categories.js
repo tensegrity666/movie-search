@@ -1,5 +1,3 @@
-import data from './data';
-
 const CATEGORIES = {
   isMain: false,
   isActionA: false,
@@ -12,15 +10,13 @@ const CATEGORIES = {
   isEmotions: false,
 };
 
-const CURRENT_STATE = {
-  isMainPage: true,
+export const CURRENT_STATE = {
+  isMainPage: false,
   currentCategory: 0,
 };
 
-const categoryIndexes = [];
-
-export function dataToProcess(index) {
-  switch (index) {
+export function dataToProcess(numberOfCategory) {
+  switch (numberOfCategory) {
     case 1:
       CATEGORIES.isActionA = true;
       break;
@@ -49,11 +45,7 @@ export function dataToProcess(index) {
       CURRENT_STATE.isMainPage = true;
       CATEGORIES.isMain = true;
       break;
-}
+  }
 
-  console.log(CATEGORIES);
-}
-
-export function categoryOfCardsToSelect(data) {
-  categoryIndexes = Object.keys(data);
+  console.log(CATEGORIES, CURRENT_STATE);
 }
