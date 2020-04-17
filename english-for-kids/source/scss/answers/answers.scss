@@ -1,0 +1,17 @@
+.answers {
+  box-sizing: border-box;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  height: 7rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  font-size: 4rem;
+  text-align: center;
+  background-color: transparent;
+
+  &_show {
+    display: block;
+  }
+}
