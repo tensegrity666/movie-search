@@ -1,5 +1,6 @@
 .page {
   position: relative;
+  box-sizing: border-box;
   min-width: 320px;
   max-width: $narrow-width;
   overflow-x: hidden;

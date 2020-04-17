@@ -7,6 +7,7 @@
   width: $narrow-width;
   padding: 0;
   margin-top: 20rem;
+  margin-bottom: 6rem;
   list-style: none;
 
   &__item {
@@ -65,7 +66,6 @@
     width: 700px;
     row-gap: 10rem;
     margin-top: 18rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -75,8 +75,6 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     width: 100vw;
-    margin-top: 18rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -85,7 +83,5 @@
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
     width: 100vw;
-    margin-top: 18rem;
-    margin-bottom: 4rem;
   }
 }
