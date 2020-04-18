@@ -1,12 +1,12 @@
 import '../scss/main.scss';
-import { cardsToRender } from './CardToRender';
-import { dataToProcess, CURRENT_STATE } from './Categories';
-import sideMenuToggle from './SideMenuShow';
+import sideMenuToggle from './SideMenu';
 import togglePageType from './TogglerHandler';
+import { addHashesToAddresline, navigationCatalog } from './Routing';
+import { cardsToRender } from './CardToRender';
+import reverseCard from './ReverseCard';
 
-window.onload = () => {
-  dataToProcess(CURRENT_STATE.currentCategory);
-  cardsToRender(CURRENT_STATE.currentCategory);
-  sideMenuToggle();
-  togglePageType();
-};
+cardsToRender(navigationCatalog[location.hash]);
+addHashesToAddresline();
+sideMenuToggle();
+togglePageType();
+reverseCard();
