@@ -1,4 +1,4 @@
-import { SOUND_EFFECTS, delayForSouneffect } from './utils/SoundeffectsHandler';
+import { SOUND_EFFECTS, soundEffect } from './utils/SoundeffectsHandler';
 
 const menu = document.querySelector('.menu');
 const button = document.querySelector('.burger');
@@ -8,11 +8,12 @@ const page = document.querySelector('.page');
 export default function sideMenuToggle() {
   button.addEventListener('click', () => {
     SOUND_EFFECTS.isSoundPlay = true;
+    soundEffect(SOUND_EFFECTS.menuButton, SOUND_EFFECTS.delayForMenu);
     page.classList.toggle('page-noscroll');
     menu.classList.toggle('menu_show');
     burgerInner.classList.toggle('burger-action');
-    delayForSouneffect(SOUND_EFFECTS.menuButton, SOUND_EFFECTS.delayForMenu);
+    SOUND_EFFECTS.isSoundPlay = false;
   });
 
-  clearTimeout(delayForSouneffect);
+  clearTimeout(soundEffect);
 }
