@@ -4,6 +4,7 @@
   "description": "RSSchool personal task",
   "private": true,
   "scripts": {
+    "deploy": "npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"

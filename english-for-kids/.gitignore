@@ -8,3 +8,5 @@
 *.psd
 npm-debug.*
 Thumbs.db
+# Local Netlify folder
+.netlify
