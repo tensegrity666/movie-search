@@ -20,11 +20,12 @@
     height: 180px;
     scroll-snap-align: center;
     border-radius: 0.8rem;
-    transition: all 0.5s linear;
+    transition: transform 1.5s linear;
+    transform: rotateY(0);
     transform-style: preserve-3d;
 
     &-rotate {
-      transition: transform 1s linear;
+      transition: transform 1.5s linear;
       transform: rotateY(180deg);
     }
 
@@ -38,17 +39,18 @@
       background-color: transparent;
       border: none;
       opacity: 1;
-      transition: all 0.3s linear;
+      transition: opacity 1.4s ease-in;
+      backface-visibility: hidden;
 
       &-rotate {
         opacity: 0;
-        transition: transform 0.35s linear;
+        transition: opacity 1s ease-out;
       }
 
       &:hover {
         color: $succes-color;
         filter: brightness(0.7);
-        transition: all 0.5s linear;
+        transition: color 0.5s linear;
       }
     }
 
@@ -56,22 +58,18 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      transition: transform 1s linear;
-      transform: rotateY(0);
-      backface-visibility: hidden;
     }
 
     &_reverse {
       position: absolute;
       top: 0;
       bottom: 0;
-      transition: transform 1s linear;
       transform: rotateY(180deg);
       backface-visibility: hidden;
     }
 
     &:hover {
-      box-shadow: 0 7px 8px 1px rgba(65, 65, 65, 0.2);
+      box-shadow: 0 7px 10px 1px rgba(65, 65, 65, 0.2);
       transition: all 0.15s linear;
     }
   }

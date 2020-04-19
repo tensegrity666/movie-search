@@ -5,42 +5,42 @@ const CATEGORIES_LIST = data[0];
 
 const categoriesContent = [
   {
-    id: '1',
+    id: '0',
     word: `${CATEGORIES_LIST[0]}`,
     image: 'assets/images/dance.jpg',
   },
   {
-    id: '2',
+    id: '1',
     word: `${CATEGORIES_LIST[1]}`,
     image: 'assets/images/play.jpg',
   },
   {
-    id: '3',
+    id: '2',
     word: `${CATEGORIES_LIST[2]}`,
     image: 'assets/images/cry.jpg', /* TODO ADD PICS */
   },
   {
-    id: '4',
+    id: '3',
     word: `${CATEGORIES_LIST[3]}`,
     image: 'assets/images/cry.jpg', /* TODO: ADD PICS */
   },
   {
-    id: '5',
+    id: '4',
     word: `${CATEGORIES_LIST[4]}`,
     image: 'assets/images/rabbit.jpg',
   },
   {
-    id: '6',
+    id: '5',
     word: `${CATEGORIES_LIST[5]}`,
     image: 'assets/images/fish1.jpg',
   },
   {
-    id: '7',
+    id: '6',
     word: `${CATEGORIES_LIST[6]}`,
     image: 'assets/images/skirt.jpg',
   },
   {
-    id: '8',
+    id: '7',
     word: `${CATEGORIES_LIST[7]}`,
     image: 'assets/images/happy.jpg',
   },

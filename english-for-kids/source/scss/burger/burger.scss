@@ -9,7 +9,11 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  outline: none;
+
+  &:focus,
+  &:active {
+    outline: 1px dotted $warning-color;
+  }
 
   &__inner {
     @include burger-inner;
