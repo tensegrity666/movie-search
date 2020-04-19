@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -22,9 +23,10 @@ module.exports = {
     new CopyPlugin([
       {
         from: 'source/assets/',
-        to: 'assets/',
+        to: path.resolve(__dirname, 'assets/'),
       },
     ]),
+    new ImageminPlugin(),
     new HtmlWebpackPlugin({
       title: 'Caching',
       template: './source/index.html',
