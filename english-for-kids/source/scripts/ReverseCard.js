@@ -5,14 +5,17 @@ const onButtonClick = (event) => {
     event.target.parentElement.classList.add('categories__item-rotate');
     event.target.classList.add('categories__item-button-rotate');
     soundEffect(SOUND_EFFECTS.clickOnCard, SOUND_EFFECTS.delayForCard);
-  }
 
-  const currentId = event.target.dataset.id;
-  const currentElement = document.getElementById(currentId);
-  currentElement.onmouseleave = () => {
-    event.target.parentElement.classList.remove('categories__item-rotate');
-    event.target.classList.remove('categories__item-button-rotate');
-  };
+    const currentId = event.target.dataset.id;
+    const currentElement = document.getElementById(currentId);
+
+    const onMouseLeave = () => {
+      event.target.parentElement.classList.remove('categories__item-rotate');
+      event.target.classList.remove('categories__item-button-rotate');
+    };
+
+    currentElement.addEventListener('mouseleave', onMouseLeave);
+  }
 
   clearTimeout(soundEffect);
 };

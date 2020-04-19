@@ -1,11 +1,5 @@
 import { cardsToRender, cardList } from './CardToRender';
 
-export const CURRENT_STATE = {
-  currentCategory: 0,
-};
-
-// const navigationLink = document.querySelectorAll('.navigation__item-link');
-
 export const navigationCatalog = {
   '#main': 0,
   '#actionA': 1,
@@ -21,22 +15,6 @@ export const navigationCatalog = {
 export function addHashesToAddresline() {
   window.addEventListener('hashchange', () => {
     cardList.innerHTML = '';
-    CURRENT_STATE.currentCategory = navigationCatalog[location.hash];
-    cardsToRender(CURRENT_STATE.currentCategory);
+    cardsToRender(navigationCatalog[location.hash]);
   }, false);
-
-  // navigationLink.forEach((link) => {
-  //   link.addEventListener('click', () => {
-  //     index = Number.parseInt(link.getAttribute('data-id'), 10);
-  //     console.log(index);
-  //     cardsToRender(index);
-  //   });
-  // });
 }
-
-// window.addEventListener('hashchange', () => {
-//   CURRENT_STATE.currentCategory = navigationCatalog[location.hash];
-//   console.log(navigationCatalog[location.hash]);
-//   console.log(i);
-//   cardsToRender(1);
-// }, false);

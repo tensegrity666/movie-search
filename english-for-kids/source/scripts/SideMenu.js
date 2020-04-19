@@ -15,5 +15,11 @@ export default function sideMenuToggle() {
     SOUND_EFFECTS.isSoundPlay = false;
   });
 
+  menu.onmouseleave = () => {
+    page.classList.remove('page-noscroll');
+    menu.classList.remove('menu_show');
+    burgerInner.classList.remove('burger-action');
+  };
+
   clearTimeout(soundEffect);
 }

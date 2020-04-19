@@ -18,7 +18,7 @@ export function cardsToRender(cardIndex) {
       <div class='categories__item_front'>
       <figure class='item'>
         <picture class='item__image'>
-            <img class='item__image-inner' src=${card.image} >
+            <img class='item__image-inner' src=${card.image} alt=${card.word} >
           </picture>
             <figcaption class='item__description'>
               ${card.word}
@@ -28,7 +28,7 @@ export function cardsToRender(cardIndex) {
       <div class='categories__item_reverse'>
         <figure class='item'>
           <picture class='item__image'>
-            <img class='item__image-inner' src=${card.image} >
+            <img class='item__image-inner' src=${card.image} alt=${card.word} >
           </picture>
             <figcaption class='item__description'>
               ${card.translation}
