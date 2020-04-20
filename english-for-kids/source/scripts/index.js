@@ -1,14 +1,24 @@
+/* eslint-disable no-restricted-globals */
+
 import '../scss/main.scss';
 import sideMenuToggle from './SideMenu';
 import togglePageType from './TogglerHandler';
 import { addHashesToAddresline, navigationCatalog } from './Routing';
-import { cardsToRender } from './CardToRender';
+import cardsToRender from './CardsToRender';
 import reverseCard from './ReverseCard';
 import speakWord from './SpeakWord';
+import goToClickedCategory from './GoToCategory';
 
-cardsToRender(navigationCatalog[location.hash]);
-addHashesToAddresline();
-sideMenuToggle();
-togglePageType();
-reverseCard();
-speakWord();
+window.onload = () => {
+  cardsToRender(localStorage.currentPageBeforeExit || 0);
+  addHashesToAddresline();
+  sideMenuToggle();
+  togglePageType();
+  reverseCard();
+  speakWord();
+  goToClickedCategory();
+};
+
+window.onunload = () => {
+  localStorage.currentPageBeforeExit = navigationCatalog[location.hash];
+};
