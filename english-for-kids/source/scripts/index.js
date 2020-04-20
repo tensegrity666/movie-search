@@ -10,7 +10,7 @@ import speakWord from './SpeakWord';
 import goToClickedCategory from './GoToCategory';
 
 window.onload = () => {
-  cardsToRender(localStorage.currentPageBeforeExit);
+  cardsToRender(localStorage.currentPageBeforeExit || 0);
   addHashesToAddresline();
   sideMenuToggle();
   togglePageType();
