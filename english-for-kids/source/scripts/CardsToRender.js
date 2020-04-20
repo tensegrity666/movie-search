@@ -6,7 +6,10 @@ import errorPageToRender from './utils/ErrorPage';
 export default function cardsToRender(index) {
   const cardIndex = Number(index);
 
-  if (cardIndex !== 0 && cardIndex !== undefined && !isNaN(cardIndex)) {
+  if (cardIndex !== 0
+      && (cardIndex <= 8)
+      && (cardIndex !== undefined)
+      && !(isNaN(cardIndex))) {
     data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
       listItem.classList.add('categories__container');
@@ -35,7 +38,6 @@ export default function cardsToRender(index) {
       </div>
       <button class='categories__item-button' data-id=${card.id}>🗘</button>
       </div>`;
-
       cardList.append(listItem);
     });
   } else if (cardIndex === 0) {

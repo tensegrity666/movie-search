@@ -4,7 +4,7 @@ import '../scss/main.scss';
 import sideMenuToggle from './SideMenu';
 import togglePageType from './TogglerHandler';
 import { addHashesToAddresline, navigationCatalog } from './Routing';
-import cardsToRender from './CardToRender';
+import cardsToRender from './CardsToRender';
 import reverseCard from './ReverseCard';
 import speakWord from './SpeakWord';
 import goToClickedCategory from './GoToCategory';
