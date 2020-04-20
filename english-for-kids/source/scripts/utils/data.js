@@ -104,7 +104,7 @@ const data = [
     {
       id: '6',
       word: 'skip',
-      translation: 'пропускать, прыгать',
+      translation: 'подпрыгивать',
       image: 'assets/images/skip.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/skip.mp3',
     },
@@ -155,7 +155,7 @@ const data = [
     {
       id: '5',
       word: 'drop',
-      translation: 'падать',
+      translation: 'ронять',
       image: 'assets/images/drop.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/drop.mp3',
     },
@@ -315,7 +315,7 @@ const data = [
     {
       id: '3',
       word: 'giraffe',
-      translation: 'жирафа',
+      translation: 'жираф',
       image: 'assets/images/giraffe.jpg',
       audioSrc: 'https://wooordhunt.ru//data/sound/word/us/mp3/giraffe.mp3',
     },
@@ -466,4 +466,4 @@ const data = [
   ],
 ];
 
-export default data;
+export { data as default };

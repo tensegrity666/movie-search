@@ -4,6 +4,7 @@ import cardList from './utils/CreateWrapper';
 
 export default function cardsToRender(index) {
   const cardIndex = Number(index);
+
   if (cardIndex !== 0 && cardIndex !== undefined && !isNaN(cardIndex)) {
     data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
@@ -14,7 +15,7 @@ export default function cardsToRender(index) {
       <div class='categories__item_front'>
       <figure class='item'>
         <picture class='item__image'>
-            <img class='item__image-inner' src=${card.image} alt=${card.word} >
+            <img class='item__image-inner' src=${card.image} alt=${card.word} width='260' height='175'>
           </picture>
             <figcaption class='item__description'>
               ${card.word}
@@ -24,7 +25,7 @@ export default function cardsToRender(index) {
       <div class='categories__item_reverse'>
         <figure class='item'>
           <picture class='item__image'>
-            <img class='item__image-inner' src=${card.image} alt=${card.word} >
+            <img class='item__image-inner' src=${card.image} alt=${card.word} width='260' height='175'>
           </picture>
             <figcaption class='item__description'>
               ${card.translation}

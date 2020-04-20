@@ -1,7 +1,6 @@
 import data from './utils/data';
 import cardList from './utils/CreateWrapper';
 
-
 const CATEGORIES_LIST = data[0];
 
 const categoriesContent = [
@@ -9,44 +8,51 @@ const categoriesContent = [
     id: '#actionA',
     word: `${CATEGORIES_LIST[0]}`,
     image: 'assets/images/dance.jpg',
+    alt: 'actions',
   },
   {
     id: '#actionB',
     word: `${CATEGORIES_LIST[1]}`,
-    image: 'assets/images/play.jpg',
+    image: 'assets/images/sing.jpg',
+    alt: 'actions',
   },
   {
     id: '#actionC',
     word: `${CATEGORIES_LIST[2]}`,
-    image: 'assets/images/cry.jpg', /* TODO ADD PICS */
+    image: 'assets/images/argue.jpg',
+    alt: 'actions',
   },
   {
     id: '#adjective',
     word: `${CATEGORIES_LIST[3]}`,
-    image: 'assets/images/cry.jpg', /* TODO: ADD PICS */
+    image: 'assets/images/friendly.jpg',
+    alt: 'adjectives',
   },
   {
     id: '#animalA',
     word: `${CATEGORIES_LIST[4]}`,
     image: 'assets/images/rabbit.jpg',
+    alt: 'animals',
   },
   {
     id: '#animalB',
     word: `${CATEGORIES_LIST[5]}`,
-    image: 'assets/images/fish1.jpg',
+    image: 'assets/images/turtle.jpg',
+    alt: 'animals',
   },
   {
     id: '#clothes',
     word: `${CATEGORIES_LIST[6]}`,
     image: 'assets/images/skirt.jpg',
+    alt: 'clothes',
   },
   {
     id: '#emotions',
     word: `${CATEGORIES_LIST[7]}`,
     image: 'assets/images/happy.jpg',
+    alt: 'emotions',
   },
 ];
-
 
 export default function categoriesToRender() {
   categoriesContent.forEach((category) => {
@@ -58,7 +64,7 @@ export default function categoriesToRender() {
       <div class="categories__item_front">
         <figure class="item">
           <picture class="item__image">
-            <img class="item__image-inner" src=${category.image} >
+            <img class="item__image-inner" src=${category.image} alt=${category.alt}>
           </picture>
           <figcaption class="item__description">
             ${category.word}
