@@ -1,4 +1,5 @@
-import { cardsToRender, cardList } from './CardToRender';
+import cardsToRender from './CardToRender';
+import cardList from './utils/CreateWrapper';
 
 export const navigationCatalog = {
   '#main': 0,
@@ -9,7 +10,8 @@ export const navigationCatalog = {
   '#animalA': 5,
   '#animalB': 6,
   '#clothes': 7,
-  '#score': 8,
+  '#emotions': 8,
+  '#score': 9,
 };
 
 export function addHashesToAddresline() {

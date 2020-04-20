@@ -1,4 +1,4 @@
-import { SOUND_EFFECTS, soundEffect } from './utils/SoundeffectsHandler';
+import { SOUND_EFFECTS, soundEffect } from './utils/Soundeffects';
 
 const menu = document.querySelector('.menu');
 const button = document.querySelector('.burger');

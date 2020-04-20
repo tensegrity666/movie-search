@@ -1,14 +1,10 @@
-import data from './data';
+import data from './utils/data';
 import categoriesToRender from './CategoriesToRender';
+import cardList from './utils/CreateWrapper';
 
-export const wrapper = document.body.querySelector('.wrapper');
-export const cardList = document.createElement('ul');
-
-cardList.classList.add('categories');
-wrapper.prepend(cardList);
-
-export function cardsToRender(cardIndex) {
-  if (cardIndex !== 0 && !isNaN(cardIndex) && cardIndex !== undefined) {
+export default function cardsToRender(index) {
+  const cardIndex = Number(index);
+  if (cardIndex !== 0 && cardIndex !== undefined && !isNaN(cardIndex)) {
     data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
       listItem.classList.add('categories__container');

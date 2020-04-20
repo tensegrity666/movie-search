@@ -20,12 +20,12 @@
     height: 180px;
     scroll-snap-align: center;
     border-radius: 0.8rem;
-    transition: transform 1.5s linear;
+    transition: transform 1s linear;
     transform: rotateY(0);
     transform-style: preserve-3d;
 
     &-rotate {
-      transition: transform 1.5s linear;
+      transition: transform 1s linear;
       transform: rotateY(180deg);
     }
 
@@ -39,12 +39,12 @@
       background-color: transparent;
       border: none;
       opacity: 1;
-      transition: opacity 1.4s ease-in;
+      transition: opacity 1.3s ease-in;
       backface-visibility: hidden;
 
       &-rotate {
         opacity: 0;
-        transition: opacity 1s ease-out;
+        transition: opacity 1.3s ease-out;
       }
 
       &:hover {

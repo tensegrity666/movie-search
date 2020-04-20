@@ -1,7 +1,7 @@
 export const SOUND_EFFECTS = {
   isSundPlay: false,
-  delayForMenu: 5,
-  delayForCard: 0,
+  delayForMenu: 0,
+  delayForCard: 5,
   menuButton: new Audio('../assets/sounds/hover.mp3'),
   clickOnCard: new Audio('../assets/sounds/click.mp3'),
 };
