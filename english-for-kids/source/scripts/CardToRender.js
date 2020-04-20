@@ -1,6 +1,7 @@
 import data from './utils/data';
 import categoriesToRender from './CategoriesToRender';
 import cardList from './utils/CreateWrapper';
+import errorPageToRender from './utils/ErrorPage';
 
 export default function cardsToRender(index) {
   const cardIndex = Number(index);
@@ -39,5 +40,7 @@ export default function cardsToRender(index) {
     });
   } else if (cardIndex === 0) {
     categoriesToRender();
+  } else if (cardIndex === undefined || isNaN(cardIndex)) {
+    errorPageToRender();
   }
 }
