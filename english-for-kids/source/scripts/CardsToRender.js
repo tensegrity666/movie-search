@@ -1,6 +1,6 @@
 import data from './utils/data';
-import categoriesToRender from './CategoriesToRender';
-import cardList from './utils/CreateWrapper';
+import mainpageToRender from './MainpageToRender';
+import { cardList } from './utils/CreateWrapper';
 import errorPageToRender from './utils/ErrorPage';
 
 export default function cardsToRender(index) {
@@ -10,6 +10,7 @@ export default function cardsToRender(index) {
       && (cardIndex <= 8)
       && (cardIndex !== undefined)
       && !(isNaN(cardIndex))) {
+    cardList.innerHTML = '';
     data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
       listItem.classList.add('categories__container');
@@ -36,12 +37,12 @@ export default function cardsToRender(index) {
             </figcaption>
         </figure>
       </div>
-      <button class='categories__item-button' data-id=${card.id}>🗘</button>
+      <button class='categories__item-button' data-id=${card.id}>&#128472;</button>
       </div>`;
       cardList.append(listItem);
     });
   } else if (cardIndex === 0) {
-    categoriesToRender();
+    mainpageToRender();
   } else if (cardIndex === undefined || isNaN(cardIndex)) {
     errorPageToRender();
   }

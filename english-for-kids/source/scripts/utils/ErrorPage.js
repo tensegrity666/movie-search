@@ -1,4 +1,4 @@
-import cardList from './CreateWrapper';
+import { cardList } from './CreateWrapper';
 
 export default function errorPageToRender() {
   const listItem = document.createElement('div');

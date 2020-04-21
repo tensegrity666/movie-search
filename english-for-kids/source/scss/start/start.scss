@@ -9,11 +9,19 @@
   text-transform: capitalize;
   cursor: pointer;
   background-color: $dark-shades;
-  // filter: blur(10px) grayscale(70%) opacity(0);
   border: 2px solid $primary-color;
   border-radius: 60px;
   opacity: 0;
   transition: opacity 0.2s ease-out;
+
+  &:disabled {
+    cursor: initial;
+  }
+
+  &:hover {
+    filter: saturate(200%);
+    transition: all 1s linear;
+  }
 
   &_show {
     opacity: 1;

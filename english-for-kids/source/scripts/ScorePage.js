@@ -1,6 +1,4 @@
-import cardList from './utils/CreateWrapper';
-
-const toggler = document.querySelector('.toggler');
+import { cardList } from './utils/CreateWrapper';
 
 export default function scorePageToRender() {
   const listItem = document.createElement('table');

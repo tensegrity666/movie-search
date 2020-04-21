@@ -1,6 +1,6 @@
 import cardsToRender from './CardsToRender';
 import scorePageToRender from './ScorePage';
-import cardList from './utils/CreateWrapper';
+import { cardList } from './utils/CreateWrapper';
 
 export const navigationCatalog = {
   '#main': 0,
@@ -19,7 +19,6 @@ export function addHashesToAddresline() {
   window.addEventListener('hashchange', () => {
     cardList.innerHTML = '';
     if (location.hash === '#score') {
-      console.log('222');
       scorePageToRender();
     }
     cardsToRender(navigationCatalog[location.hash]);

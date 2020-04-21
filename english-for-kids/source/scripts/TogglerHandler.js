@@ -1,13 +1,18 @@
-import playModeToggler from './PlayModeToggler';
+import playModeStyles from './PlayModeStyles';
+import playingCardsToRender from './PlayingCardsToRender';
+import cardsToRender from './CardsToRender';
+import { navigationCatalog } from './Routing';
 
-const PAGE_TYPE = {
-  isTrain: true,
-};
 const toggler = document.querySelector('#toggle');
 
 export default function togglePageType() {
   toggler.addEventListener('change', () => {
-    PAGE_TYPE.isTrain = toggler.checked;
-    playModeToggler(PAGE_TYPE.isTrain);
+    if (toggler.checked) {
+      playModeStyles(toggler.checked);
+      playingCardsToRender(navigationCatalog[location.hash]);
+    } else {
+      playModeStyles(toggler.checked);
+      cardsToRender(navigationCatalog[location.hash]);
+    }
   });
 }
