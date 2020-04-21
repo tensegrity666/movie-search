@@ -1,11 +1,8 @@
-import cardList from './utils/CreateWrapper';
-
-const toggler = document.querySelector('.toggler');
+import { cardList } from './utils/CreateWrapper';
 
 export default function scorePageToRender() {
   const listItem = document.createElement('table');
   listItem.classList.add('score');
-  toggler.style.display = 'none';
   listItem.innerHTML = `<caption>Score</caption>
     <tr>
       <th>Word</th>

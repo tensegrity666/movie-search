@@ -8,6 +8,8 @@ import cardsToRender from './CardsToRender';
 import reverseCard from './ReverseCard';
 import speakWord from './SpeakWord';
 import goToClickedCategory from './GoToCategory';
+import removeTogglerFromPage from './TogglerRemover';
+import startPlaying from './PlayingProcess';
 
 window.onload = () => {
   cardsToRender(localStorage.currentPageBeforeExit || 0);
@@ -17,6 +19,8 @@ window.onload = () => {
   reverseCard();
   speakWord();
   goToClickedCategory();
+  removeTogglerFromPage();
+  startPlaying();
 };
 
 window.onunload = () => {

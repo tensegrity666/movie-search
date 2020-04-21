@@ -1,5 +1,5 @@
 import data from './utils/data';
-import cardList from './utils/CreateWrapper';
+import { cardList } from './utils/CreateWrapper';
 
 const CATEGORIES_LIST = data[0];
 
@@ -54,7 +54,7 @@ const categoriesContent = [
   },
 ];
 
-export default function categoriesToRender() {
+export default function mainpageToRender() {
   categoriesContent.forEach((category) => {
     const listItem = document.createElement('li');
     listItem.classList.add('categories__container');

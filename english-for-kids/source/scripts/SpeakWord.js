@@ -4,12 +4,10 @@ import data from './utils/data';
 import { navigationCatalog } from './Routing';
 
 const onCardClick = (event) => {
-  let currentLocation = [];
-  let currentCard = {};
   if (event.target.closest('.categories__container') && event.target.closest('.categories__container').hasAttribute('id') && !event.target.classList.contains('categories__item-button')) {
     const id = event.target.closest('.categories__container').getAttribute('id');
-    currentLocation = data[navigationCatalog[location.hash]];
-    currentCard = currentLocation[id];
+    const currentLocation = data[navigationCatalog[location.hash]];
+    const currentCard = currentLocation[id];
     const voice = new Audio(currentCard.audioSrc);
     voice.play();
   }

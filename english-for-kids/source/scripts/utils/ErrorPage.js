@@ -1,11 +1,8 @@
-import cardList from './CreateWrapper';
-
-const toggler = document.querySelector('.toggler');
+import { cardList } from './CreateWrapper';
 
 export default function errorPageToRender() {
   const listItem = document.createElement('div');
   listItem.classList.add('error');
-  toggler.style.display = 'none';
   listItem.innerHTML = '🤖<br>404';
   cardList.append(listItem);
   return cardList;
