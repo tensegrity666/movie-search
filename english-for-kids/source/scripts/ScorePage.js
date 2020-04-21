@@ -5,7 +5,6 @@ const toggler = document.querySelector('.toggler');
 export default function scorePageToRender() {
   const listItem = document.createElement('table');
   listItem.classList.add('score');
-  toggler.style.display = 'none';
   listItem.innerHTML = `<caption>Score</caption>
     <tr>
       <th>Word</th>
