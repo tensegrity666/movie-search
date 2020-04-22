@@ -3,17 +3,20 @@
 import { cardList } from './CreateWrapper';
 import { SOUND_EFFECTS, soundEffect } from './Soundeffects';
 import check from './answers';
+import isPlayMode from './isPlayMode';
 
 const button = document.querySelector('.start');
 const toggler = document.querySelector('.toggler');
 const answers = document.querySelector('.answers');
+const RELOAD_TIMEOUT = 500;
 
 export default function showTotalPage(isLose) {
   toggler.style.display = 'none';
   cardList.innerHTML = '';
-  button.innerText = 'go to main page';
+  button.innerText = 'return';
   const listItem = document.createElement('div');
   listItem.classList.add('result');
+  isPlayMode.play = 'false';
   if (!isLose) {
     listItem.innerHTML = '&#128568;<br>you win!';
     cardList.append(listItem);
@@ -27,10 +30,12 @@ export default function showTotalPage(isLose) {
     soundEffect(SOUND_EFFECTS.fail, SOUND_EFFECTS.delayForGame);
   }
   button.addEventListener('click', () => {
-    location.hash = '#main';
     button.classList.remove('start_show');
     button.setAttribute('disabled', 'disabled');
     answers.classList.remove('answers_show');
     answers.innerText = '';
+    setTimeout(() => {
+      location.reload();
+    }, RELOAD_TIMEOUT);
   });
 }

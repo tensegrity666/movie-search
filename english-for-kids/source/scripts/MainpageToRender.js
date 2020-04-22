@@ -57,6 +57,7 @@ const categoriesContent = [
 
 export default function mainpageToRender() {
   toggler.style.display = 'none';
+  cardList.innerHTML = '';
   categoriesContent.forEach((category) => {
     const listItem = document.createElement('li');
     listItem.classList.add('categories__container');
