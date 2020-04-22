@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 import { cardList } from './CreateWrapper';
 import { SOUND_EFFECTS, soundEffect } from './Soundeffects';
 
