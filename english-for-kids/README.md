@@ -1,11 +1,10 @@
 ## Install
-
-npm i
+* _npm i_
 
 ## Build
-
-npm run build
+* _npm run build_
 
 ## Deploy
+* _npm run deploy_
 
-npm run deploy
+[Link to documentation](https://github.com/rolling-scopes-school/tensegrity666-RS2020Q1/blob/english-for-kids/english-for-kids/documentation.md)
