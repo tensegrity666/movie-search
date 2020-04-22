@@ -1,15 +1,24 @@
+/* eslint-disable no-restricted-globals */
+
 import data from './utils/data';
 import mainpageToRender from './MainpageToRender';
 import { cardList } from './utils/CreateWrapper';
 import errorPageToRender from './utils/ErrorPage';
 
+const toggler = document.querySelector('.toggler');
+const PAGES = {
+  main: 0,
+  score: 8,
+};
+
 export default function cardsToRender(index) {
   const cardIndex = Number(index);
 
-  if (cardIndex !== 0
-      && (cardIndex <= 8)
-      && (cardIndex !== undefined)
-      && !(isNaN(cardIndex))) {
+  if (cardIndex !== Number(PAGES.main)
+    && (cardIndex <= Number(PAGES.score))
+    && (cardIndex !== undefined)
+    && !(isNaN(cardIndex))) {
+    toggler.style.display = 'flex';
     cardList.innerHTML = '';
     data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
@@ -41,7 +50,7 @@ export default function cardsToRender(index) {
       </div>`;
       cardList.append(listItem);
     });
-  } else if (cardIndex === 0) {
+  } else if (cardIndex === Number(PAGES.main)) {
     mainpageToRender();
   } else if (cardIndex === undefined || isNaN(cardIndex)) {
     errorPageToRender();

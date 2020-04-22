@@ -3,12 +3,12 @@
 import '../scss/main.scss';
 import sideMenuToggle from './SideMenu';
 import togglePageType from './TogglerHandler';
-import { addHashesToAddresline, navigationCatalog } from './Routing';
+import addHashesToAddresline from './Routing';
+import navigationCatalog from './utils/navigationCatalog';
 import cardsToRender from './CardsToRender';
 import reverseCard from './ReverseCard';
 import speakWord from './SpeakWord';
 import goToClickedCategory from './GoToCategory';
-import removeTogglerFromPage from './TogglerRemover';
 import startPlaying from './PlayingProcess';
 
 window.onload = () => {
@@ -19,7 +19,6 @@ window.onload = () => {
   reverseCard();
   speakWord();
   goToClickedCategory();
-  removeTogglerFromPage();
   startPlaying();
 };
 

@@ -15,7 +15,6 @@ const onButtonClick = (event) => {
     const currentElement = document.getElementById(currentId);
     currentElement.addEventListener('mouseleave', onMouseLeave);
   }
-  clearTimeout(soundEffect);
 };
 
 export default function reverseCard() {

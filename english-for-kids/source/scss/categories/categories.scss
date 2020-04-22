@@ -42,6 +42,10 @@
       transition: opacity 1.3s ease-in;
       backface-visibility: hidden;
 
+      &_hide {
+        display: none;
+      }
+
       &-rotate {
         opacity: 0;
         transition: opacity 1.3s ease-out;
