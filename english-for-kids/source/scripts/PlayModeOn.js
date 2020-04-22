@@ -19,6 +19,6 @@ export default function initPlay(isPlay) {
     soundEffect(SOUND_EFFECTS.word, SOUND_EFFECTS.delayForGame);
   }
   if (!isPlay) {
-    showTotalPage();
+    showTotalPage(check.wrongAnswersCounter);
   }
 }
