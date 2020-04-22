@@ -15,7 +15,8 @@
       text-decoration: none;
       transition: all 0.15s linear;
 
-      &:hover {
+      &:hover,
+      &_active {
         color: $danger-color;
         transition: all 0.15s linear;
       }
