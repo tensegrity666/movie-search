@@ -1,6 +1,10 @@
 const check = {
+  isPlaying: true,
+  totalCards: 8,
+  currentWordId: null,
   currentWord: null,
-  rightAnswersCounter: 8,
+  rightAnswersCounter: null,
+  wrongAnswersCounter: null,
 };
 
 export { check as default };

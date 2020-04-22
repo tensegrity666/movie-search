@@ -17,6 +17,4 @@ export default function sideMenuToggle() {
     menu.classList.remove('menu_show');
     burgerInner.classList.remove('burger-action');
   };
-
-  clearTimeout(soundEffect);
 }
