@@ -1,14 +1,17 @@
 import { SOUND_EFFECTS, soundEffect } from './utils/Soundeffects';
-import { navigationCatalog } from './Routing';
+import navigationCatalog from './utils/navigationCatalog';
 import data from './utils/data';
+import check from './utils/answers';
+import shuffled from './utils/shuffleArrayWithWords';
 
-const randomizer = (arrayLength) => Math.floor(Math.random() * arrayLength);
+const playground = data[navigationCatalog[location.hash]];
 
 export default function initPlay(isPlay) {
   if (isPlay) {
-    const playground = data[navigationCatalog[location.hash]];
-    const randomWord = randomizer(playground.length);
+    const randomWord = shuffled.pop();
+    console.log(shuffled);
     const wordToSpeak = playground[randomWord];
+    check.currentWord = wordToSpeak.id;
     SOUND_EFFECTS.word = new Audio(wordToSpeak.audioSrc);
     soundEffect(SOUND_EFFECTS.word, SOUND_EFFECTS.delayForGame);
   }

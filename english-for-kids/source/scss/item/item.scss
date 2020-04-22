@@ -25,13 +25,23 @@
     position: absolute;
     top: -60px;
     height: auto;
-    filter: saturate(1.5) drop-shadow(0 10px 5px rgba(0, 0, 0, 0.42));
+    filter: saturate(1.5) drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
+
+    &_play {
+      top: -15px;
+      filter: saturate(1.5) drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
+    }
 
     &-inner {
       width: 260px;
       border: 1px solid $default-color;
       border-radius: 0.5rem;
       object-fit: cover;
+
+      &_play {
+        width: 270px;
+        height: 185px;
+      }
     }
   }
 

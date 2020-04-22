@@ -10,9 +10,9 @@ export default function playingCardsToRender(index) {
 
     listItem.innerHTML = `<div class='categories__item'>
       <div class='categories__item_front'>
-        <div class='item'>
-          <div class='item__image'>
-            <img class='item__image-inner item__image-inner_play' src=${card.image} alt='guess' width='260' height='175'>
+        <div class='item item_play'>
+          <div class='item__image_play'>
+            <img class='item__image-inner_play' src=${card.image} alt='guess'>
           </div>
         </div>
       </div>

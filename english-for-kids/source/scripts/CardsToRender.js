@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 import data from './utils/data';
 import mainpageToRender from './MainpageToRender';
 import { cardList } from './utils/CreateWrapper';

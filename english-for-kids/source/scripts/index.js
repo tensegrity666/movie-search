@@ -3,7 +3,8 @@
 import '../scss/main.scss';
 import sideMenuToggle from './SideMenu';
 import togglePageType from './TogglerHandler';
-import { addHashesToAddresline, navigationCatalog } from './Routing';
+import addHashesToAddresline from './Routing';
+import navigationCatalog from './utils/navigationCatalog';
 import cardsToRender from './CardsToRender';
 import reverseCard from './ReverseCard';
 import speakWord from './SpeakWord';
@@ -12,6 +13,7 @@ import removeTogglerFromPage from './TogglerRemover';
 import startPlaying from './PlayingProcess';
 
 window.onload = () => {
+  localStorage.clear();
   cardsToRender(localStorage.currentPageBeforeExit || 0);
   addHashesToAddresline();
   sideMenuToggle();
