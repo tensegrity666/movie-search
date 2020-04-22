@@ -10,7 +10,6 @@ import reverseCard from './ReverseCard';
 import speakWord from './SpeakWord';
 import goToClickedCategory from './GoToCategory';
 import startPlaying from './PlayingProcess';
-import scorePageToRender from './ScorePage';
 
 window.onload = () => {
   cardsToRender(localStorage.currentPageBeforeExit || 0);
@@ -21,7 +20,6 @@ window.onload = () => {
   speakWord();
   goToClickedCategory();
   startPlaying();
-  scorePageToRender();
 };
 
 window.onunload = () => {
