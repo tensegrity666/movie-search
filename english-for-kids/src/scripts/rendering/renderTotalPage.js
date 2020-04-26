@@ -4,7 +4,6 @@ import { cardList } from '../utils/createWrapper';
 import soundEffect from '../helpers/playSoundeffect';
 import SOUND_EFFECTS from '../constants/soundEffects';
 import check from '../state/state';
-import isPlayMode from '../utils/isPlayMode';
 
 const button = document.querySelector('.start');
 const toggler = document.querySelector('.toggler');
@@ -26,7 +25,7 @@ export default function showTotalPage(isLose) {
   button.innerText = 'return';
   const listItem = document.createElement('div');
   listItem.classList.add('result');
-  isPlayMode.play = 'false';
+  check.isInPlayMode = 'false';
   if (!isLose) {
     listItem.innerHTML = '&#128568;<br>you win!';
     cardList.append(listItem);

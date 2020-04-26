@@ -2,6 +2,7 @@ import navigationCatalog from '../constants/navigationCatalog';
 
 const check = {
   isPlaying: true,
+  isInPlayMode: null,
   totalCards: 8,
   currentWordId: null,
   currentWord: null,
