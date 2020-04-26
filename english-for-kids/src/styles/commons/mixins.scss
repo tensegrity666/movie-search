@@ -8,9 +8,5 @@
 
 @mixin toggler-inner {
   position: absolute;
-  top: 2px;
-  width: 42px;
-  height: 42px;
   content: "";
-  border-radius: 42px;
 }

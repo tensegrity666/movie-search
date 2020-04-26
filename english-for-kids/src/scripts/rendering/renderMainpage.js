@@ -1,5 +1,5 @@
 import data from '../constants/originData';
-import { cardList } from './createWrapper';
+import { cardList } from '../utils/createWrapper';
 
 const CATEGORIES_LIST = data[0];
 const toggler = document.querySelector('.toggler');

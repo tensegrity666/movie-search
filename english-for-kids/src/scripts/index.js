@@ -2,12 +2,12 @@
 
 import '../styles/main.scss';
 
-import sideMenuToggle from './SideMenu';
-import togglePageType from './TogglerHandler';
+import sideMenuToggle from './showSideMenu';
+import togglePageType from './togglePageMode';
 import addHashesToAddresline from './utils/routing';
-import cardsToRender from './utils/renderTrainingCards';
+import cardsToRender from './rendering/renderTrainingCards';
 import reverseCard from './ReverseCard';
-import speakWord from './SpeakWord';
+import speakWord from './speakWord';
 import goToClickedCategory from './goToCategory';
 import startPlaying from './PlayingProcess';
 

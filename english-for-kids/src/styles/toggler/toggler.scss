@@ -1,10 +1,11 @@
 .toggler {
   position: relative;
   z-index: $z-index-bottom;
+  box-sizing: border-box;
   display: none;
   align-items: center;
-  width: 84px;
-  height: 36px;
+  width: 106px;
+  height: 52px;
   padding: 5px 10px;
   margin: 0 5px;
   cursor: pointer;
@@ -24,31 +25,36 @@
     display: flex;
     justify-content: flex-start;
     width: 84px;
-    width: 40px;
     font-size: 1.5rem;
     font-weight: 900;
 
     &::after {
       @include toggler-inner;
 
-      right: 2px;
+      top: 2px;
+      right: 1.7px;
+      width: 44px;
+      height: 44.5px;
       background-color: $dark-shades;
-      transition: all 0.3s linear;
+      border-radius: 44px;
+      transition: all 0.2s linear;
     }
   }
 
   &__description-play {
     display: flex;
     justify-content: flex-end;
-    width: 84px;
-    padding-right: 5px;
 
     &::after {
       @include toggler-inner;
 
-      left: 2px;
+      top: 3px;
+      left: 2.5px;
+      width: 42.5px;
+      height: 42.5px;
       background-color: $primary-color;
-      transition: all 0.3s linear;
+      border-radius: 43px;
+      transition: all 0.2s linear;
     }
   }
 }

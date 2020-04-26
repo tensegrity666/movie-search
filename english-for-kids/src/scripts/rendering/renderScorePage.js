@@ -1,5 +1,5 @@
-import { cardList } from './utils/createWrapper';
-import data from './constants/originData';
+import { cardList } from '../utils/createWrapper';
+import data from '../constants/originData';
 
 const toggler = document.querySelector('.toggler');
 

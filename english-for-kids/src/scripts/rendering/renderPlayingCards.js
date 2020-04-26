@@ -1,5 +1,5 @@
 import data from '../constants/originData';
-import { cardList } from './createWrapper';
+import { cardList } from '../utils/createWrapper';
 
 export default function playingCardsToRender(index) {
   cardList.innerHTML = '';

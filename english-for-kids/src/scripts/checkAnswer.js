@@ -2,8 +2,8 @@
 
 import soundEffect from './helpers/playSoundeffect';
 import SOUND_EFFECTS from './constants/soundEffects';
-import initPlay from './PlayModeOn';
-import check from './utils/answers';
+import initPlay from './initPlayMode';
+import check from './state/state';
 
 const answersArea = document.querySelector('.answers');
 const answers = [];

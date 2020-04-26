@@ -1,10 +1,10 @@
 /* eslint-disable no-restricted-globals */
 
-import { cardList } from './createWrapper';
+import { cardList } from '../utils/createWrapper';
 import soundEffect from '../helpers/playSoundeffect';
 import SOUND_EFFECTS from '../constants/soundEffects';
-import check from './answers';
-import isPlayMode from './isPlayMode';
+import check from '../state/state';
+import isPlayMode from '../utils/isPlayMode';
 
 const button = document.querySelector('.start');
 const toggler = document.querySelector('.toggler');

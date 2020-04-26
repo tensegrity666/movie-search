@@ -2,7 +2,7 @@
 
 import data from '../constants/originData';
 import mainpageToRender from './renderMainpage';
-import { cardList } from './createWrapper';
+import { cardList } from '../utils/createWrapper';
 import errorPageToRender from './renderErrorPage';
 
 const toggler = document.querySelector('.toggler');

@@ -1,9 +1,9 @@
-import initPlay from './PlayModeOn';
-import checkAnswer from './answerCheck';
+import initPlay from './initPlayMode';
+import checkAnswer from './checkAnswer';
 import isPlayMode from './utils/isPlayMode';
 import soundEffect from './helpers/playSoundeffect';
 import SOUND_EFFECTS from './constants/soundEffects';
-import check from './utils/answers';
+import check from './state/state';
 
 const button = document.querySelector('.start');
 let isRepeat = false;
@@ -16,7 +16,7 @@ export const onSecondClick = () => {
 
 export const onStartButtonClick = () => {
   if (!isRepeat) {
-    button.innerText = 'repeat';
+    button.innerText = `${check.buttonInnerTextRepeat}`;
     initPlay(isPlayMode.play);
     checkAnswer();
     isRepeat = true;

@@ -5,6 +5,9 @@ const check = {
   currentWord: null,
   rightAnswersCounter: null,
   wrongAnswersCounter: null,
+  buttonInnerTextRepeat: 'repeat',
+  buttonInnerTextStart: 'start',
+  currentCategoryForPlay: null,
 };
 
 export { check as default };

@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-globals */
-
 import playModeStyles from './setPlayModeStyles';
-import playingCardsToRender from './utils/renderPlayingCards';
-import cardsToRender from './utils/renderTrainingCards';
+import playingCardsToRender from './rendering/renderPlayingCards';
+import cardsToRender from './rendering/renderTrainingCards';
 import navigationCatalog from './constants/navigationCatalog';
 import isPlayMode from './utils/isPlayMode';
 
