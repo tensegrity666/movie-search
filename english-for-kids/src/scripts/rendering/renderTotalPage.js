@@ -9,7 +9,8 @@ import isPlayMode from '../utils/isPlayMode';
 const button = document.querySelector('.start');
 const toggler = document.querySelector('.toggler');
 const answers = document.querySelector('.answers');
-const RELOAD_TIMEOUT = 500;
+const RELOAD_TIMEOUT_WIN = 6500;
+const RELOAD_TIMEOUT_LOSE = 1000;
 
 export default function showTotalPage(isLose) {
   toggler.style.display = 'none';
@@ -22,6 +23,9 @@ export default function showTotalPage(isLose) {
     listItem.innerHTML = '&#128568;<br>you win!';
     cardList.append(listItem);
     soundEffect(SOUND_EFFECTS.win, SOUND_EFFECTS.delayForGame);
+    setTimeout(() => {
+      location.hash = '#main';
+    }, RELOAD_TIMEOUT_WIN);
   }
   if (isLose) {
     listItem.innerHTML = `&#128575;<br>
@@ -29,14 +33,15 @@ export default function showTotalPage(isLose) {
     wrong answers: ${check.wrongAnswersCounter}`;
     cardList.append(listItem);
     soundEffect(SOUND_EFFECTS.fail, SOUND_EFFECTS.delayForGame);
+    setTimeout(() => {
+      location.hash = '#main';
+    }, RELOAD_TIMEOUT_LOSE);
   }
   button.addEventListener('click', () => {
     button.classList.remove('start_show');
     button.setAttribute('disabled', 'disabled');
     answers.classList.remove('answers_show');
     answers.innerText = '';
-    setTimeout(() => {
-      location.reload();
-    }, RELOAD_TIMEOUT);
+    location.hash = '#main';
   });
 }

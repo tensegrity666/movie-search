@@ -16,7 +16,7 @@ export const onSecondClick = () => {
 
 export const onStartButtonClick = () => {
   if (!isRepeat) {
-    button.innerText = `${check.buttonInnerTextRepeat}`;
+    button.innerHTML = `${check.buttonInnerTextRepeat}&#128472;`;
     initPlay(isPlayMode.play);
     checkAnswer();
     isRepeat = true;
