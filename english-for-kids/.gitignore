@@ -1,11 +1,15 @@
-/node_modules/
-/build/
+node_modules/
+dist/
+build/
 .DS_Store
 .vscode
+.cache
 *.ai
 *.log
 *.pdf
 *.psd
+scripts/location/
+.env
 npm-debug.*
 Thumbs.db
 # Local Netlify folder

@@ -8,7 +8,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  entry: ['./source/scripts/index.js'],
+  entry: ['./src/scripts/index.js'],
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'build'),
@@ -22,14 +22,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyPlugin([
       {
-        from: 'source/assets/',
+        from: 'src/assets/',
         to: 'assets/',
       },
     ]),
     new ImageminPlugin(),
     new HtmlWebpackPlugin({
       title: 'Caching',
-      template: './source/index.html',
+      template: './src/index.html',
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
