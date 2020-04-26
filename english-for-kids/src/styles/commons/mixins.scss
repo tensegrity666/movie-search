@@ -1,0 +1,12 @@
+@mixin burger-inner {
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+@mixin toggler-inner {
+  position: absolute;
+  content: "";
+}

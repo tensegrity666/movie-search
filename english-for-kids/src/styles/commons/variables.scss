@@ -1,0 +1,27 @@
+$font: "Comfortaa", cursive;
+$default-color: #54565c27;
+$light-accent-color: #d9c0a9;
+$accent-color: #F76B1C;
+$primary-color: #e6b424;
+$dark-shades: #3a32ca;
+$light-shades: #ffffff;
+
+$card-background-train: linear-gradient(30deg, $primary-color 50%, $accent-color 100%);
+$card-background-play: linear-gradient(50deg, #3a32ca93 10%, $primary-color 50%);
+
+$succes-color: #7ab143;
+$warning-color: #f8a00b;
+$danger-color: #f44336;
+
+$z-index-top: 999;
+$z-index-middle: 99;
+$z-index-bottom: 9;
+
+$header-height: 10rem;
+
+$narrow-width: 375px;
+$middle-width: 768px;
+$wide-width: 1024px;
+$extra-wide-width: 1280px;
+
+$transition-burger: all 0.17s linear;

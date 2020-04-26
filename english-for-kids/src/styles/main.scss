@@ -1,0 +1,24 @@
+@charset 'utf-8';
+//commons
+@import "src/styles/commons/variables.scss";
+@import "src/styles/commons/mixins.scss";
+@import "src/styles/commons/normalize.scss";
+@import "src/styles/commons/visually-hidden.scss";
+@import "src/styles/root/root.scss";
+//body
+@import "src/styles/page/page.scss";
+//header
+@import "src/styles/header/header.scss";
+@import "src/styles/menu/menu.scss";
+@import "src/styles/burger/burger.scss";
+@import "src/styles/toggler/toggler.scss";
+@import "src/styles/navigation/navigation.scss";
+//main
+@import "src/styles/categories/categories.scss";
+@import "src/styles/item/item.scss";
+@import "src/styles/start/start.scss";
+@import "src/styles/wrapper/wrapper.scss";
+@import "src/styles/answers/answers.scss";
+@import "src/styles/error/error.scss";
+@import "src/styles/score/score.scss";
+@import "src/styles/result/result.scss";
