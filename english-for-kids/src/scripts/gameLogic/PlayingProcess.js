@@ -1,9 +1,9 @@
 import initPlay from './initPlayMode';
 import checkAnswer from './checkAnswer';
-import isPlayMode from './utils/isPlayMode';
-import soundEffect from './helpers/playSoundeffect';
-import SOUND_EFFECTS from './constants/soundEffects';
-import check from './state/state';
+import isPlayMode from '../utils/isPlayMode';
+import soundEffect from '../helpers/playSoundeffect';
+import SOUND_EFFECTS from '../constants/soundEffects';
+import check from '../state/state';
 
 const button = document.querySelector('.start');
 let isRepeat = false;

@@ -6,12 +6,13 @@ import sideMenuToggle from './showSideMenu';
 import togglePageType from './togglePageMode';
 import addHashesToAddresline from './utils/routing';
 import cardsToRender from './rendering/renderTrainingCards';
-import reverseCard from './ReverseCard';
+import reverseCard from './reverseCard';
 import speakWord from './speakWord';
 import goToClickedCategory from './goToCategory';
-import startPlaying from './PlayingProcess';
+import startPlaying from './gameLogic/PlayingProcess';
+import state from './state/state';
 
-cardsToRender(0);
+cardsToRender(state.currentLocation);
 addHashesToAddresline();
 sideMenuToggle();
 togglePageType();

@@ -1,3 +1,5 @@
+import navigationCatalog from '../constants/navigationCatalog';
+
 const check = {
   isPlaying: true,
   totalCards: 8,
@@ -8,6 +10,7 @@ const check = {
   buttonInnerTextRepeat: 'repeat',
   buttonInnerTextStart: 'start',
   currentCategoryForPlay: null,
+  currentLocation: navigationCatalog[location.hash],
 };
 
 export { check as default };

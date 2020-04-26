@@ -3,7 +3,6 @@
 import data from '../constants/originData';
 import mainpageToRender from './renderMainpage';
 import { cardList } from '../utils/createWrapper';
-import errorPageToRender from './renderErrorPage';
 
 const toggler = document.querySelector('.toggler');
 const PAGES = {
@@ -14,10 +13,10 @@ const PAGES = {
 export default function cardsToRender(index) {
   const cardIndex = Number(index);
 
-  if (cardIndex !== Number(PAGES.main)
-    && (cardIndex <= Number(PAGES.score))
-    && (cardIndex !== undefined)
-    && !(isNaN(cardIndex))) {
+  if (cardIndex === Number(PAGES.main)) {
+    return mainpageToRender();
+  }
+  if (cardIndex <= Number(PAGES.score)) {
     toggler.style.display = 'flex';
     cardList.innerHTML = '';
     data[cardIndex].forEach((card) => {
@@ -50,9 +49,6 @@ export default function cardsToRender(index) {
       </div>`;
       cardList.append(listItem);
     });
-  } else if (cardIndex === Number(PAGES.main)) {
-    mainpageToRender();
-  } else if (cardIndex === undefined || isNaN(cardIndex)) {
-    errorPageToRender();
   }
+  return cardList;
 }

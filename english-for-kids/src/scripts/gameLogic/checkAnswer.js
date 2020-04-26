@@ -1,9 +1,9 @@
 /* eslint-disable no-plusplus */
 
-import soundEffect from './helpers/playSoundeffect';
-import SOUND_EFFECTS from './constants/soundEffects';
+import soundEffect from '../helpers/playSoundeffect';
+import SOUND_EFFECTS from '../constants/soundEffects';
 import initPlay from './initPlayMode';
-import check from './state/state';
+import check from '../state/state';
 
 const answersArea = document.querySelector('.answers');
 const answers = [];

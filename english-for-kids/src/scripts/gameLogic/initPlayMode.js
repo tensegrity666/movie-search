@@ -1,10 +1,10 @@
 /* eslint-disable no-restricted-globals */
 
-import soundEffect from './helpers/playSoundeffect';
-import SOUND_EFFECTS from './constants/soundEffects';
-import check from './state/state';
-import showTotalPage from './rendering/renderTotalPage';
-import shuffled from './helpers/shuffleArrayWithWords';
+import soundEffect from '../helpers/playSoundeffect';
+import SOUND_EFFECTS from '../constants/soundEffects';
+import check from '../state/state';
+import showTotalPage from '../rendering/renderTotalPage';
+import shuffled from '../helpers/shuffleArrayWithWords';
 
 export default function initPlay(isPlay) {
   if (isPlay && shuffled.length > 0) {
