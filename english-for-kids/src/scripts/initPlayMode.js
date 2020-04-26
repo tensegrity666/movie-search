@@ -9,7 +9,7 @@ import shuffled from './helpers/shuffleArrayWithWords';
 export default function initPlay(isPlay) {
   if (isPlay && shuffled.length > 0) {
     const randomWord = shuffled.pop();
-    const categoryForPlay = check.currentCategoryForPlay
+    const categoryForPlay = check.currentCategoryForPlay;
     const wordToSpeak = categoryForPlay[randomWord];
     check.currentWordId = wordToSpeak.id;
     check.currentWord = wordToSpeak.word;
