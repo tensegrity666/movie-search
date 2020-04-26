@@ -5,6 +5,7 @@ import mainpageToRender from './renderMainpage';
 import { cardList } from '../utils/createWrapper';
 
 const toggler = document.querySelector('.toggler');
+
 const PAGES = {
   main: 0,
   score: 8,
@@ -19,6 +20,7 @@ export default function cardsToRender(index) {
   if (cardIndex <= Number(PAGES.score)) {
     toggler.style.display = 'flex';
     cardList.innerHTML = '';
+
     data[cardIndex].forEach((card) => {
       const listItem = document.createElement('li');
       listItem.classList.add('categories__container');

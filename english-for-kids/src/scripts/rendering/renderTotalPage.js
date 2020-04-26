@@ -9,8 +9,16 @@ import isPlayMode from '../utils/isPlayMode';
 const button = document.querySelector('.start');
 const toggler = document.querySelector('.toggler');
 const answers = document.querySelector('.answers');
-const RELOAD_TIMEOUT_WIN = 6500;
-const RELOAD_TIMEOUT_LOSE = 1000;
+const RELOAD_TIMEOUT_WIN = 6700;
+const RELOAD_TIMEOUT_LOSE = 2000;
+
+const hideControlsAfterGame = () => {
+  button.classList.remove('start_show');
+  button.setAttribute('disabled', 'disabled');
+  answers.classList.remove('answers_show');
+  answers.innerText = '';
+  location.hash = '#main';
+};
 
 export default function showTotalPage(isLose) {
   toggler.style.display = 'none';
@@ -24,7 +32,7 @@ export default function showTotalPage(isLose) {
     cardList.append(listItem);
     soundEffect(SOUND_EFFECTS.win, SOUND_EFFECTS.delayForGame);
     setTimeout(() => {
-      location.hash = '#main';
+      hideControlsAfterGame();
     }, RELOAD_TIMEOUT_WIN);
   }
   if (isLose) {
@@ -34,14 +42,8 @@ export default function showTotalPage(isLose) {
     cardList.append(listItem);
     soundEffect(SOUND_EFFECTS.fail, SOUND_EFFECTS.delayForGame);
     setTimeout(() => {
-      location.hash = '#main';
+      hideControlsAfterGame();
     }, RELOAD_TIMEOUT_LOSE);
   }
-  button.addEventListener('click', () => {
-    button.classList.remove('start_show');
-    button.setAttribute('disabled', 'disabled');
-    answers.classList.remove('answers_show');
-    answers.innerText = '';
-    location.hash = '#main';
-  });
+  button.addEventListener('click', hideControlsAfterGame);
 }

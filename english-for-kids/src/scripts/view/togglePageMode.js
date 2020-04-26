@@ -8,16 +8,18 @@ import isPlayMode from '../utils/isPlayMode';
 
 const toggler = document.querySelector('#toggle');
 
-export default function togglePageType() {
-  toggler.addEventListener('change', () => {
-    isPlayMode.play = toggler.checked;
+const onTogglerChange = () => {
+  isPlayMode.play = toggler.checked;
 
-    if (isPlayMode.play) {
-      playModeStyles(isPlayMode.play);
-      playingCardsToRender(navigationCatalog[location.hash]);
-    } else {
-      playModeStyles(isPlayMode.play);
-      cardsToRender(navigationCatalog[location.hash]);
-    }
-  });
+  if (isPlayMode.play) {
+    playModeStyles(isPlayMode.play);
+    playingCardsToRender(navigationCatalog[location.hash]);
+  } else {
+    playModeStyles(isPlayMode.play);
+    cardsToRender(navigationCatalog[location.hash]);
+  }
+};
+
+export default function togglePageType() {
+  toggler.addEventListener('change', onTogglerChange);
 }
