@@ -2,11 +2,12 @@
 
 import data from './constants/originData';
 import navigationCatalog from './constants/navigationCatalog';
-import isPlayMode from './utils/isPlayMode';
 import { wrapper } from './utils/createWrapper';
+import check from './state/state';
+
 
 const onCardClick = (event) => {
-  if (!isPlayMode.play) {
+  if (!check.isInPlayMode) {
     if (event.target.closest('.categories__container') && event.target.closest('.categories__container').hasAttribute('id') && !event.target.classList.contains('categories__item-button')) {
       const id = event.target.closest('.categories__container').getAttribute('id');
       const currentLocation = data[navigationCatalog[location.hash]];

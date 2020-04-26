@@ -9,5 +9,6 @@ export default function addHashesToAddresline() {
   window.addEventListener('hashchange', () => {
     cardsToRender(navigationCatalog[location.hash]);
     check.currentCategoryForPlay = data[navigationCatalog[location.hash]];
+    location.reload();
   }, false);
 }
