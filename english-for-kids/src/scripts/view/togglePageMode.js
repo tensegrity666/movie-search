@@ -1,9 +1,10 @@
 /* eslint-disable no-restricted-globals */
+
 import playModeStyles from './setPlayModeStyles';
-import playingCardsToRender from './rendering/renderPlayingCards';
-import cardsToRender from './rendering/renderTrainingCards';
-import navigationCatalog from './constants/navigationCatalog';
-import isPlayMode from './utils/isPlayMode';
+import playingCardsToRender from '../rendering/renderPlayingCards';
+import cardsToRender from '../rendering/renderTrainingCards';
+import navigationCatalog from '../constants/navigationCatalog';
+import isPlayMode from '../utils/isPlayMode';
 
 const toggler = document.querySelector('#toggle');
 
