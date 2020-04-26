@@ -4,18 +4,18 @@ import playModeStyles from './setPlayModeStyles';
 import playingCardsToRender from '../rendering/renderPlayingCards';
 import cardsToRender from '../rendering/renderTrainingCards';
 import navigationCatalog from '../constants/navigationCatalog';
-import isPlayMode from '../utils/isPlayMode';
+import check from '../state/state';
 
 const toggler = document.querySelector('#toggle');
 
 const onTogglerChange = () => {
-  isPlayMode.play = toggler.checked;
+  check.isInPlayMode = toggler.checked;
 
-  if (isPlayMode.play) {
-    playModeStyles(isPlayMode.play);
+  if (check.isInPlayMode) {
+    playModeStyles(check.isInPlayMode);
     playingCardsToRender(navigationCatalog[location.hash]);
   } else {
-    playModeStyles(isPlayMode.play);
+    playModeStyles(check.isInPlayMode);
     cardsToRender(navigationCatalog[location.hash]);
   }
 };
