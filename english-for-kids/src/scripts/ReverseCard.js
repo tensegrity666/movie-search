@@ -1,5 +1,6 @@
 import soundEffect from './helpers/playSoundeffect';
 import SOUND_EFFECTS from './constants/soundEffects';
+import { wrapper } from './utils/createWrapper';
 
 const onButtonClick = (event) => {
   if (event.target.classList.contains('categories__item-button')) {
@@ -19,5 +20,5 @@ const onButtonClick = (event) => {
 };
 
 export default function reverseCard() {
-  window.addEventListener('click', onButtonClick);
+  wrapper.addEventListener('click', onButtonClick);
 }

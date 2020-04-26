@@ -3,6 +3,7 @@
 import data from './constants/originData';
 import navigationCatalog from './constants/navigationCatalog';
 import isPlayMode from './utils/isPlayMode';
+import { wrapper } from './utils/createWrapper';
 
 const onCardClick = (event) => {
   if (!isPlayMode.play) {
@@ -17,5 +18,5 @@ const onCardClick = (event) => {
 };
 
 export default function speakWord() {
-  window.addEventListener('click', onCardClick);
+  wrapper.addEventListener('click', onCardClick);
 }

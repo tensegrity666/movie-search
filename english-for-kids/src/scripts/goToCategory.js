@@ -1,5 +1,7 @@
 /* eslint-disable no-restricted-globals */
 
+import { wrapper } from './utils/createWrapper';
+
 const onCategoryClick = (event) => {
   if (event.target.closest('.categories__container') && event.target.closest('.categories__container').hasAttribute('data-category')) {
     const hashOfClickedCard = event.target.closest('.categories__container').getAttribute('data-category');
@@ -16,5 +18,5 @@ const onCategoryClick = (event) => {
 };
 
 export default function goToClickedCategory() {
-  window.addEventListener('click', onCategoryClick);
+  wrapper.addEventListener('click', onCategoryClick);
 }
