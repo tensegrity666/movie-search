@@ -1,4 +1,5 @@
 const navigationCatalog = {
+  '': 0,
   '#main': 0,
   '#actionA': 1,
   '#actionB': 2,
