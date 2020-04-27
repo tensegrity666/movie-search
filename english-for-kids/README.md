@@ -1,3 +1,5 @@
+Tested for compatibility in Chrome
+
 ## Install
 * npm i
 
@@ -6,3 +8,4 @@
 
 ## Build project
 * npm run build
+
