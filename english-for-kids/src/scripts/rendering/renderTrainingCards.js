@@ -13,6 +13,9 @@ export default function cardsToRender(index) {
   const INDEX_FOR_HEADING = cardIndex - 1;
 
   const heading = document.createElement('h2');
+  if (CATEGORIES_LIST[INDEX_FOR_HEADING] === undefined) {
+    heading.innerHTML = 'Main';
+  }
   heading.innerHTML = `${CATEGORIES_LIST[INDEX_FOR_HEADING]}`;
   heading.classList.add('visually-hidden');
   wrapper.prepend(heading);
