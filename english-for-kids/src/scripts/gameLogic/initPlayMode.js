@@ -8,7 +8,10 @@ import showTotalPage from '../rendering/renderTotalPage';
 import shuffled from '../helpers/shuffleArrayWithWords';
 import navigationCatalog from '../constants/navigationCatalog';
 
+const answersArea = document.querySelector('.answers');
+
 export default function initPlay(isPlay) {
+  answersArea.innerHTML = '';
   if (isPlay && shuffled.length > 0) {
     const randomWord = shuffled.pop();
     const choosenCategory = navigationCatalog[location.hash];

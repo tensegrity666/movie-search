@@ -3,6 +3,7 @@
 import navigationCatalog from '../constants/navigationCatalog';
 
 const check = {
+  mainpageIndex: 0,
   isPlaying: true,
   isInPlayMode: null,
   totalCards: 8,
