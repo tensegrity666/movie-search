@@ -3,6 +3,7 @@
 import navigationCatalog from '../constants/navigationCatalog';
 
 const check = {
+  mainpageIndex: 0,
   isPlaying: true,
   isInPlayMode: null,
   totalCards: 8,
@@ -14,6 +15,8 @@ const check = {
   buttonInnerTextStart: 'start',
   currentCategoryForPlay: null,
   currentLocation: navigationCatalog[location.hash],
+  togglerLabelPlay: 'play',
+  togglerLabelTrain: 'train',
 };
 
 export { check as default };

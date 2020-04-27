@@ -6,7 +6,7 @@ import initPlay from './initPlayMode';
 import check from '../state/state';
 
 const answersArea = document.querySelector('.answers');
-const answers = [];
+export const answers = [];
 
 const onAnswerClick = (event) => {
   if (event.target.classList.contains('item__image-inner_play')) {
