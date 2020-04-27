@@ -1,3 +1,5 @@
 *.min.css
 normalize.*
-/build/
+visually-hidden.*
+build/
+dist/

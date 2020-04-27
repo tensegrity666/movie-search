@@ -1,11 +1,8 @@
 ## Install
+* npm i
 
-npm i
+## Run linters
+* npm run lint
 
-## Build
-
-npm run build
-
-## Deploy
-
-npm run deploy
+## Build project
+* npm run build
