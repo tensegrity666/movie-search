@@ -1,11 +1,12 @@
 /* eslint-disable no-restricted-globals */
 
 import data from '../constants/originData';
-import mainpageToRender from './renderMainpage';
+import mainpageToRender, { CATEGORIES_LIST } from './renderMainpage';
 import { cardList } from '../utils/createWrapper';
 import check from '../state/state';
 
 const toggler = document.querySelector('.toggler');
+
 const categoryTitle = document.querySelector('.answers');
 
 export default function cardsToRender(index) {
@@ -14,9 +15,9 @@ export default function cardsToRender(index) {
   if (cardIndex === Number(check.mainpageIndex)) {
     return mainpageToRender();
   }
+  categoryTitle.innerText = `${CATEGORIES_LIST[index]}`;
   toggler.style.display = 'flex';
   cardList.innerHTML = '';
-  categoryTitle.innerHTML = '123';
 
   data[cardIndex].forEach((card) => {
     const listItem = document.createElement('li');

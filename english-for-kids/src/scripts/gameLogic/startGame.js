@@ -5,6 +5,7 @@ import SOUND_EFFECTS from '../constants/soundEffects';
 import check from '../state/state';
 
 const button = document.querySelector('.start');
+const answersArea = document.querySelector('.answers');
 let isRepeat = false;
 
 export const onSecondClick = () => {
@@ -15,6 +16,7 @@ export const onSecondClick = () => {
 
 export const onStartButtonClick = () => {
   if (!isRepeat) {
+    answersArea.innerText = '';
     button.innerHTML = `${check.buttonInnerTextRepeat}&#128472;`;
     initPlay(check.isInPlayMode);
     checkAnswer();

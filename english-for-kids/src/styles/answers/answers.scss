@@ -1,6 +1,6 @@
 .answers {
   box-sizing: border-box;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -8,10 +8,7 @@
   margin-bottom: 0.5rem;
   overflow: hidden;
   font-size: 4rem;
+  color: $dark-shades;
   text-align: center;
   background-color: transparent;
-
-  &_show {
-    display: block;
-  }
 }
