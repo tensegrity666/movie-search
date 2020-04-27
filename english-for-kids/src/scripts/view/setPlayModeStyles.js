@@ -1,4 +1,5 @@
 import { answers } from '../gameLogic/checkAnswer';
+import state from '../state/state';
 
 const togglerLabel = document.querySelector('.toggler__description-train');
 const togglerOuter = document.querySelector('.toggler');
@@ -15,13 +16,13 @@ export default function playModeStyles(isPlay) {
     categoryTitle.innerText = '';
     categoryTitle.innerHTML = `${answers.join('')}`;
     body.classList.add('page-play');
-    togglerLabel.innerText = 'play';
+    togglerLabel.innerText = state.togglerLabelPlay;
   } else {
     togglerLabel.classList.remove('toggler__description-play');
     togglerOuter.classList.remove('toggler_play');
     button.classList.remove('start_show');
     button.setAttribute('disabled', 'disabled');
     body.classList.remove('page-play');
-    togglerLabel.innerText = 'train';
+    togglerLabel.innerText = state.togglerLabelTrain;
   }
 }

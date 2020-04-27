@@ -2,20 +2,25 @@
 
 import data from '../constants/originData';
 import mainpageToRender, { CATEGORIES_LIST } from './renderMainpage';
-import { cardList } from '../utils/createWrapper';
+import { cardList, wrapper } from '../utils/createWrapper';
 import check from '../state/state';
 
 const toggler = document.querySelector('.toggler');
-
 const categoryTitle = document.querySelector('.answers');
 
 export default function cardsToRender(index) {
   const cardIndex = Number(index);
+  const INDEX_FOR_HEADING = cardIndex - 1;
+
+  const heading = document.createElement('h2');
+  heading.innerHTML = `${CATEGORIES_LIST[INDEX_FOR_HEADING]}`;
+  heading.classList.add('visually-hidden');
+  wrapper.prepend(heading);
 
   if (cardIndex === Number(check.mainpageIndex)) {
     return mainpageToRender();
   }
-  categoryTitle.innerText = `${CATEGORIES_LIST[index]}`;
+  categoryTitle.innerText = `${CATEGORIES_LIST[INDEX_FOR_HEADING]}`;
   toggler.style.display = 'flex';
   cardList.innerHTML = '';
 

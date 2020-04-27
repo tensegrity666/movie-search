@@ -15,6 +15,8 @@ const check = {
   buttonInnerTextStart: 'start',
   currentCategoryForPlay: null,
   currentLocation: navigationCatalog[location.hash],
+  togglerLabelPlay: 'play',
+  togglerLabelTrain: 'train',
 };
 
 export { check as default };
