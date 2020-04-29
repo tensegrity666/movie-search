@@ -1,6 +1,5 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -8,14 +7,13 @@ const CopyPlugin = require('copy-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  entry: ['./src/scripts/index.js'],
+  entry: ['./src/index.js'],
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'build'),
   },
   devtool: 'inline-source-map',
   devServer: {
-    open: false,
     contentBase: path.join(__dirname, 'build'),
   },
   plugins: [
@@ -26,7 +24,6 @@ module.exports = {
         to: 'assets/',
       },
     ]),
-    new ImageminPlugin(),
     new HtmlWebpackPlugin({
       title: 'Caching',
       template: './src/index.html',
@@ -53,9 +50,14 @@ module.exports = {
         test: /\.(sc|c)ss$/,
         use: [
           { loader: MiniCssExtractPlugin.loader, options: { esModule: true } },
-          { loader: 'css-loader', options: { sourceMap: true } },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: true,
+            },
+          },
+          { loader: 'postcss-loader' },
+          { loader: 'sass-loader' },
         ],
       },
       {
