@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/scripts/**/*.js && stylelint src/styles/**/*.scss --syntax scss",
+    "lint": "eslint src/**/*.js && stylelint src/**/*.scss --syntax scss",
     "deploy": "npm run lint && npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
