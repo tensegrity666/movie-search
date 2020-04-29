@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+//
+@import "src/styles/commons/visually-hidden.scss";
+@import "src/styles/commons/normalize.scss";
+@import "src/styles/commons/variables.scss";
+@import "src/styles/commons/root.scss";
+//
+@import "src/styles/page.scss";
+@import "src/styles/header.scss";
+@import "src/styles/main-container.scss";
+@import "src/styles/searcher.scss";
+@import "src/styles/footer.scss";
+//
+@import "src/styles/paginator/swiper.scss";
+@import "src/styles/paginator/cardlist.scss";
