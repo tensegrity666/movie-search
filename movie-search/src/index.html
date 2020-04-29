@@ -16,6 +16,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Notable&subset=latin&text=MovieSarch&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+  rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <meta name="keywords" content="RSSchool, JavaScript, education">
   <meta name="description" content="Application for searching movies">
@@ -27,21 +29,22 @@
     <h1 class="header__title">Movie Search</h1>
 
     <form class="searcher" action="#qwerty" method="get">
-      <input class="searcher__input" type="text" name="search" id="searchID">
-      <button type="reset">clear</button>
-      <button type="submit">search</button>
+      <input class="searcher__input" type="text" name="search" autofocus>
+      <button class="searcher__button-reset" type="reset"><span class="visually-hidden">clear</span>&#215;</button>
+      <button class="searcher__button-submit" type="submit">go!</button>
     </form>
 
   </header>
   <main class="main-container">
     <p class="main-container__textfield">some message</p>
 
+    <div class="swiper-outer">
       <div class="swiper-container">
         <ul class="cardlist swiper-wrapper">
 
-          <li class="cardlist__moviecard swiper-slide">
+          <li class="moviecard swiper-slide">
             <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
+              <a class="moviecard__title" href="http://www.dsdfdsf.ru" target="_blank"
                 rel="noopener noreferrer">
                 reqiuem fo bla bla
               </a>
@@ -49,13 +52,13 @@
             <img
               src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
               alt="sdfsdf">
-            <p></p>
-            <span></span>
+            <p class="moviecard__year">2002</p>
+            <span class="moviecard__rating">3***</span>
           </li>
-
-          <li class="cardlist__moviecard swiper-slide">
+      
+          <li class="moviecard swiper-slide">
             <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
+              <a class="moviecard__title" href="http://www.dsdfdsf.ru" target="_blank"
                 rel="noopener noreferrer">
                 reqiuem fo bla bla
               </a>
@@ -63,13 +66,13 @@
             <img
               src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
               alt="sdfsdf">
-            <p></p>
-            <span></span>
+            <p class="moviecard__year">1234</p>
+            <span class="moviecard__rating">$%@</span>
           </li>
-
-          <li class="cardlist__moviecard swiper-slide">
+      
+          <li class="moviecard swiper-slide">
             <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
+              <a class="moviecard__title" href="http://www.dsdfdsf.ru" target="_blank"
                 rel="noopener noreferrer">
                 reqiuem fo bla bla
               </a>
@@ -77,13 +80,13 @@
             <img
               src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
               alt="sdfsdf">
-            <p></p>
-            <span></span>
+            <p class="moviecard__year">1990</p>
+            <span>2*</span>
           </li>
-
-          <li class="cardlist__moviecard swiper-slide">
+      
+          <li class="moviecard swiper-slide">
             <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
+              <a class="moviecard__title" href="http://www.dsdfdsf.ru" target="_blank"
                 rel="noopener noreferrer">
                 reqiuem fo bla bla
               </a>
@@ -91,13 +94,13 @@
             <img
               src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
               alt="sdfsdf">
-            <p></p>
-            <span></span>
+            <p class="moviecard__year">1978</p>
+            <span class="moviecard__rating">8**</span>
           </li>
-
-          <li class="cardlist__moviecard swiper-slide">
+      
+          <li class="moviecard swiper-slide">
             <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
+              <a class="moviecard__title" href="http://www.dsdfdsf.ru" target="_blank"
                 rel="noopener noreferrer">
                 reqiuem fo bla bla
               </a>
@@ -105,130 +108,18 @@
             <img
               src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
               alt="sdfsdf">
-            <p></p>
-            <span></span>
+            <p class="moviecard__year">1256</p>
+            <span class="moviecard__rating">23432423</span>
           </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
-          <li class="cardlist__moviecard swiper-slide">
-            <header>
-              <a href="http://www.dsdfdsf.ru" target="_blank"
-                rel="noopener noreferrer">
-                reqiuem fo bla bla
-              </a>
-            </header>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGEzZjdjMGQtZmYzZC00N2I4LThiY2QtNWY5ZmQ3M2ExZmM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-              alt="sdfsdf">
-            <p></p>
-            <span></span>
-          </li>
-
         </ul>
-
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
-  </main>
 
+      <div class="swiper-arrow swiper-button-prev"></div>
+      <div class="swiper-arrow swiper-button-next"></div>
+    </div>
+
+  </main>
   <footer class="footer">
     <span>RollingScopesSchool 2020</span>
     <a href="https://www.github.com" target="_blank"

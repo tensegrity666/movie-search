@@ -2,9 +2,31 @@ $color-default: #ffffff;
 $color-primary: #000000;
 $color-warning: #dc9d38;
 $color-danger: #f44336;
-$color-succes: #8ba7b9;
-$color-info: #5fad70;
+$color-info: #8ba7b9;
+$color-success: #007aff;
 
-$background-main: linear-gradient(to top, $color-succes 0%, $color-default 100%);
+$z-index-top: 9999;
+
+$background-main:
+  linear-gradient(
+    to top,
+    $color-info 0%,
+    $color-default 100%
+  );
+
+$background-header:
+  linear-gradient(
+    to right,
+    rgba(59, 59, 69, 0.83) 2%,
+    rgba(53, 53, 62, 0.83) 8%,
+    rgba(42, 42, 49, 0.95) 19%,
+    rgba(0, 0, 0, 0.89) 39%,
+    rgba(0, 0, 0, 0.89) 40%,
+    rgba(0, 0, 0, 0.93) 46%,
+    rgba(0, 0, 0, 1) 56%,
+    rgba(3, 3, 5, 0.88) 81%,
+    rgba(25, 26, 33, 0.81) 95%,
+    rgba(33, 34, 43, 0.81) 100%
+  );
 
 $font-logo: 'Notable', sans-serif;

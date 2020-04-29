@@ -1,12 +1,18 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 100px 10%;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem 10% 0;
 
   &__textfield {
-    margin-bottom: 100px;
-    font-size: 20px;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
     text-align: center;
+    text-transform: lowercase;
+
+    &_danger {
+      color: $color-danger;
+    }
   }
 }
