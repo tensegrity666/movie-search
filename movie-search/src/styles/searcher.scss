@@ -20,7 +20,7 @@
     right: 130px;
     width: 30px;
     height: 30px;
-    padding: 0.2rem;
+    padding: 0 0 0.2rem;
     font-size: 4rem;
     line-height: 0;
     color: $color-danger;
@@ -33,9 +33,9 @@
   &__button-submit {
     width: 120px;
     height: 40px;
+    padding: 0.2rem;
     font-size: 2rem;
     font-weight: 600;
-    padding: 0.2rem;
     line-height: 0;
     color: white;
     text-transform: uppercase;
