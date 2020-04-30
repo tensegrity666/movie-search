@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Notable&subset=latin&text=MovieSarch&display=swap");
-
 .header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: var(--z-index-top);
+  z-index: --z-index-top;
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 80px;
@@ -13,15 +11,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10%;
-  color: var(--color-default);
-  background: var(--background-header);
-  background-color: var(--color-primary);
+  color: --color-default;
+  background: --background-header;
+  background-color: --color-primary;
   backdrop-filter: opacity(0.9) blur(2px);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
-}
 
-.header__title {
-  margin: 0;
-  font-family: var(--font-logo);
-  font-size: 3rem;
+  &__title {
+    margin: 0;
+    font-family: var(--font-logo);
+    font-size: 3rem;
+  }
 }
