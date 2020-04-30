@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: $z-index-top;
+  z-index: var(--z-index-top);
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 80px;
@@ -11,15 +11,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10%;
-  color: $color-default;
-  background: $background-header;
-  background-color: $color-primary;
+  color: var(--color-default);
+  background: var(--background-header);
+  background-color: var(--color-primary);
   backdrop-filter: opacity(0.9) blur(2px);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
 
-  &__title {
-    margin: 0;
-    font-family: $font-logo;
-    font-size: 3rem;
-  }
+.header__title {
+  margin: 0;
+  font-family: var(--font-logo);
+  font-size: 3rem;
 }

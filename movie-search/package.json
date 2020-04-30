@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/**/*.js && stylelint src/**/*.scss --syntax scss",
+    "lint": "eslint src/**/*.js && stylelint src/**/*.css --syntax css",
     "deploy": "npm run lint && npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
@@ -20,12 +20,10 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
-    "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.5.2",
-    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
@@ -35,11 +33,10 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
-    "sass": "^1.26.3",
-    "sass-loader": "^8.0.2",
     "stylelint": "^13.3.0",
     "stylelint-config-recess-order": "^2.0.4",
     "stylelint-config-standard": "^20.0.0",
+    "url-loader": "4.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
@@ -58,6 +55,8 @@
     ]
   },
   "dependencies": {
-    "swiper": "^5.3.8"
+    "swiper": "^5.3.8",
+    "cssnano": "^4.1.10",
+    "autoprefixer": "^9.7.6"
   }
 }

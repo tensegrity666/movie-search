@@ -1,4 +1,5 @@
 import { Swiper, Navigation, Pagination } from 'swiper/js/swiper.esm';
+import './styles/index.css';
 
 Swiper.use([Navigation, Pagination]);
 

@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  color: $color-primary;
-  background-color: $color-default;
-  background-image: $background-main;
+  color: var(--color-primary);
+  background-color: var(--color-default);
+  background-image: var(--background-main);
 }

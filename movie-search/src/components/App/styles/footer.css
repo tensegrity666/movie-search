@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&text=TEИSEGЯITY666&display=swap");
+
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 70px;
+  padding: 1rem 10%;
+  color: var(--color-default);
+  background-color: var(--color-primary);
+  background-image: url("/assets/rs_school.svg"), var(--background-header);
+  background-repeat: no-repeat;
+  background-position: 10% center;
+}
+
+.footer__link {
+  font-family: 'Poiret One', cursive;
+  font-size: 3rem;
+  color: var(--color-default);
+  text-decoration: none;
+  transition: all 0.5s linear;
+}
+
+.footer__link:hover {
+  color: var(--color-success);
+  transition: all 0.5s linear;
+}

@@ -1,1 +1,1 @@
-import styles from './AppStyles/page.scss';
+import './styles/index.css';
