@@ -1,9 +1,11 @@
 import { Swiper, Navigation, Pagination } from 'swiper/js/swiper.esm';
+import './styles/index.css';
 
 Swiper.use([Navigation, Pagination]);
 
 const mySwiper = new Swiper('.swiper-container', {
-  loop: true,
+  speed: 500,
+  loop: false,
   spaceBetween: 100,
   slidesPerView: 4,
 
@@ -17,6 +19,11 @@ const mySwiper = new Swiper('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+
+  a11y: {
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
   },
 });
 

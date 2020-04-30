@@ -5,12 +5,6 @@
 ],
   "rules": {
     "declaration-no-important": true,
-    "color-hex-length": "long",
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [ "mixin", "include" ]
-      }
-    ]
+    "color-hex-length": "long"
   }
 }

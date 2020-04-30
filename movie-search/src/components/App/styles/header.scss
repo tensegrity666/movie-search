@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: --z-index-top;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: 400px auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  color: --color-default;
+  background: --background-header;
+  background-color: --color-primary;
+  backdrop-filter: opacity(0.9) blur(2px);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-logo);
+    font-size: 3rem;
+  }
+}

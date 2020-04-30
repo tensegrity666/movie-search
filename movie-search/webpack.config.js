@@ -47,7 +47,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(sc|c)ss$/,
+        test: /\.css$/,
         use: [
           { loader: MiniCssExtractPlugin.loader, options: { esModule: true } },
           {
@@ -57,7 +57,6 @@ module.exports = {
             },
           },
           { loader: 'postcss-loader' },
-          { loader: 'sass-loader' },
         ],
       },
       {
@@ -70,6 +69,13 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+        },
       },
       {
         test: /\.html$/,
