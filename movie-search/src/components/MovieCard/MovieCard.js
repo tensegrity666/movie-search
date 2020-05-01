@@ -1,23 +1,52 @@
-export default class MovieCard {
-  constructor(title, poster, year, imdbRating) {
-    this.title = title;
-    this.poster = poster;
-    this.year = year;
-    this.imdbRating = imdbRating;
-  }
+// export default class MovieCard {
 
-  render() {
-    this.card = document.createElement('li');
-    this.card.innerHTML = `<header>
-    <a class="moviecard__title" href="http://www.dsdfdsf.ru" target="_blank"
+//   constructor(title, year, poster, imdbID, imdbRating) {
+//     this.title = title;
+//     this.year = year;
+//     this.poster = poster;
+//     this.imdbRating = imdbRating;
+//     this.imdbID = imdbID;
+//   }
+
+//   render() {
+//     return `<header>
+//               <a class='moviecard__title' href=${moviepage} target='_blank' rel='noopener noreferrer'>
+//                 ${Title}
+//               </a>
+//             </header>
+//             <img src=${Poster} alt=${Title} load='lazy'>
+//             <p class="moviecard__year">${Year}</p>
+//             <span class="moviecard__rating">${imdbRating}</span>`
+//   }
+// }
+
+import './styles/index.css';
+
+const LINK_TO_CATALOG = 'https://www.imdb.com/title/';
+
+export default function MovieCard(movie) {
+
+  const {
+    Title, Year, Poster, imdbID, imdbRating,
+  } = movie;
+
+  const list = document.querySelector('.cardlist');
+  const moviepage = `${LINK_TO_CATALOG}${imdbID}`;
+  const card = document.createElement('li');
+
+  card.classList.add('moviecard', 'swiper-slide');
+
+  card.innerHTML = `<header>
+    <a class="moviecard__title" href=${moviepage} target="_blank"
       rel="noopener noreferrer">
-      reqiuem fo bla bla
+      ${Title}
     </a>
   </header>
   <img
-    src=${this.poster}
-    alt=${this.title}>
-  <p class="moviecard__year">${this.year}</p>
-  <span class="moviecard__rating">${this.imdbRating}</span>`;
-  }
+    src=${Poster}
+    alt=${Title} load='lazy'>
+  <p class="moviecard__year">${Year}</p>
+  <span class="moviecard__rating">${imdbRating}</span>`;
+
+  return list.append(card);
 }
