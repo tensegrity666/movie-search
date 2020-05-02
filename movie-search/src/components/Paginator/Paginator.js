@@ -1,13 +1,17 @@
-import { Swiper, Navigation, Pagination } from 'swiper/js/swiper.esm';
+import {
+  Swiper, Navigation, Pagination, A11y,
+} from 'swiper/js/swiper.esm';
 import './styles/index.css';
 
-Swiper.use([Navigation, Pagination]);
+Swiper.use([Navigation, Pagination, A11y]);
 
 const mySwiper = new Swiper('.swiper-container', {
+  init: false,
   speed: 500,
   loop: false,
-  spaceBetween: 100,
-  slidesPerView: 4,
+  effect: 'slide',
+  spaceBetween: 10,
+  slidesPerView: 1,
 
   pagination: {
     el: '.swiper-pagination',
@@ -19,6 +23,21 @@ const mySwiper = new Swiper('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    1480: {
+      slidesPerView: 4,
+      spaceBetween: 80,
+    },
   },
 
   a11y: {
