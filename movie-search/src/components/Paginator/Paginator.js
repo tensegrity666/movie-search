@@ -10,8 +10,8 @@ const mySwiper = new Swiper('.swiper-container', {
   speed: 500,
   loop: false,
   effect: 'slide',
-  spaceBetween: 100,
-  slidesPerView: 4,
+  spaceBetween: 10,
+  slidesPerView: 1,
 
   pagination: {
     el: '.swiper-pagination',
@@ -23,6 +23,21 @@ const mySwiper = new Swiper('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    1480: {
+      slidesPerView: 4,
+      spaceBetween: 80,
+    },
   },
 
   a11y: {

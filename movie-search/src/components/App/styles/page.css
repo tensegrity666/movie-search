@@ -9,3 +9,9 @@
   background-color: var(--color-default);
   background-image: var(--background-main);
 }
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .page {
+    height: 1024px;
+  }
+}

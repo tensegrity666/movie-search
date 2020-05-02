@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&text=TEИSEGЯITY666&display=swap");
-
 .footer {
+  z-index: var(--z-index-top);
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -26,4 +25,14 @@
 .footer__link:hover {
   color: var(--color-success);
   transition: all 0.5s linear;
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer__link {
+    font-size: 2rem;
+  }
 }

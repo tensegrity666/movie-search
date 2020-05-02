@@ -10,7 +10,8 @@
 
 //   render() {
 //     return `<header>
-//               <a class='moviecard__title' href=${moviepage} target='_blank' rel='noopener noreferrer'>
+//               <a class='moviecard__title' href=${moviepage}
+// target='_blank' rel='noopener noreferrer'>
 //                 ${Title}
 //               </a>
 //             </header>
@@ -21,16 +22,13 @@
 // }
 
 import './styles/index.css';
+import { LINK_TO_CATALOG } from '../../constants/constants';
 
-const LINK_TO_CATALOG = 'https://www.imdb.com/title/';
-
-export default function MovieCard(movie) {
-
+export default function renderMovieCard(movie) {
   const {
     Title, Year, Poster, imdbID, imdbRating,
   } = movie;
 
-  const list = document.querySelector('.cardlist');
   const moviepage = `${LINK_TO_CATALOG}${imdbID}`;
   const card = document.createElement('li');
 
@@ -48,5 +46,5 @@ export default function MovieCard(movie) {
   <p class="moviecard__year">${Year}</p>
   <span class="moviecard__rating">${imdbRating}</span>`;
 
-  return list.append(card);
+  return card;
 }

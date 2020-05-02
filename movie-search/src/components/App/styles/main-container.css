@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  padding: 2rem 10% 0;
+  padding: 20px 10% 0;
 }
 
 .main-container__textfield {
@@ -13,6 +13,18 @@
   text-transform: lowercase;
 }
 
-.main-containerdanger {
+.main-container_danger {
   color: var(--color-danger);
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .main-container {
+    justify-content: flex-start;
+    padding: 120px 0 0;
+  }
+
+  .main-container__textfield {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
 }
