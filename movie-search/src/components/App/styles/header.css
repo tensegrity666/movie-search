@@ -20,7 +20,7 @@
 
 .header__title {
   margin: 0;
-  font-family: var(--font-logo);
+  font-family: var(--font-header-logo);
   font-size: 3rem;
 }
 

@@ -1,6 +1,7 @@
 import './styles/index.css';
-import renderMovieCard from '../MovieCard/MovieCard';
-import mySwiper from '../Paginator/Paginator';
+import renderMovieCard from '../MovieCard';
+import mySwiper from '../Paginator';
+import '../Searcher/';
 
 import data from '../../stub/dataExample';
 

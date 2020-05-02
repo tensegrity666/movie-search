@@ -1,7 +1,7 @@
+import './styles/swiper.css';
 import {
   Swiper, Navigation, Pagination, A11y,
 } from 'swiper/js/swiper.esm';
-import './styles/index.css';
 
 Swiper.use([Navigation, Pagination, A11y]);
 

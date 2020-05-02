@@ -15,7 +15,7 @@
 }
 
 .footer__link {
-  font-family: 'Poiret One', cursive;
+  font-family: var(--font-author);
   font-size: 3rem;
   color: var(--color-default);
   text-decoration: none;

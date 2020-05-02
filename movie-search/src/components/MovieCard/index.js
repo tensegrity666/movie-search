@@ -21,8 +21,8 @@
 //   }
 // }
 
-import './styles/index.css';
-import { LINK_TO_CATALOG } from '../../constants/constants';
+import './styles/moviecard.css';
+import { LINK_TO_CATALOG } from '../../constants';
 
 export default function renderMovieCard(movie) {
   const {
