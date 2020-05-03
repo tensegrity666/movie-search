@@ -1,7 +1,7 @@
 import './styles/moviecard.css';
-import { LINK_TO_CATALOG, TITLE_FONT_SIZES } from '../../constants';
+import { LINK_TO_CATALOG, TITLE_FONT_SIZES, RATING_STARS } from '../../constants';
 
-export function changeTitleSize() {
+function changeTitleSize() {
   const titles = document.querySelectorAll('.moviecard__title');
 
   Array.from(titles).forEach((title) => {
@@ -13,7 +13,44 @@ export function changeTitleSize() {
   });
 }
 
-export default function renderMovieCard(movie) {
+function addStarRating() {
+  const ratings = document.querySelectorAll('.moviecard__rating');
+
+  Array.from(ratings).map((rating) => {
+    if (Math.floor(Number(rating.innerHTML)) === 1) {
+      rating.innerHTML = RATING_STARS[1];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 2) {
+      rating.innerHTML = RATING_STARS[2];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 3) {
+      rating.innerHTML = RATING_STARS[3];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 4) {
+      rating.innerHTML = RATING_STARS[4];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 5) {
+      rating.innerHTML = RATING_STARS[5];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 6) {
+      rating.innerHTML = RATING_STARS[6];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 7) {
+      rating.innerHTML = RATING_STARS[7];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 8) {
+      rating.innerHTML = RATING_STARS[8];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 9) {
+      rating.innerHTML = RATING_STARS[9];
+    }
+    if (Math.floor(Number(rating.innerHTML)) === 10) {
+      rating.innerHTML = RATING_STARS[10];
+    }
+  });
+}
+
+function renderMovieCard(movie) {
   const {
     Title, Year, Poster, imdbID, imdbRating,
   } = movie;
@@ -37,3 +74,5 @@ export default function renderMovieCard(movie) {
 
   return card;
 }
+
+export { renderMovieCard, changeTitleSize, addStarRating };
