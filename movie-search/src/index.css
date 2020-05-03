@@ -1,5 +1,6 @@
 :root {
   /* colors */
+  --color-gold: #eed545;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-orange: #dc9d38;
@@ -39,7 +40,8 @@
 
   /* position */
   --z-index-top: 9999;
-  --padding-sides: 6%;
+  --padding-for-centering: 6%;
+  --padding-top-for-container: 65px;
   --margin-bottom-big: 2rem;
   --margin-bottom-small: 1rem;
 

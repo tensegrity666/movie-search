@@ -10,7 +10,7 @@
   grid-template-columns: 350px 1fr;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--padding-sides);
+  padding: 0 var(--padding-for-centering);
   color: var(--color-default);
   background: var(--background-header);
   background-color: var(--color-primary);
