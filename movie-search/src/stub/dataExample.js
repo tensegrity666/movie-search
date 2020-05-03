@@ -42,7 +42,7 @@ const data = [
     'Response': 'True',
   },
   {
-    'Title': 'Scary Movie 2',
+    'Title': 'Pirates of the Caribbean: The Curse of the Black Pearl',
     'Year': '2000',
     'Rated': 'R',
     'Released': '07 Jul 2000',
@@ -122,8 +122,8 @@ const data = [
     'Response': 'True',
   },
   {
-    'Title': 'Scary Movie 4',
-    'Year': '2000',
+    'Title': 'Don\'t Be a Menace to South Central While Drinking Your Juice in the Hood',
+    'Year': '1996',
     'Rated': 'R',
     'Released': '07 Jul 2000',
     'Runtime': '88 min',

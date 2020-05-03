@@ -1,28 +1,17 @@
-// export default class MovieCard {
-
-//   constructor(title, year, poster, imdbID, imdbRating) {
-//     this.title = title;
-//     this.year = year;
-//     this.poster = poster;
-//     this.imdbRating = imdbRating;
-//     this.imdbID = imdbID;
-//   }
-
-//   render() {
-//     return `<header>
-//               <a class='moviecard__title' href=${moviepage}
-// target='_blank' rel='noopener noreferrer'>
-//                 ${Title}
-//               </a>
-//             </header>
-//             <img src=${Poster} alt=${Title} load='lazy'>
-//             <p class="moviecard__year">${Year}</p>
-//             <span class="moviecard__rating">${imdbRating}</span>`
-//   }
-// }
-
 import './styles/moviecard.css';
-import { LINK_TO_CATALOG } from '../../constants';
+import { LINK_TO_CATALOG, TITLE_FONT_SIZES } from '../../constants';
+
+export function changeTitleSize() {
+  const titles = document.querySelectorAll('.moviecard__title');
+
+  Array.from(titles).forEach((title) => {
+    if (title.innerText.length > 50) {
+      title.style.fontSize = TITLE_FONT_SIZES.tiny;
+    } else if (title.innerText.length > 25) {
+      title.style.fontSize = TITLE_FONT_SIZES.small;
+    }
+  });
+}
 
 export default function renderMovieCard(movie) {
   const {

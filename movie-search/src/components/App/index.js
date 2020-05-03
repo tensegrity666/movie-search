@@ -1,5 +1,5 @@
 import './styles/index.css';
-import renderMovieCard from '../MovieCard';
+import renderMovieCard, { changeTitleSize } from '../MovieCard';
 import mySwiper from '../Paginator';
 import '../Searcher/';
 
@@ -12,4 +12,5 @@ data.map((movie) => {
   return movieList.append(movieCard);
 });
 
+changeTitleSize();
 mySwiper.init();
