@@ -6,7 +6,7 @@
 }
 
 .searcher__input {
-  width: 950px;
+  width: 100%;
   height: 40px;
   padding: 0 5rem 0 2rem;
   font-size: 2.4rem;

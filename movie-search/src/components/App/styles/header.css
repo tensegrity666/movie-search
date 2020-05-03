@@ -7,10 +7,10 @@
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 80px;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 350px 1fr;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10%;
+  padding: 0 var(--padding-sides);
   color: var(--color-default);
   background: var(--background-header);
   background-color: var(--color-primary);
@@ -29,7 +29,7 @@
     grid-template-rows: repeat(2, 60px);
     grid-template-columns: 300px;
     justify-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--margin-bottom-big);
   }
 
   .header__title {

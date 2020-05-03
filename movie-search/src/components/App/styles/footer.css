@@ -6,12 +6,12 @@
   justify-content: flex-end;
   width: 100%;
   height: 70px;
-  padding: 1rem 10%;
+  padding: 1rem var(--padding-sides);
   color: var(--color-default);
   background-color: var(--color-primary);
   background-image: url("/assets/rs_school.svg"), var(--background-header);
   background-repeat: no-repeat;
-  background-position: 10% center;
+  background-position: var(--padding-sides) center;
 }
 
 .footer__link {

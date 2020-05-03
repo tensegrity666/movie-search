@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  padding: 20px 10% 0;
+  padding: 60px var(--padding-sides) 0;
 }
 
 .main-container__textfield {
-  margin-bottom: 1rem;
-  font-size: 3.5rem;
+  margin-bottom: var(--margin-bottom-small);
+  font-size: 2.4rem;
   text-align: center;
   text-transform: lowercase;
 }
@@ -24,7 +23,7 @@
   }
 
   .main-container__textfield {
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom-big);
     font-size: 2rem;
   }
 }

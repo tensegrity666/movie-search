@@ -39,6 +39,9 @@
 
   /* position */
   --z-index-top: 9999;
+  --padding-sides: 6%;
+  --margin-bottom-big: 2rem;
+  --margin-bottom-small: 1rem;
 
   /* fonts */
   --font-header-logo: 'Notable', sans-serif;
