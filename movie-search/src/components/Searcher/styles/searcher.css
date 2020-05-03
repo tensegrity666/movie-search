@@ -30,6 +30,14 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
+  transition: var(--default-transition);
+}
+
+.searcher__button-reset:hover {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  filter: saturate(2.9) contrast(2.5);
+  transition: var(--default-transition);
+  transform: translateY(1px);
 }
 
 .searcher__button-submit {
@@ -45,6 +53,12 @@
   background-color: var(--color-success);
   border: 1px solid var(--color-success);
   border-radius: 0 1rem 1rem 0;
+  transition: var(--default-transition);
+}
+
+.searcher__button-submit:hover {
+  filter: saturate(1.9) contrast(1.5);
+  transition: var(--default-transition);
 }
 
 @media (min-width: 320px) and (max-width: 511px) {

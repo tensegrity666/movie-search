@@ -49,6 +49,9 @@
   --font-header-logo: 'Notable', sans-serif;
   --font-author: 'Poiret One', cursive;
 
+  /* animations */
+  --default-transition: all 0.3s linear;
+
   font-family: 'Kanit', sans-serif;
   font-size: 10px;
   line-height: 2;
