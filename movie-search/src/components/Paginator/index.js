@@ -1,7 +1,7 @@
+import './styles/swiper.css';
 import {
   Swiper, Navigation, Pagination, A11y,
 } from 'swiper/js/swiper.esm';
-import './styles/index.css';
 
 Swiper.use([Navigation, Pagination, A11y]);
 
@@ -36,7 +36,7 @@ const mySwiper = new Swiper('.swiper-container', {
     },
     1480: {
       slidesPerView: 4,
-      spaceBetween: 80,
+      spaceBetween: 50,
     },
   },
 

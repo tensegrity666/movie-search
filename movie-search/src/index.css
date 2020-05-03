@@ -1,19 +1,19 @@
 :root {
-  --color-default: #ffffff;
-  --color-primary: #000000;
-  --color-warning: #dc9d38;
-  --color-danger: #f44336;
-  --color-info: #8ba7b9;
-  --color-success: #007aff;
-  --z-index-top: 9999;
-  --font-logo: 'Notable', sans-serif;
-  --background-main:
+  /* colors */
+  --color-gold: #eed545;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-orange: #dc9d38;
+  --color-red: #f44336;
+  --color-gray: #8ba7b9;
+  --color-blue: #007aff;
+  --gradient-white:
     linear-gradient(
       to top,
       var(--color-info) 0%,
       var(--color-default) 100%
     );
-  --background-header:
+  --gradient-black:
     linear-gradient(
       to right,
       rgba(59, 59, 69, 0.83) 2%,
@@ -27,6 +27,30 @@
       rgba(25, 26, 33, 0.81) 95%,
       rgba(33, 34, 43, 0.81) 100%
     );
+
+  /* colors of theme */
+  --color-default: var(--color-white);
+  --color-primary: var(--color-black);
+  --color-warning: var(--color-orange);
+  --color-danger: var(--color-red);
+  --color-info: var(--color-gray);
+  --color-success: var(--color-blue);
+  --background-main: var(--gradient-white);
+  --background-header: var(--gradient-black);
+
+  /* position */
+  --z-index-top: 9999;
+  --padding-for-centering: 6%;
+  --padding-top-for-container: 65px;
+  --margin-bottom-big: 2rem;
+  --margin-bottom-small: 1rem;
+
+  /* fonts */
+  --font-header-logo: 'Notable', sans-serif;
+  --font-author: 'Poiret One', cursive;
+
+  /* animations */
+  --default-transition: all 0.3s linear;
 
   font-family: 'Kanit', sans-serif;
   font-size: 10px;
