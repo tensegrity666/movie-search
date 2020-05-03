@@ -29,7 +29,8 @@
     <h1 class="header__title">Movie Search</h1>
 
     <form class="searcher">
-      <input class="searcher__input" type="text" name="search" autofocus autocomplete="off" placeholder="Please, enter movie title here">
+      <label for="search-input"><span class="visually-hidden">Please, enter movie title here</span></label>
+      <input class="searcher__input" type="text" name="search" autofocus autocomplete="off" placeholder="Enter movie title" id="search-input">
       <button class="searcher__button-reset" type="reset"><span class="visually-hidden">clear</span>&#215;</button>
       <button class="searcher__button-submit" type="submit">go!</button>
     </form>

@@ -17,9 +17,8 @@
   color: var(--color-danger);
 }
 
-@media (min-width: 320px) and (max-width: 450px) {
+@media (min-width: 320px) and (max-width: 1440px) {
   .main-container {
-    justify-content: flex-start;
     padding: 120px 0 0;
   }
 

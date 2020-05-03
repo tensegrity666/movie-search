@@ -73,7 +73,7 @@ function renderMovieCard(movie) {
     src=${Poster}
     alt=${Title} load='lazy'>
   <p class='moviecard__year'>${Year}</p>
-  <span class='visually-hidden'>${imdbRating}</span>
+  <span class='visually-hidden'>IMDB Rating: ${imdbRating}</span>
   <span class='moviecard__rating' data-rating=${imdbRating}></span>`;
 
   return card;
