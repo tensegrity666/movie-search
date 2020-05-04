@@ -6,6 +6,9 @@
 }
 
 .main-container__textfield {
+  display: inline-block;
+  width: 100%;
+  height: 5rem;
   margin-bottom: var(--margin-bottom-small);
   font-size: 2rem;
   color: var(--color-success);
