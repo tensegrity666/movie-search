@@ -2,6 +2,7 @@ import './styles/index.css';
 import { renderMovieCard, changeTitleSize, addStarRating } from '../MovieCard';
 import mySwiper from '../Paginator';
 import Searcher from '../Searcher';
+import reducer from '../Store/index';
 
 import data from '../../stub/dataExample';
 
@@ -13,7 +14,19 @@ data.map((movie) => {
 });
 
 Searcher();
+const ACTIONS = ['SEARCH_MOVIES_REQUEST', 'SEARCH_MOVIES_SUCCESS', 'SEARCH_MOVIES_FAILURE'];
+
+const initialState = {
+  loading: true,
+  loaded: false,
+  searchQuery: '',
+  movies: [],
+  errorMessage: null,
+};
 
 addStarRating();
 changeTitleSize();
 mySwiper.init();
+
+console.log(reducer(initialState, ACTIONS[2]));
+console.log(initialState);
