@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  padding: 20px 10% 0;
+  padding: var(--padding-top-for-container) var(--padding-for-centering) 0;
 }
 
 .main-container__textfield {
-  margin-bottom: 1rem;
-  font-size: 3.5rem;
+  margin-bottom: var(--margin-bottom-small);
+  font-size: 2rem;
+  color: var(--color-success);
   text-align: center;
   text-transform: lowercase;
 }
@@ -17,14 +17,13 @@
   color: var(--color-danger);
 }
 
-@media (min-width: 320px) and (max-width: 450px) {
+@media (min-width: 320px) and (max-width: 1440px) {
   .main-container {
-    justify-content: flex-start;
     padding: 120px 0 0;
   }
 
   .main-container__textfield {
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom-big);
     font-size: 2rem;
   }
 }
