@@ -1,7 +1,7 @@
 import './styles/index.css';
 import { renderMovieCard, changeTitleSize, addStarRating } from '../MovieCard';
 import mySwiper from '../Paginator';
-import Searcher from '../Searcher';
+import submitHandler from '../Searcher';
 import reducer from '../Store/index';
 
 import data from '../../stub/dataExample';
@@ -13,7 +13,8 @@ data.map((movie) => {
   return movieList.append(movieCard);
 });
 
-Searcher();
+submitHandler();
+
 const ACTIONS = ['SEARCH_MOVIES_REQUEST', 'SEARCH_MOVIES_SUCCESS', 'SEARCH_MOVIES_FAILURE'];
 
 const initialState = {
