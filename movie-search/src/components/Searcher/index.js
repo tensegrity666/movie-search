@@ -1,40 +1,57 @@
 import './styles/searcher.css';
 import EventEmitter from '../EventEmitter';
-// import data from '../../stub/dataExample';
+import { LINK_TO_CATALOG } from '../../constants';
+import {
+  reducer, action, initialState, dispatch,
+} from '../Store';
 
-// const form = document.querySelector('.searcher');
-const input = document.querySelector('#search-input');
 const button = document.querySelector('#search-submit');
-const textfield = document.querySelector('.main-container__textfield');
 const emitter = new EventEmitter();
 
-const MY_URL = 'http://www.omdbapi.com/?t=titanic&apikey=fcbac651';
+function modifyRequestText(request) {
+  return request
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim().split(' ')
+    .join('+');
+}
+
+export const state = {
+  movies: [],
+};
 
 function sendRequest(url) {
-  return fetch(url).then((response) => response.json());
+  return fetch(url)
+    .then((response) => response.json());
 }
 
 const onRequest = (request) => {
-  textfield.innerText = `request: ${request}`;
-  // const response = await fetch(`http://www.omdbapi.com/?t=${query}&apikey=fcbac651`);
-  // const foo = await response.json();
-  // return console.log(JSON.parse(foo));
-  sendRequest(MY_URL)
-    .then((answer) => console.log(answer))
-    .catch((error) => console.log(error));
+  const textfield = document.querySelector('.main-container__textfield');
+
+  const modifiedRequest = modifyRequestText(request);
+
+  textfield.innerText = `request: ${modifiedRequest}`;
+  dispatch('SEARCH_MOVIES_REQUEST');
+  sendRequest(`${LINK_TO_CATALOG}${modifiedRequest}`)
+    .then((json) => {
+      dispatch('SEARCH_MOVIES_SUCCESS', json.Search);
+    })
+    .catch((error) => {
+      dispatch('SEARCH_MOVIES_FAILURE', null, error);
+      console.log(action);
+    });
 };
 
 emitter.subscribe('event:request-sending', onRequest);
 
-const onClick = (event) => {
+const onSubmit = (event) => {
+  const input = document.querySelector('#search-input');
+
   event.preventDefault();
   emitter.emit('event:request-sending', input.value);
   input.value = '';
 };
 
-const submitHandler = () => button.addEventListener('click', onClick);
-
-// sendRequest('data')
-//   .then((foo) => console.log(JSON.parse(foo)));
+const submitHandler = () => button.addEventListener('click', onSubmit);
 
 export default submitHandler;

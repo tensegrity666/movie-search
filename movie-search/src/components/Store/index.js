@@ -1,19 +1,17 @@
-const ACTIONS = {
-  request: 'SEARCH_MOVIES_REQUEST',
-  success: 'SEARCH_MOVIES_SUCCESS',
-  failure: 'SEARCH_MOVIES_FAILURE',
+export const action = {
+  type: '',
+  payload: [],
+  error: '',
 };
 
-const initialState = {
+export const initialState = {
   loading: false,
-  loaded: false,
-  searchQuery: '',
   movies: [],
   errorMessage: null,
 };
 
-export default function reducer(state, action) {
-  switch (action) {
+export function reducer(state, currentAction) {
+  switch (currentAction.type) {
     case 'SEARCH_MOVIES_REQUEST':
       return {
         ...state,
@@ -24,17 +22,21 @@ export default function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        movies: [],
+        movies: currentAction.payload,
       };
     case 'SEARCH_MOVIES_FAILURE':
       return {
         ...state,
         loading: false,
-        errorMessage: `Error ${initialState.loading}`,
+        errorMessage: currentAction.error,
       };
     default:
       return state;
   }
 }
 
-reducer(initialState, ACTIONS);
+export function dispatch(type, payload = null, error = null) {
+  action.type = type;
+  action.payload = payload;
+  action.error = error;
+}

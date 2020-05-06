@@ -1,6 +1,4 @@
-const API_KEY = '&apikey=fcbac651';
-
-const LINK_TO_CATALOG = 'https://www.imdb.com/title/';
+const LINK_TO_CATALOG = 'http://www.omdbapi.com/?apikey=fcbac651&s=';
 
 const RATING_STARS = {
   1: '&#9733;',
@@ -16,5 +14,5 @@ const RATING_STARS = {
 };
 
 export {
-  API_KEY, LINK_TO_CATALOG, RATING_STARS,
+  LINK_TO_CATALOG, RATING_STARS,
 };
