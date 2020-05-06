@@ -21,6 +21,13 @@
   <link href="https://unpkg.com/swiper/css/swiper.min.css" rel="stylesheet">
   <meta name="keywords" content="RSSchool, JavaScript, education">
   <meta name="description" content="Application for searching cool movies">
+  <meta property="og:url"
+    content="https://tensegrity666-movie-search.netlify.app" />
+  <meta property="og:title" content="Movie Search" />
+  <meta property="og:description"
+    content="Here you can find cool movies!" />
+  <meta property="og:image"
+    content="https://sun9-33.userapi.com/c633922/v633922551/e816/XSQreNQht-8.jpg?ava=1" />
   <title>Movie Search</title>
 </head>
 
@@ -29,14 +36,15 @@
     <h1 class="header__title">Movie Search</h1>
 
     <form class="searcher">
-      <input class="searcher__input" type="text" name="search" autofocus autocomplete="off" placeholder="Please, enter movie title here">
+      <label for="search-input"><span class="visually-hidden">Please, enter movie title here</span></label>
+      <input class="searcher__input" type="text" name="search" autofocus autocomplete="off" placeholder="Enter movie title" id="search-input">
       <button class="searcher__button-reset" type="reset"><span class="visually-hidden">clear</span>&#215;</button>
-      <button class="searcher__button-submit" type="submit">go!</button>
+      <button class="searcher__button-submit" type="submit" id="search-submit">go!</button>
     </form>
 
   </header>
   <main class="main-container">
-    <p class="main-container__textfield">some message</p>
+    <p class="main-container__textfield"></p>
 
     <div class="swiper-outer">
       <div class="swiper-container">

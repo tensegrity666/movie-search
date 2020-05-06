@@ -26,14 +26,14 @@
 
 @media (min-width: 320px) and (max-width: 511px) {
   .header {
-    grid-template-rows: repeat(2, 60px);
+    grid-template-rows: repeat(2, 50px);
     grid-template-columns: 300px;
     justify-items: center;
-    margin-bottom: var(--margin-bottom-big);
+    padding-bottom: var(--margin-bottom-small);
   }
 
   .header__title {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 
@@ -41,5 +41,6 @@
   .header {
     grid-template-rows: repeat(2, 60px);
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
