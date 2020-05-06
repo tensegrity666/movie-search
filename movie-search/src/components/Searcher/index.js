@@ -1,57 +1,44 @@
 import './styles/searcher.css';
-import EventEmitter from '../EventEmitter';
-import { LINK_TO_CATALOG } from '../../constants';
-import {
-  reducer, action, initialState, dispatch,
-} from '../Store';
+import { dispatch, reducer, currentState } from '../../store';
+import { LINK_TO_CATALOG, ACTION_TYPE } from '../../constants';
+import { modifyRequestText, sendRequest } from '../../helpers';
 
-const button = document.querySelector('#search-submit');
-const emitter = new EventEmitter();
 
-function modifyRequestText(request) {
-  return request
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim().split(' ')
-    .join('+');
-}
-
-export const state = {
-  movies: [],
-};
-
-function sendRequest(url) {
-  return fetch(url)
-    .then((response) => response.json());
-}
-
-const onRequest = (request) => {
+function getMoviesData(request) {
   const textfield = document.querySelector('.main-container__textfield');
+  textfield.innerText = `request: ${request}`;
 
   const modifiedRequest = modifyRequestText(request);
-
-  textfield.innerText = `request: ${modifiedRequest}`;
-  dispatch('SEARCH_MOVIES_REQUEST');
   sendRequest(`${LINK_TO_CATALOG}${modifiedRequest}`)
     .then((json) => {
-      dispatch('SEARCH_MOVIES_SUCCESS', json.Search);
+      dispatch(ACTION_TYPE.success, json.Search);
+      currentState.loading = reducer().loading;
+      currentState.movies = reducer().movies;
+      console.log(currentState);
     })
     .catch((error) => {
-      dispatch('SEARCH_MOVIES_FAILURE', null, error);
-      console.log(action);
+      dispatch(ACTION_TYPE.fail, null, error);
+      currentState.loading = reducer().loading;
+      currentState.errorMessage = reducer().errorMessage;
     });
-};
+}
 
-emitter.subscribe('event:request-sending', onRequest);
+console.log(currentState);
 
-const onSubmit = (event) => {
-  const input = document.querySelector('#search-input');
+function initSearcher() {
+  const submitButton = document.querySelector('#search-submit');
 
-  event.preventDefault();
-  emitter.emit('event:request-sending', input.value);
-  input.value = '';
-};
+  const onSubmit = (event) => {
+    const input = document.querySelector('#search-input');
 
-const submitHandler = () => button.addEventListener('click', onSubmit);
+    event.preventDefault();
+    dispatch(ACTION_TYPE.request);
+    currentState.loading = reducer().loading;
+    getMoviesData(input.value);
+    input.value = '';
+  };
 
-export default submitHandler;
+  submitButton.addEventListener('click', onSubmit);
+}
+
+export default initSearcher;

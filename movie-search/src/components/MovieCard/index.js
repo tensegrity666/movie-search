@@ -20,36 +20,7 @@ function addStarRating() {
   const ratings = document.querySelectorAll('.moviecard__rating');
 
   Array.from(ratings).forEach((element) => {
-    if (Math.floor(element.dataset.rating) === 1) {
-      element.innerHTML = RATING_STARS[1];
-    }
-    if (Math.floor(element.dataset.rating) === 2) {
-      element.innerHTML = RATING_STARS[2];
-    }
-    if (Math.floor(element.dataset.rating) === 3) {
-      element.innerHTML = RATING_STARS[3];
-    }
-    if (Math.floor(element.dataset.rating) === 4) {
-      element.innerHTML = RATING_STARS[4];
-    }
-    if (Math.floor(element.dataset.rating) === 5) {
-      element.innerHTML = RATING_STARS[5];
-    }
-    if (Math.floor(element.dataset.rating) === 6) {
-      element.innerHTML = RATING_STARS[6];
-    }
-    if (Math.floor(element.dataset.rating) === 7) {
-      element.innerHTML = RATING_STARS[7];
-    }
-    if (Math.floor(element.dataset.rating) === 8) {
-      element.innerHTML = RATING_STARS[8];
-    }
-    if (Math.floor(element.dataset.rating) === 9) {
-      element.innerHTML = RATING_STARS[9];
-    }
-    if (Math.floor(element.dataset.rating) === 10) {
-      element.innerHTML = RATING_STARS[10];
-    }
+    element.innerHTML = RATING_STARS[Math.floor(element.dataset.rating)];
   });
 }
 
@@ -76,7 +47,10 @@ function renderMovieCard(movie) {
   <span class='visually-hidden'>IMDB Rating: ${imdbRating}</span>
   <span class='moviecard__rating' data-rating=${imdbRating}></span>`;
 
+  changeTitleSize();
+  addStarRating();
+
   return card;
 }
 
-export { renderMovieCard, changeTitleSize, addStarRating };
+export default renderMovieCard;

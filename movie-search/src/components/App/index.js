@@ -1,18 +1,17 @@
 import './styles/index.css';
-import { renderMovieCard, changeTitleSize, addStarRating } from '../MovieCard';
-import mySwiper from '../Paginator';
-import submitHandler from '../Searcher';
+import renderMovieCard from '../MovieCard';
+import swiper from '../Paginator';
+import initSearcher from '../Searcher';
+import { currentState } from '../../store';
 
-import data from '../../stub/dataExample';
+const { movies } = currentState;
 
-data.map((movie) => {
+movies.map((movie) => {
   const movieList = document.querySelector('.cardlist');
   const movieCard = renderMovieCard(movie);
 
   return movieList.append(movieCard);
 });
 
-submitHandler();
-addStarRating();
-changeTitleSize();
-mySwiper.init();
+initSearcher();
+swiper.init();

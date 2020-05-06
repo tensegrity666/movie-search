@@ -1,16 +1,22 @@
-export const action = {
+import data from '../stub/dataExample';
+
+const action = {
   type: '',
   payload: [],
   error: '',
 };
 
-export const initialState = {
+const initialState = {
   loading: false,
   movies: [],
   errorMessage: null,
 };
 
-export function reducer(state, currentAction) {
+const currentState = {
+  movies: data,
+};
+
+function reducer(state = initialState, currentAction = action) {
   switch (currentAction.type) {
     case 'SEARCH_MOVIES_REQUEST':
       return {
@@ -35,8 +41,12 @@ export function reducer(state, currentAction) {
   }
 }
 
-export function dispatch(type, payload = null, error = null) {
+function dispatch(type, payload = null, error = null) {
   action.type = type;
   action.payload = payload;
   action.error = error;
 }
+
+export {
+  action, initialState, reducer, dispatch, currentState,
+};

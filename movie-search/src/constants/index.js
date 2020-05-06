@@ -1,5 +1,11 @@
 const LINK_TO_CATALOG = 'http://www.omdbapi.com/?apikey=fcbac651&s=';
 
+const ACTION_TYPE = {
+  success: 'SEARCH_MOVIES_SUCCESS',
+  fail: 'SEARCH_MOVIES_FAILURE',
+  request: 'SEARCH_MOVIES_REQUEST',
+};
+
 const RATING_STARS = {
   1: '&#9733;',
   2: '&#9733;&#9733;',
@@ -14,5 +20,5 @@ const RATING_STARS = {
 };
 
 export {
-  LINK_TO_CATALOG, RATING_STARS,
+  LINK_TO_CATALOG, RATING_STARS, ACTION_TYPE,
 };

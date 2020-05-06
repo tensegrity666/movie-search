@@ -5,7 +5,7 @@ import {
 
 Swiper.use([Navigation, Pagination, A11y]);
 
-const mySwiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   init: false,
   speed: 500,
   loop: false,
@@ -46,4 +46,4 @@ const mySwiper = new Swiper('.swiper-container', {
   },
 });
 
-export { mySwiper as default };
+export { swiper as default };
