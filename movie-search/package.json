@@ -4,7 +4,7 @@
   "description": "RSSchool personal task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/components/**/*.test.js",
     "lint": "eslint src/**/*.js && stylelint src/**/*.css --syntax css",
     "deploy": "npm run lint && npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
@@ -20,10 +20,12 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.5.2",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
@@ -32,6 +34,7 @@
     "html-webpack-plugin": "^4.2.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
+    "mocha": "^7.1.2",
     "postcss-loader": "^3.0.0",
     "stylelint": "^13.3.0",
     "stylelint-config-recess-order": "^2.0.4",
@@ -55,8 +58,6 @@
     ]
   },
   "dependencies": {
-    "swiper": "^5.3.8",
-    "cssnano": "^4.1.10",
-    "autoprefixer": "^9.7.6"
+    "swiper": "^5.3.8"
   }
 }
