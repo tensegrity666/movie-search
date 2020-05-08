@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-const assert = require('assert');
+import assert from 'assert';
 
 function modifyRequestText(request) {
   return request

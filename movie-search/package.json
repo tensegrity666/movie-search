@@ -4,7 +4,7 @@
   "description": "RSSchool personal task",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/components/**/*.test.js",
+    "test": "mocha src/components/**/*.test.mjs --experimental-modules",
     "lint": "eslint src/**/*.js && stylelint src/**/*.css --syntax css",
     "deploy": "npm run lint && npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
