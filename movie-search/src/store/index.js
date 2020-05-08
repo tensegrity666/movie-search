@@ -15,9 +15,14 @@ const initialState = {
 
 const currentState = {
   movies: [],
+<<<<<<< HEAD
   page: 1,
   requestString: '',
   results: 0,
+=======
+  page: null,
+  requestString: '',
+>>>>>>> 14230fb... feat: implement rendering cards from fetch
 };
 
 function reducer(state = initialState, currentAction = action) {
