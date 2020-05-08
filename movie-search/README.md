@@ -9,6 +9,9 @@ Tested for compatibility in Chrome
 ## Run linters
 * npm run lint
 
+## Run tests
+* npm test
+
 ## Build project
 * npm run build
 
