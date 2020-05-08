@@ -1,18 +1,29 @@
 import './styles/index.css';
-import { renderMovieCard, changeTitleSize, addStarRating } from '../MovieCard';
-import mySwiper from '../Paginator';
-import submitHandler from '../Searcher';
+// import renderMovieCard from '../MovieCard';
+import Moviecard from '../MovieCard';
+import { initSearcher } from '../Searcher';
+import { initialState } from '../../store';
+import paginator from '../Paginator';
+// import { InitLoadingNextPage } from '../../helpers';
+import { LINK_TO_MOVIE } from '../../constants';
 
-import data from '../../stub/dataExample';
+const { movies } = initialState;
 
-data.map((movie) => {
+
+movies.map((movie) => {
+  const mc = new Moviecard(movie, LINK_TO_MOVIE);
   const movieList = document.querySelector('.cardlist');
-  const movieCard = renderMovieCard(movie);
 
-  return movieList.append(movieCard);
+  mc.changeTitleSize();
+  mc.addStarRating();
+  movieList.append(mc.card);
+
+  return movieList;
 });
 
-submitHandler();
-addStarRating();
-changeTitleSize();
-mySwiper.init();
+
+// const swiper = document.querySelector('.swiper-outer');
+// swiper.addEventListener('mousedown', InitLoadingNextPage);
+
+initSearcher();
+paginator.init();

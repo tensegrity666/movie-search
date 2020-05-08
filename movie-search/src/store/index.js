@@ -1,33 +1,42 @@
-export const action = {
+import data from '../stub/dataExample';
+
+const action = {
   type: '',
   payload: [],
   error: '',
 };
 
-export const initialState = {
-  loading: false,
-  movies: [],
+const initialState = {
+  isLoading: false,
+  movies: data,
   errorMessage: null,
+  page: 1,
 };
 
-export function reducer(state, currentAction) {
+const currentState = {
+  movies: [],
+  page: null,
+  requestString: '',
+};
+
+function reducer(state = initialState, currentAction = action) {
   switch (currentAction.type) {
     case 'SEARCH_MOVIES_REQUEST':
       return {
         ...state,
-        loading: true,
+        isLoading: true,
         errorMessage: null,
       };
     case 'SEARCH_MOVIES_SUCCESS':
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         movies: currentAction.payload,
       };
     case 'SEARCH_MOVIES_FAILURE':
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         errorMessage: currentAction.error,
       };
     default:
@@ -35,8 +44,12 @@ export function reducer(state, currentAction) {
   }
 }
 
-export function dispatch(type, payload = null, error = null) {
+function dispatch(type, payload = null, error = null) {
   action.type = type;
   action.payload = payload;
   action.error = error;
 }
+
+export {
+  action, initialState, reducer, dispatch, currentState,
+};

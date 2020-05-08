@@ -8,6 +8,12 @@
   list-style: none;
 }
 
+.moviecard__image {
+  width: 340px;
+  height: 480px;
+  object-fit: contain;
+}
+
 .moviecard__title {
   display: inline-flex;
   margin: 0 auto;
