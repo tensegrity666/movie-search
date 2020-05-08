@@ -7,13 +7,16 @@ const action = {
 };
 
 const initialState = {
-  loading: false,
-  movies: [],
+  isLoading: false,
+  movies: data,
   errorMessage: null,
+  page: 1,
 };
 
 const currentState = {
-  movies: data,
+  movies: [],
+  page: null,
+  requestString: '',
 };
 
 function reducer(state = initialState, currentAction = action) {
@@ -21,19 +24,19 @@ function reducer(state = initialState, currentAction = action) {
     case 'SEARCH_MOVIES_REQUEST':
       return {
         ...state,
-        loading: true,
+        isLoading: true,
         errorMessage: null,
       };
     case 'SEARCH_MOVIES_SUCCESS':
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         movies: currentAction.payload,
       };
     case 'SEARCH_MOVIES_FAILURE':
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         errorMessage: currentAction.error,
       };
     default:

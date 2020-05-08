@@ -1,29 +1,38 @@
 import './styles/searcher.css';
 import './styles/spinner.css';
 import { dispatch, reducer, currentState } from '../../store';
-import { modifyRequestText, getMoviesData, showSpinner, InitLoadingNextPage } from '../../helpers';
-import { LINK_TO_CATALOG, ACTION_TYPE } from '../../constants';
-import renderMovieCard from '../MovieCard';
+import { modifyRequestText, getMoviesData, showSpinner } from '../../helpers';
+import { LINK_TO_CATALOG, ACTION_TYPE, LINK_TO_MOVIE } from '../../constants';
+import Moviecard from '../MovieCard';
 import EventEmitter from '../../eventEmitter';
+import paginator from '../Paginator';
 
 const emitter = new EventEmitter();
 
+// paginator.init();
 function renderCards(state) {
   const movieList = document.querySelector('.cardlist');
   movieList.innerHTML = '';
   state.map((movie) => {
-    const movieCard = renderMovieCard(movie);
-
-    return movieList.append(movieCard);
+    // const movieCard = renderMovieCard(movie);
+    const mc = new Moviecard(movie, LINK_TO_MOVIE);
+    // const movieList = document.querySelector('.cardlist');
+    // movieList.innerHTML = '';
+    mc.changeTitleSize();
+    mc.addStarRating();
+    movieList.append(mc.card);
+    paginator.update();
+    return movieList;
+  //   return movieList.append(movieCard);
   });
 }
 
 function sendRequestToAPI(request) {
   const modifiedRequest = modifyRequestText(request);
 
-  const page = InitLoadingNextPage();
+  // const page = InitLoadingNextPage();
 
-  currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}${page}`;
+  currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}`;
 
   getMoviesData(currentState.requestString)
     .then((json) => {
@@ -64,3 +73,28 @@ function initSearcher() {
 }
 
 export { initSearcher, getMoviesData };
+
+// class Searcher extends EventEmitter {
+//   constructor(initialState) {
+//     super();
+//     this.state = initialState;
+//   }
+
+//   init() {
+//     this.input = document.querySelector('#search-input');
+//     this.submitButton = document.querySelector('#search-submit');
+//   }
+
+//   bind() {
+//     this.submitButton.addEventListener('click', (event) => {
+//       event.preventDefault();
+//       if ((this.input.value).trim()) {
+//         sendRequestToAPI(this.input.value);
+//         // dispatch(ACTION_TYPE.request);
+//         currentState.isLoading = reducer().isLoading;
+//         showSpinner(currentState);
+//         this.input.value = '';
+//       }
+//     });
+//   }
+// }

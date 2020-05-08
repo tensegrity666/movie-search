@@ -1,4 +1,4 @@
-import { THRESHOLD } from '../constants';
+// import { THRESHOLD } from '../constants';
 
 
 function showSpinner(state) {
@@ -26,21 +26,23 @@ function getMoviesData(url) {
 }
 
 
-function InitLoadingNextPage() {
-  let counter = 1;
-  let PAGE_NUMBER = `&page=${counter}`;
+// function InitLoadingNextPage() {
+//   let counter = 1;
+//   let PAGE_NUMBER = `&page=${counter}`;
 
-  const lastMovieCardCoordinates = document.querySelector('.cardlist').lastChild.getBoundingClientRect().right;
-  const wrapperCoordinates = document.querySelector('.swiper-outer').getBoundingClientRect().right;
+//   const lastMovieCardCoordinates = document.querySelector('.cardlist')
+//  .lastChild.getBoundingClientRect().right;
+//   const wrapperCoordinates = document.querySelector('.swiper-outer')
+// .getBoundingClientRect().right;
 
-  if (Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD) {
-    counter += 1;
-    PAGE_NUMBER = `&page=${counter}`;
-  }
+//   if (Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD) {
+//     counter += 1;
+//     PAGE_NUMBER = `&page=${counter}`;
+//   }
 
-  return PAGE_NUMBER;
-}
+//   return PAGE_NUMBER;
+// }
 
 export {
-  modifyRequestText, getMoviesData, showSpinner, InitLoadingNextPage,
+  modifyRequestText, getMoviesData, showSpinner,
 };

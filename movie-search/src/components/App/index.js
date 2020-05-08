@@ -4,7 +4,7 @@ import Moviecard from '../MovieCard';
 import { initSearcher } from '../Searcher';
 import { initialState } from '../../store';
 import paginator from '../Paginator';
-import { InitLoadingNextPage } from '../../helpers';
+// import { InitLoadingNextPage } from '../../helpers';
 import { LINK_TO_MOVIE } from '../../constants';
 
 const { movies } = initialState;
@@ -22,8 +22,8 @@ movies.map((movie) => {
 });
 
 
-const swiper = document.querySelector('.swiper-outer');
-swiper.addEventListener('mousedown', InitLoadingNextPage);
+// const swiper = document.querySelector('.swiper-outer');
+// swiper.addEventListener('mousedown', InitLoadingNextPage);
 
 initSearcher();
 paginator.init();
