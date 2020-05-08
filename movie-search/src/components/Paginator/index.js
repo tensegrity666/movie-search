@@ -1,11 +1,7 @@
 import './styles/swiper.css';
-import {
-  Swiper, Navigation, Pagination, A11y,
-} from 'swiper/js/swiper.esm';
+import Swiper from 'swiper';
 
-Swiper.use([Navigation, Pagination, A11y]);
-
-const swiper = new Swiper('.swiper-container', {
+const paginator = new Swiper('.swiper-container', {
   init: false,
   speed: 500,
   loop: false,
@@ -46,4 +42,4 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
-export { swiper as default };
+export { paginator as default };
