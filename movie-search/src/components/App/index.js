@@ -7,14 +7,8 @@ import paginator from '../Paginator';
 import { InitLoadingNextPage } from '../../helpers';
 import { LINK_TO_MOVIE } from '../../constants';
 
-
 const { movies } = initialState;
 
-// movies.map((movie) => {
-//   const movieList = document.querySelector('.cardlist');
-//   const movieCard = renderMovieCard(movie);
-//   return movieList.append(movieCard);
-// });
 
 movies.map((movie) => {
   const mc = new Moviecard(movie, LINK_TO_MOVIE);

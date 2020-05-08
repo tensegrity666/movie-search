@@ -1,29 +1,47 @@
 import './styles/searcher.css';
+import './styles/spinner.css';
 import { dispatch, reducer, currentState } from '../../store';
+import { modifyRequestText, getMoviesData, showSpinner, InitLoadingNextPage } from '../../helpers';
 import { LINK_TO_CATALOG, ACTION_TYPE } from '../../constants';
-import { modifyRequestText, sendRequest } from '../../helpers';
+import renderMovieCard from '../MovieCard';
+import EventEmitter from '../../eventEmitter';
 
+const emitter = new EventEmitter();
 
-function getMoviesData(request) {
-  const textfield = document.querySelector('.main-container__textfield');
-  textfield.innerText = `request: ${request}`;
+function renderCards(state) {
+  const movieList = document.querySelector('.cardlist');
+  movieList.innerHTML = '';
+  state.map((movie) => {
+    const movieCard = renderMovieCard(movie);
 
+    return movieList.append(movieCard);
+  });
+}
+
+function sendRequestToAPI(request) {
   const modifiedRequest = modifyRequestText(request);
-  sendRequest(`${LINK_TO_CATALOG}${modifiedRequest}`)
+
+  const page = InitLoadingNextPage();
+
+  currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}${page}`;
+
+  getMoviesData(currentState.requestString)
     .then((json) => {
       dispatch(ACTION_TYPE.success, json.Search);
-      currentState.loading = reducer().loading;
-      currentState.movies = reducer().movies;
-      console.log(currentState);
+      currentState.isLoading = reducer().isLoading;
+      currentState.movies = Object.values(reducer().movies);
+      console.log(currentState.movies);
+      showSpinner(currentState);
+      renderCards(currentState.movies);
     })
     .catch((error) => {
       dispatch(ACTION_TYPE.fail, null, error);
-      currentState.loading = reducer().loading;
+      currentState.isLoading = reducer().isLoading;
       currentState.errorMessage = reducer().errorMessage;
     });
 }
 
-console.log(currentState);
+emitter.subscribe('event:request-sending', sendRequestToAPI);
 
 function initSearcher() {
   const submitButton = document.querySelector('#search-submit');
@@ -32,13 +50,17 @@ function initSearcher() {
     const input = document.querySelector('#search-input');
 
     event.preventDefault();
-    dispatch(ACTION_TYPE.request);
-    currentState.loading = reducer().loading;
-    getMoviesData(input.value);
-    input.value = '';
+    if ((input.value).trim()) {
+      sendRequestToAPI(input.value);
+      dispatch(ACTION_TYPE.request);
+      emitter.emit('event:request-sending', input.value);
+      currentState.isLoading = reducer().isLoading;
+      showSpinner(currentState);
+      input.value = '';
+    }
   };
 
   submitButton.addEventListener('click', onSubmit);
 }
 
-export default initSearcher;
+export { initSearcher, getMoviesData };

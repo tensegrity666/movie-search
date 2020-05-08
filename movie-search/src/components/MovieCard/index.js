@@ -1,6 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-param-reassign */
-/* eslint-disable prefer-destructuring */
 
 import './styles/moviecard.css';
 import { RATING_STARS } from '../../constants';
