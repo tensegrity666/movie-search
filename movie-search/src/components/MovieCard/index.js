@@ -1,56 +1,60 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-destructuring */
 
 import './styles/moviecard.css';
-import { LINK_TO_CATALOG, RATING_STARS } from '../../constants';
+import { RATING_STARS } from '../../constants';
 
-function changeTitleSize() {
-  const titles = document.querySelectorAll('.moviecard__title');
+class Moviecard {
+  constructor(movie, link) {
+    this.id = movie.imdbID;
+    this.title = movie.Title;
+    this.year = movie.Year;
+    this.poster = movie.Poster;
+    this.rating = movie.imdbRating;
+    this.link = link;
+  }
 
-  Array.from(titles).forEach((title) => {
-    if (title.innerText.length > 50) {
-      title.classList.add('moviecard__title_tiny');
-    } else if (title.innerText.length > 25) {
-      title.classList.add('moviecard__title_small');
+  get card() {
+    if (this._card) {
+      return this._card;
     }
-  });
+    this._card = document.createElement('li');
+    this._card.classList.add('moviecard', 'swiper-slide');
+    this._card.innerHTML = this.render();
+    return this._card;
+  }
+
+  render() {
+    return `<header>
+      <a class='moviecard__title ${this.titleStyle}' href='${this.link}${this.id}' target='_blank'
+        rel='noopener noreferrer'>
+        ${this.title}
+      </a>
+    </header>
+    <img
+      src=${this.poster}
+      alt='${this.title}' load='lazy'>
+    <p class='moviecard__year'>${this.year}</p>
+    <span class='visually-hidden'>IMDB Rating: ${this.rating}</span>
+    <span class='moviecard__rating'>${this.stars}</span>`;
+  }
+
+  addStarRating() {
+    this.stars = RATING_STARS[Math.floor(this.rating)];
+  }
+
+  changeTitleSize() {
+    if (this.title.length < 25) {
+      this.titleStyle = '';
+    }
+    if (this.title.length > 25) {
+      this.titleStyle = 'moviecard__title_small';
+    }
+    if (this.title.length > 50) {
+      this.titleStyle = 'moviecard__title_tiny';
+    }
+  }
 }
 
-function addStarRating() {
-  const ratings = document.querySelectorAll('.moviecard__rating');
-
-  Array.from(ratings).forEach((element) => {
-    element.innerHTML = RATING_STARS[Math.floor(element.dataset.rating)];
-  });
-}
-
-function renderMovieCard(movie) {
-  const {
-    Title, Year, Poster, imdbID, imdbRating,
-  } = movie;
-
-  const moviepage = `${LINK_TO_CATALOG}${imdbID}`;
-  const card = document.createElement('li');
-
-  card.classList.add('moviecard', 'swiper-slide');
-
-  card.innerHTML = `<header>
-    <a class='moviecard__title' href=${moviepage} target='_blank'
-      rel='noopener noreferrer'>
-      ${Title}
-    </a>
-  </header>
-  <img
-    src=${Poster}
-    alt=${Title} load='lazy'>
-  <p class='moviecard__year'>${Year}</p>
-  <span class='visually-hidden'>IMDB Rating: ${imdbRating}</span>
-  <span class='moviecard__rating' data-rating=${imdbRating}></span>`;
-
-  changeTitleSize();
-  addStarRating();
-
-  return card;
-}
-
-export default renderMovieCard;
+export default Moviecard;
