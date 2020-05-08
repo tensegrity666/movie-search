@@ -31,6 +31,7 @@ class Moviecard {
       </a>
     </header>
     <img
+      class='moviecard__image'
       src=${this.poster}
       alt='${this.title}' load='lazy'>
     <p class='moviecard__year'>${this.year}</p>
