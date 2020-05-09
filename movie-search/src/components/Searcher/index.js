@@ -9,39 +9,54 @@ import paginator from '../Paginator';
 
 const emitter = new EventEmitter();
 
-// paginator.init();
+
 function renderCards(state) {
   const movieList = document.querySelector('.cardlist');
   movieList.innerHTML = '';
   state.map((movie) => {
-    // const movieCard = renderMovieCard(movie);
     const mc = new Moviecard(movie, LINK_TO_MOVIE);
-    // const movieList = document.querySelector('.cardlist');
-    // movieList.innerHTML = '';
     mc.changeTitleSize();
     mc.addStarRating();
     movieList.append(mc.card);
     paginator.update();
     return movieList;
-  //   return movieList.append(movieCard);
   });
+}
+const textfield = document.querySelector('.main-container__textfield');
+
+function showResults(result, request) {
+  textfield.classList.remove('main-container_danger');
+  textfield.innerText = '';
+  textfield.innerText = `${result} movies found for search "${request}"`;
+}
+
+function showError(error) {
+  textfield.classList.add('main-container_danger');
+  textfield.innerText = `${error}`;
 }
 
 function sendRequestToAPI(request) {
   const modifiedRequest = modifyRequestText(request);
 
-  // const page = InitLoadingNextPage();
-
   currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}`;
 
   getMoviesData(currentState.requestString)
     .then((json) => {
-      dispatch(ACTION_TYPE.success, json.Search);
-      currentState.isLoading = reducer().isLoading;
-      currentState.movies = Object.values(reducer().movies);
-      console.log(currentState.movies);
-      showSpinner(currentState);
-      renderCards(currentState.movies);
+      if (json.Error) {
+        dispatch(ACTION_TYPE.fail, null, json.Error);
+        currentState.isLoading = reducer().isLoading;
+        currentState.errorMessage = reducer().errorMessage;
+        showSpinner(currentState);
+        showError(currentState.errorMessage);
+      } else if (json.Response === 'True') {
+        dispatch(ACTION_TYPE.success, json.Search);
+        currentState.isLoading = reducer().isLoading;
+        currentState.movies = Object.values(reducer().movies);
+        currentState.results = json.totalResults;
+        showSpinner(currentState);
+        renderCards(currentState.movies);
+        showResults(currentState.results, request);
+      }
     })
     .catch((error) => {
       dispatch(ACTION_TYPE.fail, null, error);

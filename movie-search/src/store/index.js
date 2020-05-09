@@ -17,6 +17,7 @@ const currentState = {
   movies: [],
   page: null,
   requestString: '',
+  results: 0,
 };
 
 function reducer(state = initialState, currentAction = action) {
