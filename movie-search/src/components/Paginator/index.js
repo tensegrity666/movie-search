@@ -28,11 +28,11 @@ const paginator = new Swiper('.swiper-container', {
     },
     1280: {
       slidesPerView: 3,
-      spaceBetween: 40,
+      spaceBetween: 30,
     },
     1480: {
       slidesPerView: 4,
-      spaceBetween: 50,
+      spaceBetween: 40,
     },
   },
 

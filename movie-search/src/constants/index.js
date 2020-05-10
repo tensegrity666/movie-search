@@ -1,4 +1,6 @@
-const LINK_TO_CATALOG = 'http://www.omdbapi.com/?apikey=fcbac651&type=movie&s=';
+const LINK_TO_CATALOG = 'https://www.omdbapi.com/?apikey=fcbac651&type=movie&s=';
+
+// fcbac651
 
 const LINK_TO_MOVIE = 'http://www.omdbapi.com/';
 
@@ -8,7 +10,7 @@ const ACTION_TYPE = {
   request: 'SEARCH_MOVIES_REQUEST',
 };
 
-const THRESHOLD = 20;
+const THRESHOLD = 520;
 
 const RATING_STARS = {
   1: '&#9733;',
