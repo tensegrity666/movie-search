@@ -1,7 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 
 import './styles/moviecard.css';
-import { RATING_STARS } from '../../constants';
+
+
+import { RATING_STARS, LINK_TO_MOVIE } from '../../constants';
+import paginator from '../Paginator';
+
 
 class Moviecard {
   constructor(movie, link) {
@@ -11,6 +15,10 @@ class Moviecard {
     this.poster = movie.Poster;
     this.rating = movie.imdbRating;
     this.link = link;
+
+    if (this.poster === 'N/A') {
+      this.poster = '/assets/noimage.png';
+    }
   }
 
   get card() {
@@ -56,4 +64,17 @@ class Moviecard {
   }
 }
 
-export default Moviecard;
+function renderCards(state) {
+  const movieList = document.querySelector('.cardlist');
+  movieList.innerHTML = '';
+  state.map((movie) => {
+    const mc = new Moviecard(movie, LINK_TO_MOVIE);
+    mc.changeTitleSize();
+    mc.addStarRating();
+    movieList.append(mc.card);
+    paginator.update();
+    return movieList;
+  });
+}
+
+export { Moviecard, renderCards };
