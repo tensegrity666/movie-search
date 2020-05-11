@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 const LINK_TO_CATALOG = 'https://www.omdbapi.com/?apikey=fcbac651&type=movie&s=';
 
 // fcbac651
-=======
-const LINK_TO_CATALOG = 'http://www.omdbapi.com/?apikey=fcbac651&type=movie&s=';
->>>>>>> 14230fb... feat: implement rendering cards from fetch
+
 
 const LINK_TO_MOVIE = 'http://www.omdbapi.com/';
 
@@ -14,11 +11,8 @@ const ACTION_TYPE = {
   request: 'SEARCH_MOVIES_REQUEST',
 };
 
-<<<<<<< HEAD
 const THRESHOLD = 520;
-=======
-const THRESHOLD = 20;
->>>>>>> 14230fb... feat: implement rendering cards from fetch
+
 
 const RATING_STARS = {
   1: '&#9733;',
