@@ -1,11 +1,11 @@
-function showSpinner(state) {
-  const spinner = document.querySelector('#spinner');
+// function showSpinner(state) {
+//   const spinner = document.querySelector('#spinner');
 
-  spinner.classList.remove('lds-facebook');
-  if (state.isLoading) {
-    spinner.classList.add('lds-facebook');
-  }
-}
+//   spinner.classList.remove('lds-facebook');
+//   if (state.isLoading) {
+//     spinner.classList.add('lds-facebook');
+//   }
+// }
 
 
 function modifyRequestText(request) {
@@ -40,7 +40,7 @@ function showError(error) {
 export {
   modifyRequestText,
   getMoviesData,
-  showSpinner,
+  // showSpinner,
   showResults,
   showError,
   textfield,

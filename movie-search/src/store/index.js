@@ -11,6 +11,7 @@ const initialState = {
   movies: data,
   errorMessage: null,
   page: 1,
+  link: 'http://www.omdbapi.com/',
 };
 
 const currentState = {
