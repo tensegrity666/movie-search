@@ -1,5 +1,5 @@
+/* eslint-disable class-methods-use-this */
 import './styles/searcher.css';
-
 
 // function sendRequestToAPI(request) {
 //   const modifiedRequest = modifyRequestText(request);
@@ -77,22 +77,27 @@ import './styles/searcher.css';
 
 //
 class SearcherView {
-  init(inputElement, submitButton) {
+  constructor(inputElement, submitButton) {
     this.inputElement = inputElement;
     this.submitButton = submitButton;
   }
 
-  onSubmit(text) {
-    console.log(text);
+  onSubmit() {
   }
 
   addListener() {
     this.submitButton.addEventListener('click', (event) => {
       event.preventDefault();
-
       this.onSubmit(this.inputElement.value);
       this.inputElement.value = '';
     });
+  }
+
+  disableSubmitButton(boolean) {
+    this.submitButton.removeAttribute('disabled');
+    if (boolean) {
+      this.submitButton.setAttribute('disabled', true);
+    }
   }
 }
 

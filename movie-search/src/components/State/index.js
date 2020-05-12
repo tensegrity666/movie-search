@@ -1,4 +1,8 @@
-import data from '../stub/dataExample';
+/* eslint-disable no-underscore-dangle */
+
+import { LINKS } from '../../constants';
+
+import data from '../../stub/dataExample';
 
 const action = {
   type: '',
@@ -6,22 +10,27 @@ const action = {
   error: '',
 };
 
-const initialState = {
+const _state = {
   isLoading: false,
   movies: data,
   errorMessage: null,
   page: 1,
-  link: 'http://www.omdbapi.com/',
-};
-
-const currentState = {
-  movies: [],
-  page: 1,
+  link: LINKS.movieTitle,
   requestString: '',
   results: 0,
 };
 
-function reducer(state = initialState, currentAction = action) {
+// const currentState = {
+//   isLoading: false,
+//   movies: [],
+//   errorMessage: null,
+//   page: null,
+//   link: LINKS.movieTitle,
+//   requestString: '',
+//   results: 0,
+// };
+
+function reducer(state = _state, currentAction = action) {
   switch (currentAction.type) {
     case 'SEARCH_MOVIES_REQUEST':
       return {
@@ -53,5 +62,5 @@ function dispatch(type, payload = null, error = null) {
 }
 
 export {
-  action, initialState, reducer, dispatch, currentState,
+  action, _state, reducer, dispatch,
 };

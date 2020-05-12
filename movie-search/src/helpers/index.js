@@ -1,13 +1,3 @@
-// function showSpinner(state) {
-//   const spinner = document.querySelector('#spinner');
-
-//   spinner.classList.remove('lds-facebook');
-//   if (state.isLoading) {
-//     spinner.classList.add('lds-facebook');
-//   }
-// }
-
-
 function modifyRequestText(request) {
   return request
     .toLowerCase()
