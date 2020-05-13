@@ -80,6 +80,8 @@ class SearcherView {
   constructor(inputElement, submitButton) {
     this.inputElement = inputElement;
     this.submitButton = submitButton;
+
+    this.addListener();
   }
 
   onSubmit() {
@@ -88,8 +90,10 @@ class SearcherView {
   addListener() {
     this.submitButton.addEventListener('click', (event) => {
       event.preventDefault();
-      this.onSubmit(this.inputElement.value);
-      this.inputElement.value = '';
+      if ((this.inputElement.value).trim()) {
+        this.onSubmit(this.inputElement.value);
+        this.inputElement.value = '';
+      }
     });
   }
 
@@ -100,8 +104,6 @@ class SearcherView {
     }
   }
 }
-
-//
 
 
 export default SearcherView;

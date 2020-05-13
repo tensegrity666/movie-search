@@ -1,9 +1,10 @@
 import './index.css';
 
+
 import paginator from './components/Paginator';
 import Presenter from './components/Presenter';
 
 const presenter = new Presenter();
-presenter.init(1234);
+presenter.init('App was started');
 
 paginator.init();

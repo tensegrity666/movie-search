@@ -2,23 +2,25 @@ class AppModel {
   constructor(state) {
     this.isLoading = state.isLoading;
     this.request = state.requestString;
-    this.movielist = state.movies;
-    this.results = state.results;
+    this.movies = state.movies;
     this.page = state.page;
-    this.error = state.error;
-    this.link = state.link;
+    this.error = state.errorMessage;
   }
 
-  set requestString(string) {
+  saveRequestString(string) {
     this.request = string;
   }
 
+  updateMovielist(state) {
+    this.movies = state.movies;
+  }
+
   addToMovielist(nextList) {
-    this.movielist = this.movielist.concat(nextList);
+    this.movies = this.movies.concat(nextList);
   }
 
   clearMovielist() {
-    this.movielist = [];
+    this.movies = [];
   }
 
   incrementPageNumber() {

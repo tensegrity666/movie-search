@@ -1,15 +1,3 @@
-const LINKS = {
-  search: 'https://www.omdbapi.com/?apikey=fcbac651&type=movie&s=',
-  movieTitle: 'http://www.omdbapi.com/',
-  page: '&page=',
-};
-
-const ACTION_TYPE = {
-  success: 'SEARCH_MOVIES_SUCCESS',
-  fail: 'SEARCH_MOVIES_FAILURE',
-  request: 'SEARCH_MOVIES_REQUEST',
-};
-
 const THRESHOLD = 520;
 
 const RATING_STARS = {
@@ -25,6 +13,4 @@ const RATING_STARS = {
   10: '&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;',
 };
 
-export {
-  LINKS, RATING_STARS, ACTION_TYPE, THRESHOLD,
-};
+export { RATING_STARS, THRESHOLD };

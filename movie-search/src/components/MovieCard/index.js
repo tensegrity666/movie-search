@@ -4,14 +4,15 @@ import './styles/moviecard.css';
 
 
 class MoviecardView {
-  constructor(movie, link, stars) {
+  constructor(movie, stars) {
     this.id = movie.imdbID;
     this.title = movie.Title;
     this.year = movie.Year;
     this.poster = movie.Poster;
     this.rating = movie.imdbRating;
-    this.link = link;
     this.starRating = stars[Math.floor(this.rating)];
+    this.link = 'https://www.imdb.com/title/';
+    this.noImage = '/assets/noimage.png';
   }
 
   get card() {
@@ -23,7 +24,7 @@ class MoviecardView {
     this._card.innerHTML = this.render();
 
     if (this.poster === 'N/A') {
-      this.poster = '/assets/noimage.png';
+      this.poster = this.noImage;
     }
 
     if (this.title.length < 25) {
@@ -35,7 +36,6 @@ class MoviecardView {
     if (this.title.length > 50) {
       this.titleStyle = 'moviecard__title_tiny';
     }
-
 
     return this._card;
   }

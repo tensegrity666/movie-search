@@ -4,33 +4,31 @@ import MoviecardView from '../MovieCard';
 
 // import initKeyboard from '../Keyboard';
 
-const SPINNER_SELECTOR = 'lds-facebook';
 // initKeyboard();
 
 class AppView {
   constructor(model, stars, container) {
     this.model = model;
+    this.movies = model.movies;
     this.stars = stars;
     this.movielistContainer = container;
-    this.spinnerElement = document.querySelector('#spinner');
+
+    // this.renderMovieList();
   }
 
+  updateView(model) {
+    this.model = model;
+    this.movielistContainer.innerHTML = '';
+  }
 
   renderMovieList() {
     this.movielistContainer.innerHTML = '';
-    this.model.movielist.map((movie) => {
-      const mc = new MoviecardView(movie, this.model.link, this.stars);
 
-      this.movielistContainer.append(mc.card);
-      return this.movielistContainer;
+    this.movies.map((movie) => {
+      const mc = new MoviecardView(movie, this.stars);
+
+      return this.movielistContainer.append(mc.card);
     });
-  }
-
-  showSpinner(isLoading) {
-    this.spinnerElement.classList.remove(SPINNER_SELECTOR);
-    if (isLoading) {
-      this.spinnerElement.classList.add(SPINNER_SELECTOR);
-    }
   }
 }
 
