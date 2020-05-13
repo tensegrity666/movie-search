@@ -1,6 +1,7 @@
 import './styles/swiper.css';
 
-const PARAMS = {init: false,
+const PARAMS = {
+  init: false,
   speed: 500,
   loop: false,
   effect: 'slide',

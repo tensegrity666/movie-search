@@ -1,4 +1,4 @@
-const THRESHOLD = 520;
+const THRESHOLD = 1000;
 
 const RATING_STARS = {
   1: '&#9733;',

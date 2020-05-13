@@ -6,10 +6,16 @@ import AppView from '../App';
 import AppModel from '../App/AppModel';
 import SearcherView from '../Searcher';
 import PARAMS from '../Paginator';
-
 import _state from '../State';
-import { RATING_STARS } from '../../constants';
-import { modifyRequestText, getMoviesData, renderResults } from '../../helpers';
+
+import { RATING_STARS, THRESHOLD } from '../../constants';
+import {
+  modifyRequestText,
+  getMoviesData,
+  renderResults,
+  // onSlideChange,
+  showSpinner,
+} from '../../helpers';
 
 import stubData from '../../stub/dataExample';
 
@@ -25,10 +31,10 @@ class Presenter {
     this.model = new AppModel(_state);
     this.appView = new AppView(this.model, RATING_STARS, container);
     this.searchView = new SearcherView(input, submit);
-    const paginator = new Swiper('.swiper-container', PARAMS);
+    this.paginator = new Swiper('.swiper-container', PARAMS);
 
     renderResults(stubData);
-    paginator.init();
+    this.paginator.init();
 
 
     this.searchView.onSubmit = (requestText) => {
@@ -37,10 +43,31 @@ class Presenter {
 
       modifiedRequest = modifyRequestText(requestText);
       getMoviesData(modifiedRequest, this.model.page)
-        .then(() => paginator.update());
-
-      paginator.slideTo(0, 500);
+        .then(() => {
+          _state.isLoading = false;
+          renderResults(_state.movies);
+          showSpinner(_state.isLoading);
+          this.paginator.update();
+          this.paginator.slideTo(0, 500);
+        });
     };
+
+    this.paginator.on('slideChange', () => {
+      const lastMovieCardCoordinates = document.querySelector('.cardlist').lastChild.getBoundingClientRect().right;
+      const wrapperCoordinates = document.querySelector('.swiper-outer').getBoundingClientRect().right;
+
+      if ((Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD)
+      && _state.request) {
+        _state.page += 1;
+        getMoviesData(_state.request, _state.page)
+          .then(() => {
+            _state.isLoading = false;
+            renderResults(_state.movies);
+            showSpinner(_state.isLoading);
+            this.paginator.update();
+          });
+      }
+    });
   }
 
   init(data) {

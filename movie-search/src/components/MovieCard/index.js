@@ -26,6 +26,10 @@ class MoviecardView {
       this.poster = this.noImage;
     }
 
+    if (this.rating === 'N/A') {
+      this.starRating = '';
+    }
+
     if (this.title.length < 25) {
       this.titleStyle = '';
     }
