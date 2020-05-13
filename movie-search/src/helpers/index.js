@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable consistent-return */
 
 import _state from '../components/State';
@@ -8,14 +9,16 @@ import paginator from '../components/Paginator';
 
 const container = document.querySelector('.cardlist');
 
-function render(movies) {
+function renderResults(movies) {
   container.innerHTML = '';
 
   movies.map((movie) => {
     const mc = new MoviecardView(movie, RATING_STARS);
-    return container.append(mc.card);
+
+    return container.append(mc.card());
   });
   paginator.update();
+  paginator.slideTo(0, 500);
 }
 
 
@@ -27,6 +30,7 @@ function modifyRequestText(request) {
     .join('+');
 }
 
+
 const spinner = document.querySelector('#spinner');
 
 function showSpinner(isLoading) {
@@ -36,6 +40,7 @@ function showSpinner(isLoading) {
   }
 }
 
+
 const textfield = document.querySelector('.main-container__textfield');
 
 function showResults(result, request) {
@@ -43,6 +48,7 @@ function showResults(result, request) {
   textfield.classList.remove('main-container_danger');
   textfield.innerText = `${result} movies found for search "${request}"`;
 }
+
 
 function showError(error) {
   textfield.classList.add('main-container_danger');
@@ -52,7 +58,7 @@ function showError(error) {
 
 const apiURL = 'https://www.omdbapi.com/?apikey=282ca252&type=movie';
 
-//fcbac651
+// fcbac651
 
 function getStatistics(movieID) {
   const requestTypePrefix = '&i=';
@@ -93,7 +99,7 @@ function getMoviesData(request, page) {
     .then((data) => Promise.all(data))
     .then(() => {
       showResults(_state.results, request);
-      render(_state.movies);
+      renderResults(_state.movies);
     })
     .catch((error) => console.error(error))
     .finally(() => showSpinner(_state.isLoading));
@@ -105,5 +111,5 @@ export {
   showResults,
   showError,
   textfield,
-  render,
+  renderResults,
 };

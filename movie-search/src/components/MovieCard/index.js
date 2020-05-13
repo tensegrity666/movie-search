@@ -15,13 +15,12 @@ class MoviecardView {
     this.noImage = '/assets/noimage.png';
   }
 
-  get card() {
+  card() {
     if (this._card) {
       return this._card;
     }
     this._card = document.createElement('li');
     this._card.classList.add('moviecard', 'swiper-slide');
-    this._card.innerHTML = this.render();
 
     if (this.poster === 'N/A') {
       this.poster = this.noImage;
@@ -37,6 +36,8 @@ class MoviecardView {
       this.titleStyle = 'moviecard__title_tiny';
     }
 
+    this._card.innerHTML = this.render();
+
     return this._card;
   }
 
@@ -48,9 +49,10 @@ class MoviecardView {
       </a>
     </header>
     <img
-      class='moviecard__image'
-      src=${this.poster}
+      class='moviecard__image swiper-lazy'
+      data-src=${this.poster}
       alt='${this.title}' load='lazy'>
+      <div class="swiper-lazy-preloader"></div>
     <p class='moviecard__year'>${this.year}</p>
     <span class='visually-hidden'>IMDB Rating: ${this.rating}</span>
     <span class='moviecard__rating'>${this.starRating}</span>`;

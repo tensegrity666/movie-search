@@ -1,11 +1,13 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-console */
+
 import AppView from '../App';
 import AppModel from '../App/AppModel';
 import SearcherView from '../Searcher';
-// import paginator from '../Paginator';
 
 import _state from '../State';
 import { RATING_STARS } from '../../constants';
-import { modifyRequestText, getMoviesData, render } from '../../helpers';
+import { modifyRequestText, getMoviesData, renderResults } from '../../helpers';
 
 import stubData from '../../stub/dataExample';
 
@@ -22,7 +24,7 @@ class Presenter {
     this.appView = new AppView(this.model, RATING_STARS, container);
     this.searchView = new SearcherView(input, submit);
 
-    render(stubData);
+    renderResults(stubData);
 
 
     this.searchView.onSubmit = (requestText) => {
@@ -33,14 +35,6 @@ class Presenter {
       getMoviesData(modifiedRequest, this.model.page);
     };
   }
-
-  // update(state) {
-  //   this.model.updateMovielist(state);
-  //   this.appView.updateView(this.model);
-  //   this.appView.renderMovieList();
-  //   paginator.update();
-  //   console.log(this.model.movies);
-  // }
 
   init(data) {
     console.log(data);
