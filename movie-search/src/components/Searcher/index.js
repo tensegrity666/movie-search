@@ -1,101 +1,85 @@
+/* eslint-disable class-methods-use-this */
 import './styles/searcher.css';
-import './styles/spinner.css';
 
-import { dispatch, reducer, currentState } from '../../store';
-import {
-  modifyRequestText,
-  getMoviesData,
-  showSpinner,
-  showError,
-  showResults,
-  textfield,
-} from '../../helpers';
+// function sendRequestToAPI(request) {
+//   const modifiedRequest = modifyRequestText(request);
 
-import { LINK_TO_CATALOG, ACTION_TYPE, THRESHOLD } from '../../constants';
-import { renderCards } from '../MovieCard';
-import EventEmitter from '../../eventEmitter';
-import paginator from '../Paginator';
+//   currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}&page=`;
 
-const emitter = new EventEmitter();
-const movieArr = [];
+//   getMoviesData(currentState.requestString, currentState.page)
+//     .then((json) => {
+//       if (json.Error) {
+//         dispatch(ACTION_TYPE.fail, null, json.Error);
+//         currentState.isLoading = reducer().isLoading;
+//         currentState.errorMessage = reducer().errorMessage;
+//         showSpinner(currentState);
+//         showError(currentState.errorMessage);
+//       } else if (json.Response === 'True') {
+//         dispatch(ACTION_TYPE.success, json.Search);
+//         currentState.isLoading = reducer().isLoading;
+//         movieArr.push(Object.values(json.Search));
+//         currentState.movies = Object.values(reducer().movies);
+//         currentState.results = json.totalResults;
+//         showSpinner(currentState);
+//         renderCards(currentState.movies);
+//         showResults(currentState.results, request);
+//       }
+//   // const page = InitLoadingNextPage();
 
 
-function sendRequestToAPI(request) {
-  const modifiedRequest = modifyRequestText(request);
+// // emitter.subscribe('event:request-sending', sendRequestToAPI);
 
-  currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}&page=`;
+// function initSearcher() {
+//   const submitButton = document.querySelector('#search-submit');
 
-  getMoviesData(currentState.requestString, currentState.page)
-    .then((json) => {
-      if (json.Error) {
-        dispatch(ACTION_TYPE.fail, null, json.Error);
-        currentState.isLoading = reducer().isLoading;
-        currentState.errorMessage = reducer().errorMessage;
-        showSpinner(currentState);
-        showError(currentState.errorMessage);
-      } else if (json.Response === 'True') {
-        dispatch(ACTION_TYPE.success, json.Search);
-        currentState.isLoading = reducer().isLoading;
-        movieArr.push(Object.values(json.Search));
-        currentState.movies = Object.values(reducer().movies);
-        currentState.results = json.totalResults;
-        showSpinner(currentState);
-        renderCards(currentState.movies);
-        showResults(currentState.results, request);
+//   const onSubmit = (event) => {
+//     const input = document.querySelector('#search-input');
+
+//     event.preventDefault();
+//     if ((input.value).trim()) {
+//       sendRequestToAPI(input.value);
+//       dispatch(ACTION_TYPE.request);
+//       emitter.emit('event:request-sending', input.value);
+//       currentState.isLoading = reducer().isLoading;
+//       showSpinner(currentState);
+//       input.value = '';
+//       textfield.innerText = '';
+//     }
+//   };
+
+//   submitButton.addEventListener('click', onSubmit);
+// }
+
+
+//
+class SearcherView {
+  constructor(inputElement, submitButton) {
+    this.inputElement = inputElement;
+    this.submitButton = submitButton;
+
+    this.addListener();
+  }
+
+  onSubmit() {
+  }
+
+  addListener() {
+    this.submitButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      if ((this.inputElement.value).trim()) {
+        this.onSubmit(this.inputElement.value);
+        this.inputElement.value = '';
       }
-    })
-    .catch((error) => {
-      dispatch(ACTION_TYPE.fail, null, error);
-      currentState.isLoading = reducer().isLoading;
-      currentState.errorMessage = reducer().errorMessage;
     });
+  }
 
-  paginator.on('slideChange', () => {
-    const lastMovieCardCoordinates = document.querySelector('.cardlist')
-      .lastChild.getBoundingClientRect().right;
-    const wrapperCoordinates = document.querySelector('.swiper-outer')
-      .getBoundingClientRect().right;
-    let counter = 1;
-
-    if (Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD) {
-      counter++;
-      getMoviesData(currentState.requestString, counter)
-        .then((json) => {
-          dispatch(ACTION_TYPE.success, json.Search);
-          currentState.isLoading = reducer().isLoading;
-          currentState.movies = Object.values(reducer().movies);
-          currentState.results = json.totalResults;
-          showSpinner(currentState);
-          renderCards(currentState.movies);
-          showResults(currentState.results, request);
-
-          console.log(counter);
-        });
+  disableSubmitButton(boolean) {
+    this.submitButton.removeAttribute('disabled');
+    if (boolean) {
+      this.submitButton.setAttribute('disabled', true);
     }
-  });
+  }
 }
 
-emitter.subscribe('event:request-sending', sendRequestToAPI);
 
-function initSearcher() {
-  const submitButton = document.querySelector('#search-submit');
-
-  const onSubmit = (event) => {
-    const input = document.querySelector('#search-input');
-
-    event.preventDefault();
-    if ((input.value).trim()) {
-      sendRequestToAPI(input.value);
-      dispatch(ACTION_TYPE.request);
-      emitter.emit('event:request-sending', input.value);
-      currentState.isLoading = reducer().isLoading;
-      showSpinner(currentState);
-      input.value = '';
-      textfield.innerText = '';
-    }
-  };
-
-  submitButton.addEventListener('click', onSubmit);
-}
-
-export { initSearcher };
+export default SearcherView;

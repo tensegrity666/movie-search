@@ -1,2 +1,6 @@
 import './index.css';
-import './components/App';
+
+import Presenter from './components/Presenter';
+
+const presenter = new Presenter();
+presenter.init('App was started');

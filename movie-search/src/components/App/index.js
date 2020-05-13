@@ -1,16 +1,36 @@
 import './styles/index.css';
-// import renderMovieCard from '../MovieCard';
-// import { Moviecard } from '../MovieCard';
-import { renderCards } from '../MovieCard';
-import { initSearcher } from '../Searcher';
-import { initialState } from '../../store';
-import initKeyboard from '../Keyboard';
-import paginator from '../Paginator';
+
+import MoviecardView from '../MovieCard';
+
+// import initKeyboard from '../Keyboard';
+
+// initKeyboard();
+
+class AppView {
+  constructor(model, stars, container) {
+    this.model = model;
+    this.movies = model.movies;
+    this.stars = stars;
+    this.movielistContainer = container;
+
+    // this.renderMovieList();
+  }
+
+  updateView(model) {
+    this.model = model;
+    this.movielistContainer.innerHTML = '';
+  }
+
+  renderMovieList() {
+    this.movielistContainer.innerHTML = '';
+
+    this.movies.map((movie) => {
+      const mc = new MoviecardView(movie, this.stars);
+
+      return this.movielistContainer.append(mc.card);
+    });
+  }
+}
 
 
-const { movies } = initialState;
-renderCards(movies);
-
-initSearcher();
-initKeyboard();
-paginator.init();
+export default AppView;
