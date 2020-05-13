@@ -4,7 +4,6 @@
 import _state from '../components/State';
 import MoviecardView from '../components/MovieCard';
 import { RATING_STARS } from '../constants';
-import paginator from '../components/Paginator';
 
 
 const container = document.querySelector('.cardlist');
@@ -17,8 +16,6 @@ function renderResults(movies) {
 
     return container.append(mc.card());
   });
-  paginator.update();
-  paginator.slideTo(0, 500);
 }
 
 

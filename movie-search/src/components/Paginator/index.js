@@ -1,8 +1,6 @@
 import './styles/swiper.css';
-import Swiper from 'swiper';
 
-const paginator = new Swiper('.swiper-container', {
-  init: false,
+const PARAMS = {init: false,
   speed: 500,
   loop: false,
   effect: 'slide',
@@ -42,6 +40,7 @@ const paginator = new Swiper('.swiper-container', {
     prevSlideMessage: 'Previous slide',
     nextSlideMessage: 'Next slide',
   },
-});
+};
 
-export { paginator as default };
+
+export default PARAMS;

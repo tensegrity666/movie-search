@@ -26,30 +26,6 @@ import './styles/searcher.css';
 //       }
 //   // const page = InitLoadingNextPage();
 
-//   paginator.on('slideChange', () => {
-//     const lastMovieCardCoordinates = document.querySelector('.cardlist')
-//       .lastChild.getBoundingClientRect().right;
-//     const wrapperCoordinates = document.querySelector('.swiper-outer')
-//       .getBoundingClientRect().right;
-//     let counter = 1;
-
-//     if (Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD) {
-//       counter++;
-//       getMoviesData(currentState.requestString, counter)
-//         .then((json) => {
-//           dispatch(ACTION_TYPE.success, json.Search);
-//           currentState.isLoading = reducer().isLoading;
-//           currentState.movies = Object.values(reducer().movies);
-//           currentState.results = json.totalResults;
-//           showSpinner(currentState);
-//           renderCards(currentState.movies);
-//           showResults(currentState.results, request);
-
-//           console.log(counter);
-//         });
-//     }
-//   });
-// }
 
 // // emitter.subscribe('event:request-sending', sendRequestToAPI);
 
