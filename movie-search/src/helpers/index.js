@@ -17,12 +17,30 @@ function renderResults(movies) {
 }
 
 
-function modifyRequestText(request) {
+async function modifyRequestText(request) {
   return request
     .toLowerCase()
     .replace(/\s+/g, ' ')
-    .trim().split(' ')
+    .replace(/'/g, '')
+    .trim()
+    .split(' ')
     .join('+');
+}
+
+
+const TRANSLATER_LINK = 'https://translate.yandex.net/api/v1.5/tr.json/translate?';
+const KEY = 'key=trnsl.1.1.20200322T155651Z.de98a60e6a99185e.089aea4237b51c6db082c966f27a7895cd1e8b44';
+const REQUEST_PREFIX = '&text=';
+const LANGUAGE = '&lang=ru-en';
+
+async function detectRussian(request) {
+  if (/[а-яА-ЯёЁ]/.test(request)) {
+    const response = await fetch(`${TRANSLATER_LINK}${KEY}${REQUEST_PREFIX}${request}${LANGUAGE}`);
+    const data = await response.json();
+
+    return data;
+  }
+  return request;
 }
 
 
@@ -105,4 +123,5 @@ export {
   renderResults,
   showResultMessage,
   showSpinner,
+  detectRussian,
 };
