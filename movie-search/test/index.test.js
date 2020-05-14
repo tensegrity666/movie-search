@@ -2,7 +2,7 @@
 
 
 const assert = require('assert');
-const modifyRequestText = require('../helpers');
+const modifyRequestText = require('../src/helpers');
 // function modifyRequestText(request) {
 //   return request
 //     .toLowerCase()
