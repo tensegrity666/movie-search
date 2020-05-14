@@ -7,8 +7,7 @@ const PARAMS = {
   effect: 'slide',
   spaceBetween: 10,
   slidesPerView: 1,
-  preloadImages: false,
-  lazy: true,
+  preloadImages: true,
 
   pagination: {
     el: '.swiper-pagination',
