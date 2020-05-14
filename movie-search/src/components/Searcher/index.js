@@ -1,57 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import './styles/searcher.css';
 
-// function sendRequestToAPI(request) {
-//   const modifiedRequest = modifyRequestText(request);
 
-//   currentState.requestString = `${LINK_TO_CATALOG}${modifiedRequest}&page=`;
-
-//   getMoviesData(currentState.requestString, currentState.page)
-//     .then((json) => {
-//       if (json.Error) {
-//         dispatch(ACTION_TYPE.fail, null, json.Error);
-//         currentState.isLoading = reducer().isLoading;
-//         currentState.errorMessage = reducer().errorMessage;
-//         showSpinner(currentState);
-//         showError(currentState.errorMessage);
-//       } else if (json.Response === 'True') {
-//         dispatch(ACTION_TYPE.success, json.Search);
-//         currentState.isLoading = reducer().isLoading;
-//         movieArr.push(Object.values(json.Search));
-//         currentState.movies = Object.values(reducer().movies);
-//         currentState.results = json.totalResults;
-//         showSpinner(currentState);
-//         renderCards(currentState.movies);
-//         showResults(currentState.results, request);
-//       }
-//   // const page = InitLoadingNextPage();
-
-
-// // emitter.subscribe('event:request-sending', sendRequestToAPI);
-
-// function initSearcher() {
-//   const submitButton = document.querySelector('#search-submit');
-
-//   const onSubmit = (event) => {
-//     const input = document.querySelector('#search-input');
-
-//     event.preventDefault();
-//     if ((input.value).trim()) {
-//       sendRequestToAPI(input.value);
-//       dispatch(ACTION_TYPE.request);
-//       emitter.emit('event:request-sending', input.value);
-//       currentState.isLoading = reducer().isLoading;
-//       showSpinner(currentState);
-//       input.value = '';
-//       textfield.innerText = '';
-//     }
-//   };
-
-//   submitButton.addEventListener('click', onSubmit);
-// }
-
-
-//
 class SearcherView {
   constructor(inputElement, submitButton) {
     this.inputElement = inputElement;
@@ -75,6 +25,7 @@ class SearcherView {
 
   disableSubmitButton(boolean) {
     this.submitButton.removeAttribute('disabled');
+    setTimeout(() => this.submitButton.removeAttribute('disabled'), 5000);
     if (boolean) {
       this.submitButton.setAttribute('disabled', true);
     }

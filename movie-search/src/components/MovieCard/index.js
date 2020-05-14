@@ -26,6 +26,10 @@ class MoviecardView {
       this.poster = this.noImage;
     }
 
+    if (this.rating === 'N/A') {
+      this.starRating = '';
+    }
+
     if (this.title.length < 25) {
       this.titleStyle = '';
     }
@@ -49,10 +53,9 @@ class MoviecardView {
       </a>
     </header>
     <img
-      class='moviecard__image swiper-lazy'
-      data-src=${this.poster}
+      class='moviecard__image'
+      src=${this.poster}
       alt='${this.title}' load='lazy'>
-      <div class="swiper-lazy-preloader"></div>
     <p class='moviecard__year'>${this.year}</p>
     <span class='visually-hidden'>IMDB Rating: ${this.rating}</span>
     <span class='moviecard__rating'>${this.starRating}</span>`;

@@ -7,6 +7,7 @@ const _state = {
   page: 1,
   requestString: '',
   results: 0,
+  request: '',
 };
 
 export default _state;

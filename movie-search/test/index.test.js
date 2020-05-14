@@ -1,14 +1,15 @@
 /* eslint-disable no-undef */
 
-import assert from 'assert';
 
-function modifyRequestText(request) {
-  return request
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim().split(' ')
-    .join('+');
-}
+const assert = require('assert');
+const modifyRequestText = require('../src/helpers');
+// function modifyRequestText(request) {
+//   return request
+//     .toLowerCase()
+//     .replace(/\s+/g, ' ')
+//     .trim().split(' ')
+//     .join('+');
+// }
 
 
 describe('Запрос', () => {
