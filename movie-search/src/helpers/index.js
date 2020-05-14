@@ -21,7 +21,6 @@ function modifyRequestText(request) {
   return request
     .toLowerCase()
     .replace(/\s+/g, ' ')
-    .replace(/'/g, '')
     .trim()
     .split(' ')
     .join('+');
@@ -38,7 +37,7 @@ async function detectRussian(request) {
     const response = await fetch(`${TRANSLATER_LINK}${KEY}${REQUEST_PREFIX}${request}${LANGUAGE}`);
     const json = await response.json();
 
-    return json;
+    return json.text.join('');
   }
   return request;
 }
@@ -88,7 +87,6 @@ function getMoviesData(request, page) {
   const requestTypePrefix = '&s=';
   const pagePrefix = '&page=';
 
-  _state.request = request;
   _state.isLoading = true;
   showSpinner(_state.isLoading);
 
@@ -107,7 +105,7 @@ function getMoviesData(request, page) {
       } else if (json.Response === 'True') {
         _state.results = json.totalResults;
         _state.isLoading = false;
-        showResultMessage(_state.results, request);
+        showResultMessage(_state.results, _state.request);
         return json.Search;
       }
     })

@@ -54,7 +54,7 @@ class MoviecardView {
     </header>
     <img
       class='moviecard__image'
-      src=${this.poster}
+      src='${this.poster}'
       alt='${this.title}' load='lazy'>
     <p class='moviecard__year'>${this.year}</p>
     <span class='visually-hidden'>IMDB Rating: ${this.rating}</span>

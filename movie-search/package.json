@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "lint": "eslint src/**/*.js && stylelint src/**/*.css --syntax css",
+    "lint": "eslint src/**/*.js && stylelint src/components/**/*.css --syntax css",
     "deploy": "npm run lint && npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
@@ -43,7 +43,7 @@
     "url-loader": "4.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
