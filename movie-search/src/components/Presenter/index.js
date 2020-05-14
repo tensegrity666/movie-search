@@ -14,6 +14,7 @@ import {
   getMoviesData,
   renderResults,
   // onSlideChange,
+  detectRussian,
   showSpinner,
 } from '../../helpers';
 
@@ -22,7 +23,7 @@ import stubData from '../../stub/dataExample';
 const container = document.querySelector('.cardlist');
 const input = document.querySelector('#search-input');
 const submit = document.querySelector('#search-submit');
-let modifiedRequest = '';
+
 _state.movies.push(stubData);
 
 
@@ -41,7 +42,10 @@ class Presenter {
       _state.movies = [];
       this.searchView.disableSubmitButton(_state.isLoading);
 
-      modifiedRequest = modifyRequestText(requestText);
+      const fromEnToRu = detectRussian(requestText);
+      const modifiedRequest = modifyRequestText(fromEnToRu);
+
+      console.log(modifiedRequest);
       getMoviesData(modifiedRequest, this.model.page)
         .then(() => {
           _state.isLoading = false;

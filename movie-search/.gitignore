@@ -13,4 +13,4 @@ scripts/location/
 npm-debug.*
 Thumbs.db
 # Local Netlify folder
-.netlify
+.netlify/
