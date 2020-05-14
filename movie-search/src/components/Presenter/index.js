@@ -42,10 +42,13 @@ class Presenter {
       _state.movies = [];
       this.searchView.disableSubmitButton(_state.isLoading);
 
-      const fromEnToRu = detectRussian(requestText);
-      const modifiedRequest = modifyRequestText(fromEnToRu);
 
-      console.log(modifiedRequest);
+      const data = detectRussian(requestText);
+
+      const modifiedRequest = modifyRequestText(requestText);
+
+      console.log(data);
+
       getMoviesData(modifiedRequest, this.model.page)
         .then(() => {
           _state.isLoading = false;
