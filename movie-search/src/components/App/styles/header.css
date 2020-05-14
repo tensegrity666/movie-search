@@ -30,6 +30,7 @@
     grid-template-columns: 300px;
     justify-items: center;
     padding-bottom: var(--margin-bottom-small);
+    text-align: center;
   }
 
   .header__title {
