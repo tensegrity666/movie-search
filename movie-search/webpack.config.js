@@ -1,4 +1,6 @@
 const path = require('path');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -31,10 +33,15 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
     }),
   ],
   optimization: {
     runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
 
   module: {
@@ -56,7 +63,6 @@ module.exports = {
               esModule: true,
             },
           },
-          { loader: 'postcss-loader' },
         ],
       },
       {
