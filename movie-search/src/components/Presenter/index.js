@@ -38,19 +38,18 @@ class Presenter {
     this.paginator.init();
 
 
-    this.searchView.onSubmit = (requestText) => {
+    this.searchView.onSubmit = async (requestText) => {
+      _state.request = requestText;
       _state.movies = [];
+
       this.searchView.disableSubmitButton(_state.isLoading);
 
-
-      const data = detectRussian(requestText);
-
-      const modifiedRequest = modifyRequestText(requestText);
-
-      console.log(data);
+      const data = await detectRussian(requestText);
+      const modifiedRequest = modifyRequestText(data);
 
       getMoviesData(modifiedRequest, this.model.page)
         .then(() => {
+          _state.requestString = modifiedRequest;
           _state.isLoading = false;
           renderResults(_state.movies);
           showSpinner(_state.isLoading);
@@ -66,7 +65,7 @@ class Presenter {
       if ((Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD)
       && _state.request) {
         _state.page += 1;
-        getMoviesData(_state.request, _state.page)
+        getMoviesData(_state.requestString, _state.page)
           .then(() => {
             _state.isLoading = false;
             renderResults(_state.movies);
