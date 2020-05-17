@@ -77,8 +77,7 @@ class Presenter {
     });
   }
 
-  init(data) {
-    console.log(data);
+  init() {
   }
 }
 
