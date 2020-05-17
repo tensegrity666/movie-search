@@ -3,6 +3,8 @@
 
 import Swiper from 'swiper';
 import AppView from '../App';
+import KeyboardView from '../Keyboard';
+import keysLayoutDefault from '../Keyboard/layouts';
 import AppModel from '../App/AppModel';
 import SearcherView from '../Searcher';
 import PARAMS from '../Paginator';
@@ -13,7 +15,6 @@ import {
   modifyRequestText,
   getMoviesData,
   renderResults,
-  // onSlideChange,
   detectRussian,
   showSpinner,
 } from '../../helpers';
@@ -33,9 +34,11 @@ class Presenter {
     this.appView = new AppView(this.model, RATING_STARS, container);
     this.searchView = new SearcherView(input, submit);
     this.paginator = new Swiper('.swiper-container', PARAMS);
+    this.keyboardView = new KeyboardView();
 
     renderResults(stubData);
     this.paginator.init();
+    this.keyboardView.render(keysLayoutDefault);
 
 
     this.searchView.onSubmit = async (requestText) => {
