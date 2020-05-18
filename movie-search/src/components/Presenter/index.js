@@ -24,6 +24,7 @@ import stubData from '../../stub/dataExample';
 const container = document.querySelector('.cardlist');
 const input = document.querySelector('#search-input');
 const submit = document.querySelector('#search-submit');
+// const keyboardToggler = document.querySelector('#search-toggler');
 
 _state.movies.push(stubData);
 
@@ -39,6 +40,7 @@ class Presenter {
     renderResults(stubData);
     this.paginator.init();
     this.keyboardView.render(keysLayoutDefault);
+    this.keyboardView.toggle();
 
 
     this.searchView.onSubmit = async (requestText) => {

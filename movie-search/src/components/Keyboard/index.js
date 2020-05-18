@@ -103,25 +103,30 @@ class keyboardView {
   }
 
   render(layout) {
+    this.container.innerHTML = '';
     this.layout = layout;
 
     this.layout.forEach((key) => {
       this.button = document.createElement('button');
       this.button.classList.add('keyboard__key');
+      this.insertLineBreak = ['backspace', 'p', 'enter', '?'].indexOf(key) !== -1;
+      this.brake = document.createElement('span');
+      this.brake.classList.add('linebreak');
+
       switch (key) {
-        case 'Backspace':
+        case 'backspace':
           this.button.classList.add('keyboard__key_double', 'backspace');
           this.button.innerHTML = 'Backspace';
           break;
 
-        case 'Enter':
+        case 'enter':
           this.button.classList.add('keyboard__key_double', 'enter');
           this.button.innerHTML = 'Enter';
           break;
 
-        case 'Space':
+        case 'space':
           this.button.classList.add('keyboard__key_space');
-          this.button.innerText = ' ';
+          this.button.innerText = '_';
           break;
 
         default:
@@ -131,6 +136,10 @@ class keyboardView {
       }
 
       this.container.append(this.button);
+
+      if (this.insertLineBreak) {
+        this.container.append(this.brake);
+      }
     });
   }
 
@@ -138,7 +147,7 @@ class keyboardView {
     document.body.append(this.container);
   }
 
-  open() {
+  toggle() {
     this.container.classList.toggle('keyboard__hidden');
   }
 }
