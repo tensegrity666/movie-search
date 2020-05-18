@@ -24,7 +24,7 @@ import stubData from '../../stub/dataExample';
 const container = document.querySelector('.cardlist');
 const input = document.querySelector('#search-input');
 const submit = document.querySelector('#search-submit');
-// const keyboardToggler = document.querySelector('#search-toggler');
+const keyboardToggler = document.querySelector('#search-toggler');
 
 _state.movies.push(stubData);
 
@@ -33,17 +33,23 @@ class Presenter {
   constructor() {
     this.model = new AppModel(_state);
     this.appView = new AppView(this.model, RATING_STARS, container);
-    this.searchView = new SearcherView(input, submit);
+    this.searchView = new SearcherView(input, submit, keyboardToggler);
     this.paginator = new Swiper('.swiper-container', PARAMS);
     this.keyboardView = new KeyboardView();
 
     renderResults(stubData);
+
     this.paginator.init();
+
     this.keyboardView.render(keysLayoutDefault);
-    this.keyboardView.toggle();
+
+    this.searchView.addKeyboardToggleListener(() => {
+      this.keyboardView.toggle();
+      this.searchView.inputElement.focus();
+    });
 
 
-    this.searchView.onSubmit = async (requestText) => {
+    this.searchView.onEvent = async (requestText) => {
       _state.request = requestText;
       _state.movies = [];
 

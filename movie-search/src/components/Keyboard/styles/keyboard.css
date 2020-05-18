@@ -6,7 +6,6 @@
 
   position: absolute;
   right: 0;
-  bottom: 0;
   left: 0;
   z-index: var(--z-index-top);
   box-sizing: border-box;
@@ -16,18 +15,24 @@
   justify-content: center;
   width: 65%;
   height: 40%;
-  padding: 15px 5px 10px;
+  padding: 15px 5px 50px;
   margin: 0 auto;
   color: var(--font-color);
   background-color: #cae2e4fa;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.75);
-  transition: var(--default-transition);
 }
 
-.keyboard__hidden {
+.keyboard_hide {
   bottom: -50%;
-  transition: var(--default-transition);
+  animation-name: slide-down;
+  animation-duration: 0.7s;
+}
+
+.keyboard_show {
+  bottom: -40px;
+  animation-name: bounce;
+  animation-duration: 0.7s;
 }
 
 .keyboard__key {

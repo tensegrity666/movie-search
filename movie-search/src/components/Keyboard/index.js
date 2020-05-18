@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
+
 import './styles/keyboard.css';
+import './styles/animations.css';
 
 // const wrapper = document.createElement('section');
 // const container = document.createElement('div');
@@ -97,7 +99,7 @@ import './styles/keyboard.css';
 class keyboardView {
   constructor() {
     this.container = document.createElement('div');
-    this.container.classList.add('keyboard', 'keyboard__hidden');
+    this.container.classList.add('keyboard', 'keyboard_hide');
 
     this.init();
   }
@@ -148,7 +150,8 @@ class keyboardView {
   }
 
   toggle() {
-    this.container.classList.toggle('keyboard__hidden');
+    this.container.classList.toggle('keyboard_show');
+    this.container.classList.toggle('keyboard_hide');
   }
 }
 

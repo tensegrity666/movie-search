@@ -4,24 +4,30 @@ import './styles/searcher.css';
 
 
 class SearcherView {
-  constructor(inputElement, submitButton) {
+  constructor(inputElement, submitButton, keyboardButton) {
     this.inputElement = inputElement;
     this.submitButton = submitButton;
+    this.keyboardButton = keyboardButton;
 
     this.addListener();
+    this.addKeyboardToggleListener();
   }
 
-  onSubmit() {
-  }
+  onEvent() {}
 
   addListener() {
     this.submitButton.addEventListener('click', (event) => {
       event.preventDefault();
       if ((this.inputElement.value).trim()) {
-        this.onSubmit(this.inputElement.value);
+        this.onEvent(this.inputElement.value);
         this.inputElement.value = '';
       }
     });
+  }
+
+  addKeyboardToggleListener(callback) {
+    this.callback = callback;
+    this.keyboardButton.addEventListener('click', this.callback);
   }
 
   disableSubmitButton(boolean) {

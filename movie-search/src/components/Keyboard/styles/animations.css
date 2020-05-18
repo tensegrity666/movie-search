@@ -1,0 +1,31 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(100%);
+  }
+
+  70% {
+    transform: translateY(-10%);
+  }
+
+  90% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-115%);
+  }
+
+  90% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
