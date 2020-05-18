@@ -22,19 +22,38 @@
   color: var(--color-info);
 }
 
-.searcher__button-reset {
+.searcher__button {
   position: absolute;
-  right: 130px;
   width: 30px;
   height: 30px;
   padding: 0 0 0.2rem;
   font-size: 4rem;
   line-height: 0;
+  cursor: pointer;
+  border: none;
+  transition: var(--default-transition);
+}
+
+.searcher__button-reset {
+  right: 130px;
   color: var(--color-danger);
   text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
   background-color: transparent;
-  border: none;
+}
+
+.searcher__button-keyboard {
+  right: 150px;
+  color: black;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  background-image: url('/assets/keyboard.svg');
+  filter: opacity(0.3);
+  background-position: center;
+  background-size: contain;
+}
+
+.searcher__button-keyboard:hover {
+  filter: opacity(0.9);
   transition: var(--default-transition);
 }
 
@@ -46,19 +65,17 @@
 }
 
 .searcher__button-submit {
+  right: -10px;
   width: 120px;
   height: 40px;
   padding: 0.2rem;
   font-size: 2rem;
   font-weight: 600;
-  line-height: 0;
   color: var(--color-default);
   text-transform: uppercase;
-  cursor: pointer;
   background-color: var(--color-success);
   border: 1px solid var(--color-success);
   border-radius: 0 1rem 1rem 0;
-  transition: var(--default-transition);
 }
 
 .searcher__button-submit:hover {

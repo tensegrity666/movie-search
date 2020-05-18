@@ -13,11 +13,6 @@
   <link rel="shortcut icon" href="assets/favicon/favicon.ico"
     type="image/x-icon">
   <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
-  rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Notable&subset=latin&text=MovieSarch&display=swap" rel="stylesheet">
-  <link
-  href="https://fonts.googleapis.com/css2?family=Poiret+One&text=TEИSEGЯITY666&display=swap" rel="stylesheet">
 
   <link rel="preconnect" href="https://unpkg.com/">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
@@ -31,6 +26,41 @@
     content="Here you can find cool movies!" />
   <meta property="og:image"
     content="https://sun9-33.userapi.com/c633922/v633922551/e816/XSQreNQht-8.jpg?ava=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Notable&subset=latin&text=MovieSarch&display=swap" rel="stylesheet">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poiret+One&text=TEИSEGЯITY666&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+  rel="stylesheet">
+
+  <style>
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--z-index-top);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: 350px 1fr;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--padding-for-centering);
+  color: var(--color-default);
+  background: var(--background-header);
+  background-color: var(--color-primary);
+  backdrop-filter: opacity(0.9) blur(2px);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.header__title {
+  margin: 0;
+  font-family: var(--font-header-logo);
+  font-size: 3rem;
+}
+  </style>
+
   <title>Movie Search</title>
 </head>
 
@@ -41,8 +71,9 @@
     <form class="searcher">
       <label for="search-input"><span class="visually-hidden">Please, enter movie title here</span></label>
       <input class="searcher__input" type="text" name="search" autofocus autocomplete="off" placeholder="Enter movie title" id="search-input" required maxlength="80">
-      <button class="searcher__button-reset" type="reset"><span class="visually-hidden">clear</span>&#215;</button>
-      <button class="searcher__button-submit" type="submit" id="search-submit">go!</button>
+      <button class="searcher__button searcher__button-reset" type="reset"><span class="visually-hidden">clear</span>&#215;</button>
+      <button class="searcher__button searcher__button-keyboard" type="button" id="search-toggler"><span class="visually-hidden">virtual keyboard</span></button>
+      <button class="searcher__button searcher__button-submit" type="submit" id="search-submit">go!</button>
     </form>
 
   </header>

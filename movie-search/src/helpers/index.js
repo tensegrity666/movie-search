@@ -17,11 +17,10 @@ function renderResults(movies) {
 }
 
 
-async function modifyRequestText(request) {
+function modifyRequestText(request) {
   return request
     .toLowerCase()
     .replace(/\s+/g, ' ')
-    .replace(/'/g, '')
     .trim()
     .split(' ')
     .join('+');
@@ -29,16 +28,16 @@ async function modifyRequestText(request) {
 
 
 const TRANSLATER_LINK = 'https://translate.yandex.net/api/v1.5/tr.json/translate?';
-const KEY = 'key=trnsl.1.1.20200322T155651Z.de98a60e6a99185e.089aea4237b51c6db082c966f27a7895cd1e8b44';
+const KEY = 'key=trnsl.1.1.20200514T113357Z.7da7410ce1f8a61f.28103d59da89aacae1b845dc43aefa4dcb7abedd';
 const REQUEST_PREFIX = '&text=';
 const LANGUAGE = '&lang=ru-en';
 
 async function detectRussian(request) {
   if (/[а-яА-ЯёЁ]/.test(request)) {
     const response = await fetch(`${TRANSLATER_LINK}${KEY}${REQUEST_PREFIX}${request}${LANGUAGE}`);
-    const data = await response.json();
+    const json = await response.json();
 
-    return data;
+    return json.text.join('');
   }
   return request;
 }
@@ -88,7 +87,6 @@ function getMoviesData(request, page) {
   const requestTypePrefix = '&s=';
   const pagePrefix = '&page=';
 
-  _state.request = request;
   _state.isLoading = true;
   showSpinner(_state.isLoading);
 
@@ -107,7 +105,7 @@ function getMoviesData(request, page) {
       } else if (json.Response === 'True') {
         _state.results = json.totalResults;
         _state.isLoading = false;
-        showResultMessage(_state.results, request);
+        showResultMessage(_state.results, _state.request);
         return json.Search;
       }
     })
