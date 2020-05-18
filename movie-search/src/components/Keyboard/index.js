@@ -99,7 +99,7 @@ import './styles/animations.css';
 class keyboardView {
   constructor() {
     this.container = document.createElement('div');
-    this.container.classList.add('keyboard', 'keyboard_hide');
+    this.container.classList.add('keyboard');
 
     this.init();
   }
@@ -128,11 +128,11 @@ class keyboardView {
 
         case 'space':
           this.button.classList.add('keyboard__key_space');
-          this.button.innerText = '_';
+          this.button.innerHTML = ' ';
           break;
 
         default:
-          this.button.innerText = key;
+          this.button.innerHTML = key;
           this.button.classList.add('keyboard__key');
           break;
       }
@@ -151,7 +151,15 @@ class keyboardView {
 
   toggle() {
     this.container.classList.toggle('keyboard_show');
-    this.container.classList.toggle('keyboard_hide');
+  }
+
+  addKeyPressEvent(callback) {
+    this.callback = callback;
+    this.container.addEventListener('click', (event) => {
+      if (event.target.classList.contains('keyboard__key')) {
+        this.callback(event.target.innerHTML);
+      }
+    });
   }
 }
 

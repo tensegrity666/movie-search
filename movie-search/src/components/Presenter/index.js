@@ -1,3 +1,5 @@
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-unused-vars */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 
@@ -46,6 +48,25 @@ class Presenter {
     this.searchView.addKeyboardToggleListener(() => {
       this.keyboardView.toggle();
       this.searchView.inputElement.focus();
+      this.searchView.inputElement.value = '';
+    });
+
+    this.keyboardView.addKeyPressEvent((inputFromVKeyb) => {
+      switch (inputFromVKeyb) {
+        case 'Backspace':
+          this.searchView.inputElement.value = this.searchView.inputElement.value.slice(0, -1);
+          break;
+
+        case 'Enter':
+          if (this.searchView.inputElement.value) {
+            this.searchView.onEvent(this.searchView.inputElement.value);
+          }
+          this.searchView.inputElement.value = '';
+          break;
+
+        default:
+          this.searchView.inputElement.value += inputFromVKeyb;
+      }
     });
 
 
@@ -87,8 +108,7 @@ class Presenter {
     });
   }
 
-  init() {
-  }
+  init() {}
 }
 
 export default Presenter;

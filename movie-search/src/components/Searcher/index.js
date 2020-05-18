@@ -10,7 +10,6 @@ class SearcherView {
     this.keyboardButton = keyboardButton;
 
     this.addListener();
-    this.addKeyboardToggleListener();
   }
 
   onEvent() {}
