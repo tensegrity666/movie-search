@@ -44,6 +44,7 @@
   --padding-top-for-container: 75px;
   --margin-bottom-big: 2rem;
   --margin-bottom-small: 1rem;
+  --footer-height: 60px;
 
   /* fonts */
   --font-header-logo: 'Notable', sans-serif;

@@ -1,13 +1,14 @@
 .keyboard {
   --small-height: 38vh;
   --font: 'Sen', sans-serif;
-  --font-color: #134d69;
+  --font-color: #0e1518;
   --font-hover: #2a94b5;
 
   position: absolute;
   right: 0;
+  bottom: -50%;
   left: 0;
-  z-index: var(--z-index-top);
+  z-index: 99;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -15,24 +16,19 @@
   justify-content: center;
   width: 65%;
   height: 40%;
-  padding: 15px 5px 50px;
+  padding: 15px 5px 60px;
   margin: 0 auto;
   color: var(--font-color);
-  background-color: #cae2e4fa;
+  background-color: #8ba7b9f1;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.75);
-}
-
-.keyboard_hide {
-  bottom: -50%;
-  animation-name: slide-down;
-  animation-duration: 0.7s;
+  transition: bottom 0.3s ease-out;
 }
 
 .keyboard_show {
-  bottom: -40px;
+  bottom: calc(var(--footer-height) - 40px);
   animation-name: bounce;
-  animation-duration: 0.7s;
+  animation-duration: 0.8s;
 }
 
 .keyboard__key {
@@ -47,20 +43,20 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  background: #cae2e5;
-  border: 1px solid #cae2e5;
+  background: #8ba7b9;
+  border: 1px solid #8ba7b9;
   border-radius: 10px;
   outline: none;
   box-shadow:
-    -9px 9px 25px #aec2c5,
-    9px -9px 25px #e6ffff;
+    -5px 5px 15px #5d707c,
+    5px -5px 15px #b9def6;
   transition: var(--default-transition);
 }
 
 .keyboard__key:active {
   color: var(--font-hover);
   text-shadow: #6a949b 1px -1px 10px;
-  background: linear-gradient(45deg, #d8f2f5, #aec2c5);
+  background: linear-gradient(45deg, #b9def6, #5d707c);
 }
 
 .keyboard__key:hover {
@@ -68,35 +64,13 @@
   transition: var(--default-transition);
 }
 
-@media (max-width: 1280px) {
-  .keyboard__key {
-    width: 5%;
-    height: 12%;
-    margin: 8px 8px;
-    font-size: 1.8rem;
-  }
-}
-
-.keyboard__key_caps {
-  color: var(--font-hover);
-  background: linear-gradient(45deg, #d8f2f5, #92c1c9);
-}
-
 .keyboard__key_double {
-  width: 9%;
+  width: 10%;
   font-size: 2rem;
 }
 
-@media (max-width: 1280px) {
-  .keyboard__key_double {
-    font-size: 1.4rem;
-  }
-}
-
-.keyboard__key_press {
-  color: var(--font-hover);
-  text-shadow: #6a949b 1px -1px 10px;
-  background: linear-gradient(45deg, #d8f2f5, #aec2c5);
+.keyboard__key_triple {
+  width: 15%;
 }
 
 .keyboard__key_space {
@@ -105,11 +79,7 @@
 
 .keyboard__key_space:active {
   text-shadow: #6a949b 1px 0 30px;
-  background: linear-gradient(5deg, #d8f2f5, #aec2c5);
-}
-
-.keyboard__key_triple {
-  width: 13%;
+  background: linear-gradient(5deg, #b9def6, #5d707c);
 }
 
 .linebreak {
