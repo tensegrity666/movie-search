@@ -71,13 +71,12 @@ class MoviecardView {
     <button class='moviecard__info_button' type='button' data-modal>?</button>
 
     <ul class='moviecard__info_hidden'>
-      <li class='moviecard__info-item'>'Year: ${this.year}'</li>
-      <li class='moviecard__info-item'>'Country: ${this.country}'</li>
-      <li class='moviecard__info-item'>'Director: ${this.director}'</li>
-      <li class='moviecard__info-item'>'Genre: ${this.genre}'</li>
-      <li class='moviecard__info-item'>'Date of release: ${this.release}'</li>
-      <li class='moviecard__info-item'>'Length: ${this.length}'</li>
-      <li class='moviecard__info-item'>'Rated: ${this.rated}'</li>
+      <li class='moviecard__info-item'>Country: ${this.country}</li>
+      <li class='moviecard__info-item'>Director: ${this.director}</li>
+      <li class='moviecard__info-item'>Genre: ${this.genre}</li>
+      <li class='moviecard__info-item'>Date of release: ${this.release}</li>
+      <li class='moviecard__info-item'>Length: ${this.length}</li>
+      <li class='moviecard__info-item'>Rated: ${this.rated}</li>
     </ul>`;
   }
 }
