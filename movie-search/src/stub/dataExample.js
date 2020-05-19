@@ -1,5 +1,6 @@
 /* eslint-disable quotes */
 /* eslint-disable quote-props */
+
 const data = [
   {
     Title: "Scary Movie",

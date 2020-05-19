@@ -12,8 +12,9 @@
   background-image: var(--background-main);
 }
 
-@media (min-width: 320px) and (max-width: 450px) {
+@media (min-width: 320px) and (max-width: 570px) {
   .page {
     overflow-y: scroll;
+    background-image: none;
   }
 }
