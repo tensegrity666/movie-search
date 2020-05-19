@@ -31,9 +31,8 @@ class AppView {
     });
   }
 
-  renderModalWindow() {
-    
-  }
+  // renderModalWindow() {
+  // }
 }
 
 
