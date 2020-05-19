@@ -13,4 +13,12 @@ const RATING_STARS = {
   10: '&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;',
 };
 
-export { RATING_STARS, THRESHOLD };
+const PICS = {
+  bspace: 'Backspace',
+  enter: 'Search',
+  space: ' ',
+  escape: '&#11015;',
+  language: '&#127760;',
+};
+
+export { RATING_STARS, THRESHOLD, PICS };
