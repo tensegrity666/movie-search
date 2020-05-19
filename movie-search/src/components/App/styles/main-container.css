@@ -22,7 +22,7 @@
 
 @media (min-width: 320px) and (max-width: 1440px) {
   .main-container {
-    padding: 120px 0 0;
+    padding: 25px 0 0;
   }
 
   .main-container__textfield {

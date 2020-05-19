@@ -74,7 +74,7 @@
 }
 
 .keyboard__key_space {
-  width: 80%;
+  width: 60%;
 }
 
 .keyboard__key_space:active {
@@ -86,4 +86,10 @@
   display: inline-block;
   width: 100%;
   height: 0;
+}
+
+@media (min-width: 320px) and (max-width: 512px) {
+  .keyboard {
+    display: none;
+  }
 }

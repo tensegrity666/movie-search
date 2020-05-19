@@ -19,6 +19,7 @@ const PICS = {
   space: ' ',
   escape: '&#11015;',
   language: '&#127760;',
+  symbol: '&#177;',
 };
 
 export { RATING_STARS, THRESHOLD, PICS };

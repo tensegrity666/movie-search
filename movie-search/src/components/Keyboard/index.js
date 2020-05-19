@@ -1,4 +1,3 @@
-/* eslint-disable default-case */
 /* eslint-disable no-underscore-dangle */
 
 import './styles/keyboard.css';
@@ -8,11 +7,12 @@ import { PICS } from '../../constants';
 
 
 class keyboardView {
-  constructor(defaultLayout, rusLayout) {
+  constructor(defaultLayout, rusLayout, symbolsLayout) {
     this.container = document.createElement('div');
     this.container.classList.add('keyboard');
     this.defaultLayout = defaultLayout;
     this.rusLayout = rusLayout;
+    this.symbolsLayout = symbolsLayout;
     this.language = 'en';
 
     this.render(defaultLayout);
@@ -57,6 +57,11 @@ class keyboardView {
         case 'lang':
           this.button.setAttribute('data-lang', '');
           this.button.innerHTML = PICS.language;
+          break;
+
+        case 'sym':
+          this.button.setAttribute('data-symbol', '');
+          this.button.innerHTML = PICS.symbol;
           break;
 
         default:
