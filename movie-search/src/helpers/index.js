@@ -4,7 +4,6 @@ import _state from '../components/State';
 import MoviecardView from '../components/MovieCard';
 import { RATING_STARS } from '../constants';
 
-
 function renderResults(movies) {
   const container = document.querySelector('.cardlist');
   container.innerHTML = '';
@@ -62,16 +61,13 @@ function showResultMessage(result, request) {
   textfield.innerText = `${result} movies found for search "${request}"`;
 }
 
-
 function showError(error) {
   textfield.classList.add('main-container_danger');
   textfield.innerText = `${error}`;
 }
 
 
-const apiURL = 'https://www.omdbapi.com/?apikey=282ca252&type=movie';
-
-// fcbac651
+const apiURL = 'https://www.omdbapi.com/?apikey=fcbac651&type=movie';
 
 function getStatistics(movieID) {
   const requestTypePrefix = '&i=';

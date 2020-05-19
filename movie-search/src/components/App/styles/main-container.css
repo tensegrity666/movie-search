@@ -20,7 +20,14 @@
   color: var(--color-danger);
 }
 
-@media (min-width: 320px) and (max-width: 1440px) {
+@media (min-width: 320px) and (max-width: 570px) {
+  .main-container__textfield {
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 571px) and (max-width: 1440px) {
   .main-container {
     padding: 25px 0 0;
   }

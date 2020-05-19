@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 511px) {
+@media (min-width: 320px) and (max-width: 570px) {
   .header {
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
   }
 }
 
-@media (min-width: 512px) and (max-width: 1280px) {
+@media (min-width: 571px) and (max-width: 1280px) {
   .header {
     grid-template-rows: repeat(2, 60px);
     grid-template-columns: 1fr;

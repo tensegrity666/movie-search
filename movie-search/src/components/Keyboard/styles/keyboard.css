@@ -1,5 +1,4 @@
 .keyboard {
-  --small-height: 38vh;
   --font: 'Sen', sans-serif;
   --font-color: #0e1518;
   --font-hover: #2a94b5;
@@ -88,7 +87,7 @@
   height: 0;
 }
 
-@media (min-width: 320px) and (max-width: 512px) {
+@media (min-width: 320px) and (max-width: 570px) {
   .keyboard {
     display: none;
   }

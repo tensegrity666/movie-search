@@ -83,9 +83,14 @@
   transition: var(--default-transition);
 }
 
-@media (min-width: 320px) and (max-width: 511px) {
+@media (min-width: 320px) and (max-width: 570px) {
   .searcher__input {
     width: 280px;
+    padding: 0.2rem 7rem 0.2rem 0.5rem;
+  }
+
+  .searcher__input::placeholder {
+    color: transparent;
   }
 
   .searcher__button-reset {
@@ -101,7 +106,7 @@
   }
 }
 
-@media (min-width: 512px) {
+@media (min-width: 571px) {
   .searcher__button-reset {
     right: 110px;
   }

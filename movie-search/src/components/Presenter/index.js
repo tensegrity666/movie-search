@@ -12,7 +12,7 @@ import SearcherView from '../Searcher';
 import PARAMS from '../Paginator';
 import _state from '../State';
 
-import { RATING_STARS, THRESHOLD, PICS } from '../../constants';
+import { THRESHOLD, PICS } from '../../constants';
 import {
   modifyRequestText,
   getMoviesData,
@@ -23,7 +23,6 @@ import {
 
 import stubData from '../../stub/dataExample';
 
-const container = document.querySelector('.cardlist');
 const input = document.querySelector('#search-input');
 const submit = document.querySelector('#search-submit');
 const keyboardToggler = document.querySelector('#search-toggler');
@@ -34,7 +33,7 @@ _state.movies.push(stubData);
 class Presenter {
   constructor() {
     this.model = new AppModel(_state);
-    this.appView = new AppView(this.model, RATING_STARS, container);
+    this.appView = new AppView(this.model);
     this.searchView = new SearcherView(input, submit, keyboardToggler);
     this.paginator = new Swiper('.swiper-container', PARAMS);
     this.keyboardView = new KeyboardView(keysLayoutDefault, keysLayoutCyrillic);
@@ -73,6 +72,7 @@ class Presenter {
       _state.request = requestText;
       _state.movies = [];
 
+
       this.searchView.disableSubmitButton(_state.isLoading);
 
       const data = await detectRussian(requestText);
@@ -83,6 +83,7 @@ class Presenter {
           _state.requestString = modifiedRequest;
           _state.isLoading = false;
           renderResults(_state.movies);
+
           showSpinner(_state.isLoading);
           this.paginator.update();
           this.paginator.slideTo(0, 500);
