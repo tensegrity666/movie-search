@@ -9,7 +9,7 @@
 }
 
 .moviecard__image {
-  width: 100%;
+  width: 80%;
   height: 440px;
   object-fit: cover;
   object-position: top;
@@ -57,4 +57,11 @@
   line-height: 1;
   color: var(--color-gold);
   text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 320px) and (max-width: 511px) {
+  .moviecard__image {
+    width: 90%;
+    height: 350px;
+  }
 }

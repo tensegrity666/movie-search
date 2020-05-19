@@ -30,6 +30,9 @@ class AppView {
       return this.movielistContainer.append(mc.card);
     });
   }
+
+  // renderModalWindow() {
+  // }
 }
 
 

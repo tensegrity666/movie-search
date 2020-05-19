@@ -6,13 +6,13 @@
 import Swiper from 'swiper';
 import AppView from '../App';
 import KeyboardView from '../Keyboard';
-import keysLayoutDefault from '../Keyboard/layouts';
+import { keysLayoutDefault, keysLayoutCyrillic } from '../Keyboard/layouts';
 import AppModel from '../App/AppModel';
 import SearcherView from '../Searcher';
 import PARAMS from '../Paginator';
 import _state from '../State';
 
-import { RATING_STARS, THRESHOLD } from '../../constants';
+import { RATING_STARS, THRESHOLD, PICS } from '../../constants';
 import {
   modifyRequestText,
   getMoviesData,
@@ -37,13 +37,12 @@ class Presenter {
     this.appView = new AppView(this.model, RATING_STARS, container);
     this.searchView = new SearcherView(input, submit, keyboardToggler);
     this.paginator = new Swiper('.swiper-container', PARAMS);
-    this.keyboardView = new KeyboardView();
+    this.keyboardView = new KeyboardView(keysLayoutDefault, keysLayoutCyrillic);
 
     renderResults(stubData);
 
     this.paginator.init();
 
-    this.keyboardView.render(keysLayoutDefault);
 
     this.searchView.addKeyboardToggleListener(() => {
       this.keyboardView.toggle();
@@ -53,11 +52,11 @@ class Presenter {
 
     this.keyboardView.addKeyPressEvent((inputFromVKeyb) => {
       switch (inputFromVKeyb) {
-        case 'Backspace':
+        case PICS.bspace:
           this.searchView.inputElement.value = this.searchView.inputElement.value.slice(0, -1);
           break;
 
-        case 'Enter':
+        case PICS.enter:
           if (this.searchView.inputElement.value) {
             this.searchView.onEvent(this.searchView.inputElement.value);
           }

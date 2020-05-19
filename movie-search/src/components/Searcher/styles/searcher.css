@@ -85,15 +85,19 @@
 
 @media (min-width: 320px) and (max-width: 511px) {
   .searcher__input {
-    width: 220px;
+    width: 280px;
   }
 
   .searcher__button-reset {
-    right: 70px;
+    right: 50px;
   }
 
   .searcher__button-submit {
     width: 60px;
+  }
+
+  .searcher__button-keyboard {
+    display: none;
   }
 }
 
