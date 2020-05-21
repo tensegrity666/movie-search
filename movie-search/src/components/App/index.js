@@ -14,6 +14,9 @@ class AppView {
       if (event.target.hasAttribute('data-modal')) {
         event.target.nextElementSibling.classList.toggle('moviecard__info_show');
       }
+      if (event.target.hasAttribute('data-modal-close')) {
+        event.target.parentElement.classList.toggle('moviecard__info_show');
+      }
     });
   }
 }

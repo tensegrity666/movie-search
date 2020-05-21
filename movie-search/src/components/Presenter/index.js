@@ -50,6 +50,8 @@ class Presenter {
     });
 
     this.keyboardView.addKeyPressEvent((inputFromVKeyb) => {
+      this.searchView.inputElement.focus();
+
       switch (inputFromVKeyb) {
         case PICS.bspace:
           this.searchView.inputElement.value = this.searchView.inputElement.value.slice(0, -1);

@@ -2,14 +2,13 @@
 
 import _state from '../components/State';
 import MoviecardView from '../components/MovieCard';
-import { RATING_STARS } from '../constants';
 
 function renderResults(movies) {
   const container = document.querySelector('.cardlist');
   container.innerHTML = '';
 
   movies.map((movie) => {
-    const mc = new MoviecardView(movie, RATING_STARS);
+    const mc = new MoviecardView(movie);
 
     return container.append(mc.card());
   });

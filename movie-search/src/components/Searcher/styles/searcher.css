@@ -104,14 +104,23 @@
 
 @media (min-width: 571px) {
   .searcher__button-reset {
-    right: 110px;
+    right: 115px;
   }
 }
 
 @media (min-width: 571px) and (max-width: 660px) {
   .searcher__input {
-    width: 600px;
+    width: 100%;
     padding: 0.2rem 7rem 0.2rem 0.5rem;
+  }
+
+  .searcher__button-reset {
+    right: 60px;
+  }
+
+  .searcher__button-submit {
+    right: -30px;
+    width: 15%;
   }
 }
 

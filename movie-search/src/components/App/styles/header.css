@@ -49,6 +49,7 @@
 
 @media (min-width: 571px) and (max-width: 800px) {
   .header {
+    grid-template-columns: 1fr;
     padding: 0 60px 0 20px;
   }
 }

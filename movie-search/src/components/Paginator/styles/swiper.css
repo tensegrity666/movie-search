@@ -71,7 +71,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1440px) {
   .swiper-button-prev {
     left: -60px;
   }

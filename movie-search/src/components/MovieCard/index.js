@@ -4,13 +4,12 @@ import './styles/moviecard.css';
 
 
 class MoviecardView {
-  constructor(movie, stars) {
+  constructor(movie) {
     this.id = movie.imdbID;
     this.title = movie.Title;
     this.year = movie.Year;
     this.poster = movie.Poster;
     this.rating = movie.imdbRating;
-    this.starRating = stars[(Math.round(this.rating * 2) / 2).toFixed()];
     this.link = 'https://www.imdb.com/title/';
     this.noImage = '/assets/noimage.png';
 
@@ -66,8 +65,9 @@ class MoviecardView {
     <p class='moviecard__year'>
     ${this.year}
     </p>
-    <span class='visually-hidden'>IMDB Rating: ${this.rating}</span>
-    <span class='moviecard__rating'>${this.starRating}</span>
+    <span class='moviecard__rating'>
+      <span class='moviecard__rating-name'>IMDB:</span> ${this.rating}&#9733;
+    </span>
     <button class='moviecard__info_button' type='button' data-modal>?</button>
 
     <div class='moviecard__info_hidden'>

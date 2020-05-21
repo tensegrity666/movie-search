@@ -1,8 +1,9 @@
 .moviecard {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0;
   text-align: center;
   list-style: none;
@@ -10,7 +11,7 @@
 
 .moviecard__image {
   width: 95%;
-  height: 440px;
+  height: 50vh;
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
@@ -46,27 +47,35 @@
 }
 
 .moviecard__year {
-  margin: 20px 0 0;
+  margin: 30px 0 0;
   font-size: 2.1rem;
   line-height: 1.3;
   color: var(--color-primary);
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
 }
 
 .moviecard__rating {
-  font-size: 2.2rem;
+  align-self: flex-start;
+  margin: -23px 0 0 12px;
+  font-size: 2rem;
   line-height: 1;
   color: var(--color-gold);
   text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
 }
 
+.moviecard__rating-name {
+  color: var(--color-success);
+}
+
 .moviecard__info_hidden {
   position: absolute;
+  top: 45px;
   right: 0;
   left: 0;
   z-index: var(--z-index-top);
   display: none;
-  width: 102%;
-  height: 450px;
+  width: 96%;
+  height: 51vh;
   padding: 0;
   margin: 0 auto;
   margin-top: -12px;
@@ -97,14 +106,14 @@
 }
 
 .moviecard__info_button {
-  z-index: 9999;
   align-self: flex-end;
   width: 30px;
   height: 30px;
-  margin: -40px 5px 0 0;
+  margin: -24px 15px 0 0;
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-success);
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   background-color: transparent;
   border: 3px solid var(--color-success);
@@ -117,6 +126,25 @@
   transition: var(--default-transition);
 }
 
+.moviecard__info_close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: var(--z-index-top);
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
+  padding: 0 0 0.2rem;
+  font-size: 4rem;
+  line-height: 0;
+  color: var(--color-danger);
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: var(--default-transition);
+}
+
 @media (min-width: 320px) and (max-width: 540px) {
   .moviecard__image {
     width: 80%;
@@ -125,6 +153,13 @@
 
   .moviecard__info_button {
     display: none;
+  }
+
+  .moviecard__rating {
+    align-self: center;
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -153,6 +188,6 @@
 
 @media (min-width: 1024px) and (max-width: 1600px) {
   .moviecard__info_button {
-    margin: -110px 10px 0 0;
+    margin: -25px 13px 0 0;
   }
 }

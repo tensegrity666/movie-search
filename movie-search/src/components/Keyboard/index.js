@@ -59,11 +59,6 @@ class keyboardView {
           this.button.innerHTML = PICS.language;
           break;
 
-        case 'sym':
-          this.button.setAttribute('data-symbol', '');
-          this.button.innerHTML = PICS.symbol;
-          break;
-
         default:
           this.button.innerHTML = key;
           this.button.setAttribute('data-key', '');
