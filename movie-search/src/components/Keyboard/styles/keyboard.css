@@ -87,8 +87,14 @@
   height: 0;
 }
 
-@media (min-width: 320px) and (max-width: 570px) {
+@media (min-width: 320px) and (max-width: 1020px) {
   .keyboard {
     display: none;
+  }
+}
+
+@media (min-width: 1021px) and (max-width: 1440px) {
+  .keyboard {
+    width: 100%;
   }
 }
