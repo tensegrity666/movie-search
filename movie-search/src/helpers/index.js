@@ -74,7 +74,7 @@ function getStatistics(movieID) {
   return fetch(`${apiURL}${requestTypePrefix}${movieID}`)
     .then((response) => response.json())
     .then((data) => _state.movies.push(data))
-    .catch((error) => showError(error));
+    .catch((error) => showError('Error occured...', error));
 }
 
 
@@ -90,13 +90,13 @@ function getMoviesData(request, page) {
       if (response.ok) {
         return response.json();
       }
-      showError(response.statusText);
+      showError(`Error: ${response.statusText}`);
     })
     .then((json) => {
       if (json.Error) {
         _state.errorMessage = json.Error;
         _state.isLoading = false;
-        showError(_state.errorMessage);
+        showError(`Error, no results for: ${_state.request}`);
       } else if (json.Response === 'True') {
         _state.results = json.totalResults;
         _state.isLoading = false;
@@ -106,7 +106,7 @@ function getMoviesData(request, page) {
     })
     .then((movies) => movies.map((movie) => getStatistics(movie.imdbID)))
     .then((data) => Promise.all(data))
-    .catch(() => showError(_state.errorMessage));
+    .catch(() => showError(`No results for: ${_state.request}`));
 }
 
 

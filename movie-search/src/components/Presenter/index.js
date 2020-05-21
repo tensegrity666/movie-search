@@ -46,7 +46,6 @@ class Presenter {
     this.searchView.addKeyboardToggleListener(() => {
       this.keyboardView.toggle();
       this.searchView.inputElement.focus();
-      this.searchView.inputElement.value = '';
     });
 
     this.keyboardView.addKeyPressEvent((inputFromVKeyb) => {
@@ -61,7 +60,6 @@ class Presenter {
           if (this.searchView.inputElement.value) {
             this.searchView.onEvent(this.searchView.inputElement.value);
           }
-          this.searchView.inputElement.value = '';
           break;
 
         default:
@@ -71,21 +69,21 @@ class Presenter {
 
 
     this.searchView.onEvent = async (requestText) => {
-      _state.request = requestText;
       _state.movies = [];
-
 
       this.searchView.disableSubmitButton(_state.isLoading);
 
       const data = await detectRussian(requestText);
+      _state.request = data;
       const modifiedRequest = modifyRequestText(data);
+
+      this.searchView.inputElement.value = requestText;
 
       getMoviesData(modifiedRequest, this.model.page)
         .then(() => {
           _state.requestString = modifiedRequest;
           _state.isLoading = false;
           renderResults(_state.movies);
-
           showSpinner(_state.isLoading);
           this.paginator.update();
           this.paginator.slideTo(0, 500);
@@ -97,7 +95,7 @@ class Presenter {
       const wrapperCoordinates = document.querySelector('.swiper-outer').getBoundingClientRect().right;
 
       if ((Math.floor(lastMovieCardCoordinates) - Math.floor(wrapperCoordinates) <= THRESHOLD)
-      && _state.request) {
+      && _state.requestString) {
         _state.page += 1;
         getMoviesData(_state.requestString, _state.page)
           .then(() => {

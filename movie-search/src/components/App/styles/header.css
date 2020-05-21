@@ -52,4 +52,8 @@
     grid-template-columns: 1fr;
     padding: 0 60px 0 20px;
   }
+
+  .header__title {
+    display: none;
+  }
 }
