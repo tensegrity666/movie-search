@@ -22,17 +22,17 @@ const PARAMS = {
   },
 
   breakpoints: {
-    768: {
+    670: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 5,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 10,
     },
     1280: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    1480: {
       slidesPerView: 4,
-      spaceBetween: 40,
+      spaceBetween: 30,
     },
   },
 

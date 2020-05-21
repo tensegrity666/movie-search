@@ -10,7 +10,7 @@ class MoviecardView {
     this.year = movie.Year;
     this.poster = movie.Poster;
     this.rating = movie.imdbRating;
-    this.starRating = stars[Math.floor(this.rating)];
+    this.starRating = stars[(Math.round(this.rating * 2) / 2).toFixed()];
     this.link = 'https://www.imdb.com/title/';
     this.noImage = '/assets/noimage.png';
 
@@ -70,14 +70,17 @@ class MoviecardView {
     <span class='moviecard__rating'>${this.starRating}</span>
     <button class='moviecard__info_button' type='button' data-modal>?</button>
 
-    <ul class='moviecard__info_hidden'>
-      <li class='moviecard__info-item'>Country: ${this.country}</li>
-      <li class='moviecard__info-item'>Director: ${this.director}</li>
-      <li class='moviecard__info-item'>Genre: ${this.genre}</li>
-      <li class='moviecard__info-item'>Date of release: ${this.release}</li>
-      <li class='moviecard__info-item'>Length: ${this.length}</li>
-      <li class='moviecard__info-item'>Rated: ${this.rated}</li>
-    </ul>`;
+    <div class='moviecard__info_hidden'>
+    <button class='moviecard__info_close' type='button' data-modal-close>&#215;</button>
+      <ul class='moviecard__info_list'>
+        <li class='moviecard__info-item'>Country: ${this.country}</li>
+        <li class='moviecard__info-item'>Director: ${this.director}</li>
+        <li class='moviecard__info-item'>Genre: ${this.genre}</li>
+        <li class='moviecard__info-item'>Date of release: ${this.release}</li>
+        <li class='moviecard__info-item'>Length: ${this.length}</li>
+        <li class='moviecard__info-item'>Rated: ${this.rated}</li>
+      </ul>
+    </div>`;
   }
 }
 

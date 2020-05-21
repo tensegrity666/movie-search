@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="20" viewBox="0 0 200 20">
+  <defs>
+    <image id="image" width="20" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA/UlEQVQ4jb1UwRGCMBBcqAArUJ+8hA6gFCqhFTvBDsRXntiBdBDn4qJBQwIM487cwBx3O3u5DREC0AoHAFdW5VGKu68jDhECqAEkjDpU7FVIdd1X+uhTGVLoUuRVOalQKzNix1Ft9FTZz1bIUWsHGYazZM2vQq1QACZOLC58IzlwoeqbvAuhXkjgRUz2rdALYbkRqXCUZstaIQPQTCxhPlmK9m0bLqdZSShkspyPbZioVpBVAxlcxtYKjwWj91GKnZ0YGZu3Y8k5JuxxEwJmOUuR/ZVwP9F0Zrgw6gmNLNuTv7RsUhyQMzdbYWs9xVvGrMNHY9zU3CwJu/YFAE8ED0EYCmeWlQAAAABJRU5ErkJggg=="/>
+  </defs>
+  <use xlink:href="#image"/>
+  <use x="20" xlink:href="#image"/>
+  <use x="40" xlink:href="#image"/>
+  <use x="60" xlink:href="#image"/>
+  <use x="80" xlink:href="#image"/>
+  <use x="100" xlink:href="#image"/>
+  <use x="120" xlink:href="#image"/>
+  <use x="140" xlink:href="#image"/>
+  <use x="160" xlink:href="#image"/>
+  <use x="180" xlink:href="#image"/>
+</svg>
