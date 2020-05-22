@@ -3,7 +3,10 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 
-import Swiper from 'swiper';
+import {
+  Swiper, Navigation, Pagination, A11y,
+} from 'swiper/js/swiper.esm';
+
 import AppView from '../App';
 import KeyboardView from '../Keyboard';
 import { keysLayoutDefault, keysLayoutCyrillic } from '../Keyboard/layouts';
@@ -22,6 +25,8 @@ import {
 } from '../../helpers';
 
 import stubData from '../../stub/dataExample';
+
+Swiper.use([Navigation, Pagination, A11y]);
 
 const input = document.querySelector('#search-input');
 const submit = document.querySelector('#search-submit');

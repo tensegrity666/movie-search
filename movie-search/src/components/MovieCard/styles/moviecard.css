@@ -105,6 +105,10 @@
   list-style: none;
 }
 
+.moviecard__info_list {
+  padding: 0;
+}
+
 .moviecard__info_button {
   align-self: flex-end;
   width: 30px;
@@ -147,7 +151,7 @@
 
 @media (min-width: 320px) and (max-width: 540px) {
   .moviecard__image {
-    width: 80%;
+    width: 65%;
     height: 320px;
   }
 

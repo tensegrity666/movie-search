@@ -33,17 +33,17 @@
 
 @media (min-width: 571px) and (max-width: 800px) {
   .main-container__textfield {
-    padding: 40px 0 0;
+    padding: 40px 0 30px;
   }
 }
 
 @media (min-width: 801px) and (max-width: 1440px) {
   .main-container {
-    padding: 25px 0 0;
+    padding: 25px 0 30px;
   }
 
   .main-container__textfield {
-    padding: 80px 0 0;
+    padding: 80px 0 30px;
     font-size: 2.2rem;
   }
 }
