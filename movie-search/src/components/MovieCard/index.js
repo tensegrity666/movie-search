@@ -52,7 +52,7 @@ class MoviecardView {
   }
 
   render() {
-    return `<header>
+    return `<header style='width: 105%; overflow: hidden;'>
       <a class='moviecard__title ${this.titleStyle}' href='${this.link}${this.id}' target='_blank'
         rel='noopener noreferrer'>
         ${this.title}

@@ -27,6 +27,7 @@
   color: var(--color-primary);
   text-transform: capitalize;
   transition: var(--default-transition);
+  white-space: nowrap;
 }
 
 .moviecard__title:hover {
@@ -35,15 +36,17 @@
 }
 
 .moviecard__title_small {
-  margin: 0 -1rem 4px;
+  margin: 0 auto;
   font-size: 1.8rem;
-  line-height: 1.5;
+  line-height: 2;
+  white-space: nowrap;
 }
 
 .moviecard__title_tiny {
-  margin: 0 -2rem 10px;
+  margin: 0 auto;
   font-size: 1.6rem;
-  line-height: 1.3;
+  line-height: 2.2;
+  white-space: nowrap;
 }
 
 .moviecard__year {
