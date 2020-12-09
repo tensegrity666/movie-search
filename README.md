@@ -1,17 +1,15 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/64a8d03c-0226-4307-bca0-26c3420141c6/deploy-status)](https://app.netlify.com/sites/tensegrity666-movie-search/deploys)
-## https://tensegrity666-movie-search.netlify.app/
+* [Link to task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/movie-search.md)
+* https://tensegrity666-movie-search.netlify.app
+______________________________________________________________________________
+[Screenshot](https://yadi.sk/i/cwTXQzbmcINYpA)
+______________________________________________________________________________
+* Deadline: 10.05.2020 23:59
 
-Tested for compatibility in Chrome
+### Total:
+* Basic scope +60
+* Advanced scope +90
+* Hacker scope +30
+* * Дополнительная функциональность - карточки фильмов содержат дополнительную информацию, доступную по клику на соответствующую кнопку. Анимировано появление/скрытие меню.
 
-## Install
-* npm i
-
-## Run linters
-* npm run lint
-
-## Run tests
-* npm test
-
-## Build project
-* npm run build
-
+Бандл при сборке делится на чанки, при подключении библиотеки свайпера импортированы только несколько нужных модулей, благодаря чему размер чанка vendors уменьшился на ~200Kb. Тест производительности в Lighthouse показывает от 80%+ (на новом лайтхаусе в канарейке) до 90%+ в текущей версии хрома.
+_к слову, у людей из топ-5 скора средняя производительность приложений от 30% до 50%_
